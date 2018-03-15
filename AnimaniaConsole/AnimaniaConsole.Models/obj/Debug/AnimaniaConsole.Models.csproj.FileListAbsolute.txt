@@ -4,3 +4,9 @@ D:\GIT\Source\Repos\Teamwork-DB\Team9-Project\AnimaniaConsole\AnimaniaConsole.Mo
 D:\GIT\Source\Repos\Teamwork-DB\Team9-Project\AnimaniaConsole\AnimaniaConsole.Models\bin\Debug\AnimaniaConsole.Models.pdb
 D:\GIT\Source\Repos\Teamwork-DB\Team9-Project\AnimaniaConsole\AnimaniaConsole.Models\obj\Debug\AnimaniaConsole.Models.dll
 D:\GIT\Source\Repos\Teamwork-DB\Team9-Project\AnimaniaConsole\AnimaniaConsole.Models\obj\Debug\AnimaniaConsole.Models.pdb
+C:\Users\Freeware Sys\Desktop\TEAMWORK\AnimaniaConsole\AnimaniaConsole.Models\bin\Debug\AnimaniaConsole.Models.dll
+C:\Users\Freeware Sys\Desktop\TEAMWORK\AnimaniaConsole\AnimaniaConsole.Models\bin\Debug\AnimaniaConsole.Models.pdb
+C:\Users\Freeware Sys\Desktop\TEAMWORK\AnimaniaConsole\AnimaniaConsole.Models\obj\Debug\AnimaniaConsole.Models.csprojResolveAssemblyReference.cache
+C:\Users\Freeware Sys\Desktop\TEAMWORK\AnimaniaConsole\AnimaniaConsole.Models\obj\Debug\AnimaniaConsole.Models.csproj.CoreCompileInputs.cache
+C:\Users\Freeware Sys\Desktop\TEAMWORK\AnimaniaConsole\AnimaniaConsole.Models\obj\Debug\AnimaniaConsole.Models.dll
+C:\Users\Freeware Sys\Desktop\TEAMWORK\AnimaniaConsole\AnimaniaConsole.Models\obj\Debug\AnimaniaConsole.Models.pdb

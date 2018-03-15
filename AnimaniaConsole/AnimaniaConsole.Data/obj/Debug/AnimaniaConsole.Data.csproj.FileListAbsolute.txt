@@ -46,3 +46,19 @@ C:\Users\Gosho\source\TeamWorkProjectDatabase\Team9-Project\AnimaniaConsole\Anim
 D:\GIT\Source\Repos\Teamwork-DB\Team9-Project\AnimaniaConsole\AnimaniaConsole.Data\obj\Debug\AnimaniaConsole.Data.csproj.CopyComplete
 D:\GIT\Source\Repos\Teamwork-DB\Team9-Project\AnimaniaConsole\AnimaniaConsole.Data\obj\Debug\AnimaniaConsole.Data.csprojResolveAssemblyReference.cache
 D:\GIT\Source\Repos\Teamwork-DB\Team9-Project\AnimaniaConsole\AnimaniaConsole.Data\obj\Debug\AnimaniaConsole.Data.Migrations.someunknownpendingchangesasaresultofassemblyerrorwithAnimaniaConsoleModel.resources
+C:\Users\Freeware Sys\Desktop\TEAMWORK\AnimaniaConsole\AnimaniaConsole.Data\bin\Debug\AnimaniaConsole.Data.dll.config
+C:\Users\Freeware Sys\Desktop\TEAMWORK\AnimaniaConsole\AnimaniaConsole.Data\bin\Debug\AnimaniaConsole.Data.dll
+C:\Users\Freeware Sys\Desktop\TEAMWORK\AnimaniaConsole\AnimaniaConsole.Data\bin\Debug\AnimaniaConsole.Data.pdb
+C:\Users\Freeware Sys\Desktop\TEAMWORK\AnimaniaConsole\AnimaniaConsole.Data\bin\Debug\AnimaniaConsole.Models.dll
+C:\Users\Freeware Sys\Desktop\TEAMWORK\AnimaniaConsole\AnimaniaConsole.Data\bin\Debug\EntityFramework.dll
+C:\Users\Freeware Sys\Desktop\TEAMWORK\AnimaniaConsole\AnimaniaConsole.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Freeware Sys\Desktop\TEAMWORK\AnimaniaConsole\AnimaniaConsole.Data\bin\Debug\AnimaniaConsole.Models.pdb
+C:\Users\Freeware Sys\Desktop\TEAMWORK\AnimaniaConsole\AnimaniaConsole.Data\bin\Debug\EntityFramework.xml
+C:\Users\Freeware Sys\Desktop\TEAMWORK\AnimaniaConsole\AnimaniaConsole.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Freeware Sys\Desktop\TEAMWORK\AnimaniaConsole\AnimaniaConsole.Data\obj\Debug\AnimaniaConsole.Data.csprojResolveAssemblyReference.cache
+C:\Users\Freeware Sys\Desktop\TEAMWORK\AnimaniaConsole\AnimaniaConsole.Data\obj\Debug\AnimaniaConsole.Data.Migrations.Manychangestodb.resources
+C:\Users\Freeware Sys\Desktop\TEAMWORK\AnimaniaConsole\AnimaniaConsole.Data\obj\Debug\AnimaniaConsole.Data.csproj.GenerateResource.Cache
+C:\Users\Freeware Sys\Desktop\TEAMWORK\AnimaniaConsole\AnimaniaConsole.Data\obj\Debug\AnimaniaConsole.Data.csproj.CoreCompileInputs.cache
+C:\Users\Freeware Sys\Desktop\TEAMWORK\AnimaniaConsole\AnimaniaConsole.Data\obj\Debug\AnimaniaConsole.Data.dll
+C:\Users\Freeware Sys\Desktop\TEAMWORK\AnimaniaConsole\AnimaniaConsole.Data\obj\Debug\AnimaniaConsole.Data.pdb
+C:\Users\Freeware Sys\Desktop\TEAMWORK\AnimaniaConsole\AnimaniaConsole.Data\obj\Debug\AnimaniaConsole.Data.Migrations.TowndeletedLocationfixed.resources

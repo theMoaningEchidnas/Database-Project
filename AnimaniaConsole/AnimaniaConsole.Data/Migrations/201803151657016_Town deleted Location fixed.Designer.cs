@@ -7,13 +7,13 @@ namespace AnimaniaConsole.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class someunknownpendingchangesasaresultofassemblyerrorwithAnimaniaConsoleModel : IMigrationMetadata
+    public sealed partial class TowndeletedLocationfixed : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(someunknownpendingchangesasaresultofassemblyerrorwithAnimaniaConsoleModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(TowndeletedLocationfixed));
         
         string IMigrationMetadata.Id
         {
-            get { return "201803151613347_some unknown pending changes as a result of assembly error with AnimaniaConsole.Model"; }
+            get { return "201803151657016_Town deleted Location fixed"; }
         }
         
         string IMigrationMetadata.Source
