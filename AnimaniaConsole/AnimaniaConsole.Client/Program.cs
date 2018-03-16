@@ -8,6 +8,9 @@ namespace AnimaniaConsole.Client
         {
             var context = new AnimaniaConsoleContext();
             context.Database.CreateIfNotExists();
+
+            //var animals = context.Animals.Add() ;
+
         }
     }
 }

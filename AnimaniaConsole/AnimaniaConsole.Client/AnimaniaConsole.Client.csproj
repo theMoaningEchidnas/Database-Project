@@ -68,6 +68,10 @@
       <Project>{e8719406-f072-4214-93b2-45f7c995dad3}</Project>
       <Name>AnimaniaConsole.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AnimaniaConsole.Models\AnimaniaConsole.Models.csproj">
+      <Project>{1c1dd402-36d5-4a11-86eb-bbdc7acf63ed}</Project>
+      <Name>AnimaniaConsole.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

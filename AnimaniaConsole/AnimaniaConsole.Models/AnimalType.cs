@@ -8,6 +8,14 @@ namespace AnimaniaConsole.Models
 {
     public class AnimalType
     {
+        public AnimalType()
+        {
+            this.BreedTypes = new HashSet<BreedType>();
+        }
+
         public int ID { get; set; }
+        public string AnimalTypeName { get; set; }
+
+        public virtual ICollection<BreedType> BreedTypes { get; set; }
     }
 }
