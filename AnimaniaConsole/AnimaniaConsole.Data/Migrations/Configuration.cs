@@ -1,6 +1,5 @@
 namespace AnimaniaConsole.Data.Migrations
 {
-    using AnimaniaConsole.Models;
     using System.Data.Entity.Migrations;
 
     public sealed class Configuration : DbMigrationsConfiguration<AnimaniaConsole.Data.AnimaniaConsoleContext>
@@ -20,7 +19,7 @@ namespace AnimaniaConsole.Data.Migrations
                     FirstName = "Stefan",
                     LastName = "Zhekov",
                     Email = "asdas@abv.bg",
-                    
+
 
                 }
                 );
@@ -33,7 +32,7 @@ namespace AnimaniaConsole.Data.Migrations
                 UserId = 1,
                 AnimalTypeID = 1,
                 LocationID = 1,
-                PostId=1
+                PostId = 1
 
             }
 
@@ -48,10 +47,10 @@ namespace AnimaniaConsole.Data.Migrations
        }
 
            );
-            context.AnimalTypes.AddOrUpdate(a => a.ID,
+            context.AnimalTypes.AddOrUpdate(a => a.Id,
        new Models.AnimalType()
        {
-           ID = 1,
+           Id = 1,
            AnimalTypeName = "Dog"
 
        }
@@ -69,10 +68,10 @@ namespace AnimaniaConsole.Data.Migrations
                           PostDate = System.DateTime.Now,
                           Price = 199,
                           Status = true,
-                  
-                         
 
-                }
+
+
+                      }
                );
 
 

@@ -13,7 +13,7 @@ namespace AnimaniaConsole.Models
             this.BreedTypes = new HashSet<BreedType>();
         }
 
-        public int ID { get; set; }
+        public byte Id { get; set; }
         public string AnimalTypeName { get; set; }
 
         public virtual ICollection<BreedType> BreedTypes { get; set; }

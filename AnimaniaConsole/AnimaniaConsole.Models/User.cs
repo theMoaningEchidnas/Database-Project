@@ -4,12 +4,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AnimaniaConsole.Models
 {
+
     public class User
     {
         public User()
         {
             this.Posts = new HashSet<Post>();
             this.Animals = new HashSet<Animal>();
+
         }
 
         public int Id { get; set; }
@@ -19,6 +21,8 @@ namespace AnimaniaConsole.Models
         [StringLength(12, MinimumLength = 6, ErrorMessage = "Invalid username! It must be between 6 and 12 characters")]
         [RegularExpression(@"^[a-zA-Z0-9]+$", ErrorMessage = "Invalid username! It must contain letters and digits only")]
         public string UserName { get; set; }
+
+
 
         [Required]
         [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$", ErrorMessage = "Invalid password! It must contain at least one digit, one lowercase letter and one uppercase letter")]

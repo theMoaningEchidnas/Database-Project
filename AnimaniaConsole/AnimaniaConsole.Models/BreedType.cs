@@ -9,7 +9,7 @@ namespace AnimaniaConsole.Models
 {
     public class BreedType
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string BreedTypeName { get; set; }
 
         [ForeignKey("AnimalType")]
