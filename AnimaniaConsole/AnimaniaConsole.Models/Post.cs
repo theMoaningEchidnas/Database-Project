@@ -15,7 +15,7 @@ namespace AnimaniaConsole.Models
         public string Description { get; set; }
         public DateTime PostDate { get; set; }
         public decimal Price { get; set; }
-
+        
         public bool Status { get; set; }
         public int LocationId { get; set; }
         public virtual Location Location { get; set; }
