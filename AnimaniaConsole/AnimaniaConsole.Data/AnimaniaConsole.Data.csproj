@@ -69,6 +69,34 @@
     <Compile Include="Migrations\201803161305301_Last migration prior push.Designer.cs">
       <DependentUpon>201803161305301_Last migration prior push.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803161405498_seed test.cs" />
+    <Compile Include="Migrations\201803161405498_seed test.Designer.cs">
+      <DependentUpon>201803161405498_seed test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161442077_testing validation 1.cs" />
+    <Compile Include="Migrations\201803161442077_testing validation 1.Designer.cs">
+      <DependentUpon>201803161442077_testing validation 1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161442340_testing validation 2.cs" />
+    <Compile Include="Migrations\201803161442340_testing validation 2.Designer.cs">
+      <DependentUpon>201803161442340_testing validation 2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161443092_last test for validation.cs" />
+    <Compile Include="Migrations\201803161443092_last test for validation.Designer.cs">
+      <DependentUpon>201803161443092_last test for validation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161452158_seed testing couple of models created.cs" />
+    <Compile Include="Migrations\201803161452158_seed testing couple of models created.Designer.cs">
+      <DependentUpon>201803161452158_seed testing couple of models created.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161456476_Seed test with post added.cs" />
+    <Compile Include="Migrations\201803161456476_Seed test with post added.Designer.cs">
+      <DependentUpon>201803161456476_Seed test with post added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161505477_added user id to posts and made nullable problem.cs" />
+    <Compile Include="Migrations\201803161505477_added user id to posts and made nullable problem.Designer.cs">
+      <DependentUpon>201803161505477_added user id to posts and made nullable problem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -97,6 +125,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803161305301_Last migration prior push.resx">
       <DependentUpon>201803161305301_Last migration prior push.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161405498_seed test.resx">
+      <DependentUpon>201803161405498_seed test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161442077_testing validation 1.resx">
+      <DependentUpon>201803161442077_testing validation 1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161442340_testing validation 2.resx">
+      <DependentUpon>201803161442340_testing validation 2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161443092_last test for validation.resx">
+      <DependentUpon>201803161443092_last test for validation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161452158_seed testing couple of models created.resx">
+      <DependentUpon>201803161452158_seed testing couple of models created.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161456476_Seed test with post added.resx">
+      <DependentUpon>201803161456476_Seed test with post added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161505477_added user id to posts and made nullable problem.resx">
+      <DependentUpon>201803161505477_added user id to posts and made nullable problem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

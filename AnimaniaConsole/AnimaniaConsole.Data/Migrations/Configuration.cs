@@ -11,6 +11,72 @@ namespace AnimaniaConsole.Data.Migrations
 
         protected override void Seed(AnimaniaConsole.Data.AnimaniaConsoleContext context)
         {
+            context.Users.AddOrUpdate(u => u.Id,
+                new Models.User()
+                {
+                    Id = 1,
+                    UserName = "cheficha",
+                    Password = "12345",
+                    FirstName = "Stefan",
+                    LastName = "Zhekov",
+                    Email = "asdas@abv.bg",
+                    
+
+                }
+                );
+            context.Animals.AddOrUpdate(a => a.Id,
+            new Models.Animal()
+            {
+                Id = 1,
+                AnimalName = "Jhony",
+                Birthday = System.DateTime.Now,
+                UserId = 1,
+                AnimalTypeID = 1,
+                LocationID = 1,
+                PostId=1
+
+            }
+
+
+                );
+            context.Locations.AddOrUpdate(a => a.Id,
+       new Models.Location()
+       {
+           Id = 1,
+           Name = "Sofia"
+
+       }
+
+           );
+            context.AnimalTypes.AddOrUpdate(a => a.ID,
+       new Models.AnimalType()
+       {
+           ID = 1,
+           AnimalTypeName = "Dog"
+
+       }
+
+
+           );
+            context.Posts.AddOrUpdate(a => a.Id,
+                      new Models.Post()
+                      {
+                          UserId = 1,
+                          Id = 1,
+
+                          Title = "A dog for sell",
+                          Description = "I sell my dog for a good price pls buy fast",
+                          PostDate = System.DateTime.Now,
+                          Price = 199,
+                          Status = true,
+                  
+                         
+
+                }
+               );
+
+
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

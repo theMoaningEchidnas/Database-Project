@@ -11,6 +11,7 @@ namespace AnimaniaConsole.Models
         {
             this.Images = new HashSet<Image>();
         }
+        public  int? UserId { get; set; }
         //[ForeignKey("Animal")]
         public int Id { get; set; }
 
