@@ -14,7 +14,7 @@ namespace AnimaniaConsole.Data.Migrations
             context.Users.AddOrUpdate(u => u.Id,
                 new Models.User()
                 {
-                    Id = 1,
+                  
                     UserName = "cheficha",
                     Password = "12345",
                     FirstName = "Stefan",
