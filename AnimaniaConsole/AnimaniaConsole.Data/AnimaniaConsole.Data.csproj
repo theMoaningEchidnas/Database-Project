@@ -97,6 +97,10 @@
     <Compile Include="Migrations\201803161505477_added user id to posts and made nullable problem.Designer.cs">
       <DependentUpon>201803161505477_added user id to posts and made nullable problem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803161541382_asdasffsafs.cs" />
+    <Compile Include="Migrations\201803161541382_asdasffsafs.Designer.cs">
+      <DependentUpon>201803161541382_asdasffsafs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -146,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803161505477_added user id to posts and made nullable problem.resx">
       <DependentUpon>201803161505477_added user id to posts and made nullable problem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161541382_asdasffsafs.resx">
+      <DependentUpon>201803161541382_asdasffsafs.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

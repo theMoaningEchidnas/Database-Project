@@ -9,6 +9,7 @@ namespace AnimaniaConsole.Models
         {
             this.Animals = new HashSet<Animal>();
         }
+        // [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
         public int Id { get; set; }
         public string Name { get; set; }

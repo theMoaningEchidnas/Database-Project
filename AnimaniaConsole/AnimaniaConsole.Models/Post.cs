@@ -21,7 +21,7 @@ namespace AnimaniaConsole.Models
 
         [Required]
         [StringLength(1000, MinimumLength = 20, ErrorMessage = "Please, more than 20 and less than 1000 symbols")]
-        [RegularExpression(@"^((?!([\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*@((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))))[\S\s])*$", ErrorMessage = "Please do not include an email address in your field description.")]
+        //[RegularExpression(@"^((?!([\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*@((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))))[\S\s])*$", ErrorMessage = "Please do not include an email address in your field description.")]
         public string Description { get; set; }
 
         [DataType(DataType.DateTime)]
