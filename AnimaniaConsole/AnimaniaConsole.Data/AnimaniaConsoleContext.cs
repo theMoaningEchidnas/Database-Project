@@ -1,5 +1,6 @@
 ﻿using AnimaniaConsole.Models;
 using System.Data.Entity;
+using AnimaniaConsole.Models.Models;
 
 namespace AnimaniaConsole.Data
 {

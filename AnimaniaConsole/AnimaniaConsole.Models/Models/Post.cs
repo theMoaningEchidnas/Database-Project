@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AnimaniaConsole.Models
+namespace AnimaniaConsole.Models.Models
 {
     public class Post
     {
         public Post()
         {
-            this.Images = new HashSet<Image>();
+            //this.Images = new HashSet<Image>();
         }
-        public  int? UserId { get; set; }
-        //[ForeignKey("Animal")]
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
+        //public int? UserId { get; set; }
 
         [Required]
         [StringLength(50, MinimumLength = 10, ErrorMessage = "Please, more than 10 and less than 50 symbols")]
@@ -25,7 +27,7 @@ namespace AnimaniaConsole.Models
         public string Description { get; set; }
 
         [DataType(DataType.DateTime)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:DD.MM.YYYY}")]
+        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:DD.MM.YYYY}")]
         public DateTime PostDate { get; set; }
 
         [Range(0, 100000, ErrorMessage = "Please, provide a price in range of 0 to 100,000")]
@@ -34,10 +36,11 @@ namespace AnimaniaConsole.Models
         //TODO: check whether we can provide default value here
         public bool Status { get; set; }
 
-        [Required]
+        public int AnimalId { get; set; }
+        //[Required]
         public virtual Animal Animal { get; set; }
 
-        public virtual ICollection<Image> Images { get; set; }
+        //public virtual ICollection<Image> Images { get; set; }
 
     }
 }

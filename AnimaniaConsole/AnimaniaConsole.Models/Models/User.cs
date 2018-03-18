@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AnimaniaConsole.Models
+namespace AnimaniaConsole.Models.Models
 {
 
     public class User
@@ -36,7 +36,7 @@ namespace AnimaniaConsole.Models
 
         public string Tel { get; set; }
         public string Skype { get; set; }
-        public string FaceBook { get; set; }
+        public string Facebook { get; set; }
 
         //[Required]
         //[EmailAddress]

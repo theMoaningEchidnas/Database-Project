@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AnimaniaConsole.Models
+namespace AnimaniaConsole.Models.Models
 {
     public class Location
     {
@@ -9,9 +10,10 @@ namespace AnimaniaConsole.Models
         {
             this.Animals = new HashSet<Animal>();
         }
-        // [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
         public string Name { get; set; }
 
         public virtual ICollection<Animal> Animals { get; set; }
