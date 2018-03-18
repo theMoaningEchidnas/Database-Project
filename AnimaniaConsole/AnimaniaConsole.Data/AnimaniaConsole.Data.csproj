@@ -193,6 +193,58 @@
     <Compile Include="Migrations\201803180820596_PlayingWithIdentityFieldOfPost3.Designer.cs">
       <DependentUpon>201803180820596_PlayingWithIdentityFieldOfPost3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803180846079_KeysIssue.cs" />
+    <Compile Include="Migrations\201803180846079_KeysIssue.Designer.cs">
+      <DependentUpon>201803180846079_KeysIssue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180850534_KeysIssue2.cs" />
+    <Compile Include="Migrations\201803180850534_KeysIssue2.Designer.cs">
+      <DependentUpon>201803180850534_KeysIssue2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180858365_KeysIssue3.cs" />
+    <Compile Include="Migrations\201803180858365_KeysIssue3.Designer.cs">
+      <DependentUpon>201803180858365_KeysIssue3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180925334_ChangedAnimalAndPostIdsToAnimalIdandPOstId.cs" />
+    <Compile Include="Migrations\201803180925334_ChangedAnimalAndPostIdsToAnimalIdandPOstId.Designer.cs">
+      <DependentUpon>201803180925334_ChangedAnimalAndPostIdsToAnimalIdandPOstId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180940331_ChangeIdsBack.cs" />
+    <Compile Include="Migrations\201803180940331_ChangeIdsBack.Designer.cs">
+      <DependentUpon>201803180940331_ChangeIdsBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180947422_DropDataAnnotationForDatabaseGeneratedOnPost.cs" />
+    <Compile Include="Migrations\201803180947422_DropDataAnnotationForDatabaseGeneratedOnPost.Designer.cs">
+      <DependentUpon>201803180947422_DropDataAnnotationForDatabaseGeneratedOnPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180954501_RemoveDataGeneratedOnIdinPost.cs" />
+    <Compile Include="Migrations\201803180954501_RemoveDataGeneratedOnIdinPost.Designer.cs">
+      <DependentUpon>201803180954501_RemoveDataGeneratedOnIdinPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180959470_YesYesYes_DataSeedWorks_Now_Add_back_The_Images_Data_In_Post.cs" />
+    <Compile Include="Migrations\201803180959470_YesYesYes_DataSeedWorks_Now_Add_back_The_Images_Data_In_Post.Designer.cs">
+      <DependentUpon>201803180959470_YesYesYes_DataSeedWorks_Now_Add_back_The_Images_Data_In_Post.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803181006286_AllValidationsAreBack.cs" />
+    <Compile Include="Migrations\201803181006286_AllValidationsAreBack.Designer.cs">
+      <DependentUpon>201803181006286_AllValidationsAreBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803181139257_IncreaseUserNameTo30char.cs" />
+    <Compile Include="Migrations\201803181139257_IncreaseUserNameTo30char.Designer.cs">
+      <DependentUpon>201803181139257_IncreaseUserNameTo30char.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803181145091_ChangePasswordValidation.cs" />
+    <Compile Include="Migrations\201803181145091_ChangePasswordValidation.Designer.cs">
+      <DependentUpon>201803181145091_ChangePasswordValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803181154134_ChangePasswordValidation1.cs" />
+    <Compile Include="Migrations\201803181154134_ChangePasswordValidation1.Designer.cs">
+      <DependentUpon>201803181154134_ChangePasswordValidation1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803181202346_AddUserIdInPost.cs" />
+    <Compile Include="Migrations\201803181202346_AddUserIdInPost.Designer.cs">
+      <DependentUpon>201803181202346_AddUserIdInPost.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\EntityValidationErrorsOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -315,6 +367,45 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803180820596_PlayingWithIdentityFieldOfPost3.resx">
       <DependentUpon>201803180820596_PlayingWithIdentityFieldOfPost3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180846079_KeysIssue.resx">
+      <DependentUpon>201803180846079_KeysIssue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180850534_KeysIssue2.resx">
+      <DependentUpon>201803180850534_KeysIssue2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180858365_KeysIssue3.resx">
+      <DependentUpon>201803180858365_KeysIssue3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180925334_ChangedAnimalAndPostIdsToAnimalIdandPOstId.resx">
+      <DependentUpon>201803180925334_ChangedAnimalAndPostIdsToAnimalIdandPOstId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180940331_ChangeIdsBack.resx">
+      <DependentUpon>201803180940331_ChangeIdsBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180947422_DropDataAnnotationForDatabaseGeneratedOnPost.resx">
+      <DependentUpon>201803180947422_DropDataAnnotationForDatabaseGeneratedOnPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180954501_RemoveDataGeneratedOnIdinPost.resx">
+      <DependentUpon>201803180954501_RemoveDataGeneratedOnIdinPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180959470_YesYesYes_DataSeedWorks_Now_Add_back_The_Images_Data_In_Post.resx">
+      <DependentUpon>201803180959470_YesYesYes_DataSeedWorks_Now_Add_back_The_Images_Data_In_Post.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803181006286_AllValidationsAreBack.resx">
+      <DependentUpon>201803181006286_AllValidationsAreBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803181139257_IncreaseUserNameTo30char.resx">
+      <DependentUpon>201803181139257_IncreaseUserNameTo30char.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803181145091_ChangePasswordValidation.resx">
+      <DependentUpon>201803181145091_ChangePasswordValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803181154134_ChangePasswordValidation1.resx">
+      <DependentUpon>201803181154134_ChangePasswordValidation1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803181202346_AddUserIdInPost.resx">
+      <DependentUpon>201803181202346_AddUserIdInPost.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
