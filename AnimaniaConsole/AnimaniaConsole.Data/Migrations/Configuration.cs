@@ -1,7 +1,6 @@
 using AnimaniaConsole.Models.Models;
 using System;
 using System.Linq;
-using System.Security.Cryptography;
 
 namespace AnimaniaConsole.Data.Migrations
 {
@@ -13,10 +12,8 @@ namespace AnimaniaConsole.Data.Migrations
 
         public Configuration()
         {
-            if (System.Diagnostics.Debugger.IsAttached == false)
-            {
-                System.Diagnostics.Debugger.Launch();
-            }
+            ////used while in development mode to be able to debug while updating database
+            if (System.Diagnostics.Debugger.IsAttached == false) { System.Diagnostics.Debugger.Launch(); }
         }
 
         protected override void Seed(AnimaniaConsole.Data.AnimaniaConsoleContext context)
@@ -66,7 +63,7 @@ namespace AnimaniaConsole.Data.Migrations
                 AnimalTypeId = maxAnimalTypeId,
                 BreedTypeId = maxBreedTypeId,
                 LocationId = maxLocationId,
-                UserId = maxUserId,
+                UserId = maxUserId
             };
             context.Animals.AddOrUpdate(a => a.Id, animal);
             context.SaveChanges();

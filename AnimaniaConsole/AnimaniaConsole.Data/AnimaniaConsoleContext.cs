@@ -1,33 +1,34 @@
-﻿using AnimaniaConsole.Models;
+﻿using AnimaniaConsole.Models.Models;
 using System.Data.Entity;
-using AnimaniaConsole.Models.Models;
 
 namespace AnimaniaConsole.Data
 {
-    public class AnimaniaConsoleContext : DbContext
+    public class AnimaniaConsoleContext : DbContext, IAnimaniaConsoleContext
     {
-        public AnimaniaConsoleContext() : base("name=AnimaniaConsoleCtx")
+        public AnimaniaConsoleContext()
+            : base("name=AnimaniaConsoleCtx")
         {
             //To be used in case of Automatic Migration
             //var strategy = new MigrateDatabaseToLatestVersion<AnimaniaConsoleContext, Configuration>();
             //Database.SetInitializer(strategy);
         }
 
-        public DbSet<Post> Posts { get; set; }
-        public DbSet<Image> Images { get; set; }
-        public DbSet<Location> Locations { get; set; }
-        public DbSet<User> Users { get; set; }
-        public DbSet<Animal> Animals { get; set; }
-        public DbSet<AnimalType> AnimalTypes { get; set; }
-        public DbSet<BreedType> BreedTypes { get; set; }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-
+            //without this we will get an error
             modelBuilder.Entity<Animal>()
-                .HasRequired(s => s.Post).WithRequiredPrincipal(ad => ad.Animal);
+                .HasRequired(s => s.Post)
+                .WithRequiredPrincipal(ad => ad.Animal);
         }
+
+        public IDbSet<Post> Posts { get; set; }
+        public IDbSet<Image> Images { get; set; }
+        public IDbSet<Location> Locations { get; set; }
+        public IDbSet<User> Users { get; set; }
+        public IDbSet<Animal> Animals { get; set; }
+        public IDbSet<AnimalType> AnimalTypes { get; set; }
+        public IDbSet<BreedType> BreedTypes { get; set; }
     }
 }

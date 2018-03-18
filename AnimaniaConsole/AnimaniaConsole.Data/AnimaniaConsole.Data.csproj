@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnimaniaConsoleContext.cs" />
+    <Compile Include="IAnimaniaConsoleContext.cs" />
     <Compile Include="Migrations\201803160955151_New.cs" />
     <Compile Include="Migrations\201803160955151_New.Designer.cs">
       <DependentUpon>201803160955151_New.cs</DependentUpon>
