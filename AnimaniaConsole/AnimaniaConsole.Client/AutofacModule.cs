@@ -9,6 +9,7 @@ using AnimaniaConsole.Services.Contracts;
 using AnimaniaConsole.Services.Services;
 using Autofac;
 using Module = Autofac.Module;
+using AutoMapper;
 
 namespace Client
 {
@@ -19,6 +20,10 @@ namespace Client
 
             builder.RegisterType<AnimaniaConsoleContext>().As<IAnimaniaConsoleContext>().InstancePerDependency();
             builder.RegisterType<PostService>().As<IPostService>();
+        
+            builder.Register(x=>Mapper.Instance);
+            builder.RegisterType<UserService>().As<IUserService>();
+
 
         }
     }

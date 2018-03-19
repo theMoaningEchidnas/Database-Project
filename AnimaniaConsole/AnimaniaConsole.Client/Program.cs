@@ -26,7 +26,17 @@ namespace AnimaniaConsole.Client
 
             var postService = container.Resolve<IPostService>();
             var posts = postService.GetAll();
-            Console.WriteLine(posts.Count());
+            //TEST FOR CREATING USER AND ADDING IT TO THE DATABASE
+            //var userservice = container.Resolve<IUserService>();
+            //var user = new CreateUserModel();
+            //user.UserName = "adasfaasf";
+            //user.FirstName = "asdasfa";
+            //user.LastName = "asdasfas";
+            //user.Password = "As123asf21";
+            //user.Email = "asdaf@abv.bg";
+            //userservice.RegisterUser(user);
+            
+            
         }
     }
 }

@@ -7,49 +7,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper.QueryableExtensions;
+using AnimaniaConsole.Services.Contracts;
+using AutoMapper;
 
 namespace AnimaniaConsole.Services.Services
 {
-    public class UserService
+    public class UserService:IUserService
     {
         private readonly IAnimaniaConsoleContext ctx;
+        private readonly IMapper mapper;
 
-        public UserService(IAnimaniaConsoleContext ctx)
+        public UserService(IAnimaniaConsoleContext ctx,IMapper mapper)
         {
             this.ctx = ctx;
+            this.mapper = mapper;
         }
         public IAnimaniaConsoleContext Context
         {
             get { return this.ctx; }
         }
-        public void RegisterUser(string username,string firstname,string lastname,string password,string email,string additionalInfo)
+        public IMapper Mapper
         {
-            var addInfoColection = additionalInfo.Split().ToList();
-            var user = new User();
-            user.UserName = username;
-            user.FirstName = firstname;
-            user.LastName = lastname;
-            user.Password = password;
-            user.Email = email;
-            switch (addInfoColection.Count)
-            {
-                case 1:
-                    user.Tel = addInfoColection[0];
-                    break;
-                case 2:
-                    user.Tel = addInfoColection[0];
-                    user.Facebook = addInfoColection[1];
-                    break;
-                case 3:
-                    user.Tel = addInfoColection[0];
-                    user.Facebook = addInfoColection[1];
-                    user.Skype = addInfoColection[2];
-                    break;
-                default :
-                    break;
-            }
-            this.Context.Users.Add(user);
-
+            get { return this.mapper; }
         }
+        public void RegisterUser(CreateUserModel userDTO)
+        {
+            var newUser = Mapper.Map<User>(userDTO);
+            this.Context.Users.Add(newUser);
+            Context.SaveChanges();
+        }
+    
     }
 }

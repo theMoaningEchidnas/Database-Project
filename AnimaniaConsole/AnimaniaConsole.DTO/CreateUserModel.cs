@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AnimaniaConsole.DTO
 {
-   public class UserModel
+   public class CreateUserModel
     {
         public string UserName { get; set; }
 
