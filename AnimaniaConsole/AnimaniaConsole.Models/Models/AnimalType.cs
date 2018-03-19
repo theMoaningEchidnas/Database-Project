@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AnimaniaConsole.Models
+namespace AnimaniaConsole.Models.Models
 {
     public class AnimalType
     {
@@ -13,7 +10,9 @@ namespace AnimaniaConsole.Models
             this.BreedTypes = new HashSet<BreedType>();
         }
 
-        public int ID { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public byte Id { get; set; }
+
         public string AnimalTypeName { get; set; }
 
         public virtual ICollection<BreedType> BreedTypes { get; set; }

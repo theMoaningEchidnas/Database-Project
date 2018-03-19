@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AnimaniaConsole.Models
+namespace AnimaniaConsole.Models.Models
 {
     public class Post
     {
@@ -11,8 +10,8 @@ namespace AnimaniaConsole.Models
         {
             this.Images = new HashSet<Image>();
         }
-        public  int? UserId { get; set; }
-        //[ForeignKey("Animal")]
+
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)] -- this is both PK & FK and cannot be store generated
         public int Id { get; set; }
 
         [Required]
@@ -21,7 +20,7 @@ namespace AnimaniaConsole.Models
 
         [Required]
         [StringLength(1000, MinimumLength = 20, ErrorMessage = "Please, more than 20 and less than 1000 symbols")]
-        //[RegularExpression(@"^((?!([\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*@((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))))[\S\s])*$", ErrorMessage = "Please do not include an email address in your field description.")]
+        [RegularExpression(@"^((?!([\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*@((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))))[\S\s])*$", ErrorMessage = "Please do not include an email address in your field description.")]
         public string Description { get; set; }
 
         [DataType(DataType.DateTime)]
@@ -33,7 +32,11 @@ namespace AnimaniaConsole.Models
 
         //TODO: check whether we can provide default value here
         public bool Status { get; set; }
+        
+        public int UserId { get; set; }
+        public virtual User User { get; set; }
 
+        //public int AnimalId { get; set; }
         [Required]
         public virtual Animal Animal { get; set; }
 
