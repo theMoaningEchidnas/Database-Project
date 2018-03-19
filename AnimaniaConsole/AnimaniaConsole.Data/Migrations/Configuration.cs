@@ -13,7 +13,7 @@ namespace AnimaniaConsole.Data.Migrations
         public Configuration()
         {
             ////used while in development mode to be able to debug while updating database
-            if (System.Diagnostics.Debugger.IsAttached == false) { System.Diagnostics.Debugger.Launch(); }
+            //if (System.Diagnostics.Debugger.IsAttached == false) { System.Diagnostics.Debugger.Launch(); }
         }
 
         protected override void Seed(AnimaniaConsole.Data.AnimaniaConsoleContext context)
