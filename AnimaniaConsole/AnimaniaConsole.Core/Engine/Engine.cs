@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace AnimaniaConsole.Core.Engine
@@ -56,9 +57,13 @@ namespace AnimaniaConsole.Core.Engine
 
         }
 
-        private string[] StringifyModelProperties(Object obj)
+        private List<string> StringifyModelProperties(Object obj)
         {
+            var props = obj.GetType().GetProperties();
+            foreach (var item in collection)
+            {
 
+            }
         }
     }
 }
