@@ -56,6 +56,10 @@ namespace AnimaniaConsole.Core.Engine
 
         }
 
+        private string[] StringifyModelProperties(Object obj)
+        {
+
+        }
     }
 }
 
