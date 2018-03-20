@@ -35,8 +35,8 @@ namespace AnimaniaConsole.Client
             //user.Password = "As123asf21";
             //user.Email = "asdaf@abv.bg";
             //userservice.RegisterUser(user);
-            
-            
+
+
         }
     }
 }
