@@ -10,6 +10,7 @@ using AnimaniaConsole.Services.Services;
 using Autofac;
 using AutoMapper;
 using Client;
+using AnimaniaConsole.Core.Contracts;
 
 namespace AnimaniaConsole.Client
 {
@@ -26,6 +27,9 @@ namespace AnimaniaConsole.Client
 
             var postService = container.Resolve<IPostService>();
             var posts = postService.GetAll();
+
+            var engine = container.Resolve<IEngine>();
+            engine.Run();
             //TEST FOR CREATING USER AND ADDING IT TO THE DATABASE
             //var userservice = container.Resolve<IUserService>();
             //var user = new CreateUserModel();

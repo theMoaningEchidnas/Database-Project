@@ -12,6 +12,11 @@ using Module = Autofac.Module;
 using AutoMapper;
 using AnimaniaConsole.Core.Engine;
 using AnimaniaConsole.Core.Contracts;
+using AnimaniaConsole.Core.Commands.CommandContracts;
+using AnimaniaConsole.Core.Commands;
+using AnimaniaConsole.Core;
+using AnimaniaConsole.Core.Wrappers;
+using AnimaniaConsole.Core.Factories;
 
 namespace Client
 {
@@ -19,7 +24,15 @@ namespace Client
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<Engine>().As<IEngine>();
+            builder.RegisterType<CommandFactory>().As<ICommandFactory>().SingleInstance();
+            builder.RegisterType<CommandProcessor>().As<ICommandProcessor>().SingleInstance();
+            builder.RegisterType<CommandParser>().As<ICommandParser>().SingleInstance();
+            builder.RegisterType<Writer>().As<IWriter>().SingleInstance();
+            builder.RegisterType<Reader>().As<IReader>().SingleInstance();
+            builder.RegisterType<Engine>().As<IEngine>().SingleInstance();
+
+
+
 
             builder.RegisterType<AnimaniaConsoleContext>().As<IAnimaniaConsoleContext>().InstancePerDependency();
             builder.RegisterType<PostService>().As<IPostService>();

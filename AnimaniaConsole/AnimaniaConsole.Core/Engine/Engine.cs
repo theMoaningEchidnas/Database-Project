@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AnimaniaConsole.Core.Engine
 {
-    public class Engine
+    public class Engine:IEngine
     {
         private const string TerminationCommand = "exit";
 
@@ -15,9 +15,16 @@ namespace AnimaniaConsole.Core.Engine
         private ICommandProcessor processor;
         private IWriter writer;
 
-        public Engine(IReader reader)
+        public Engine(IReader reader,
+            ICommandProcessor processor,
+            ICommandParser parser,
+            IWriter writer
+ )
         {
             this.reader = reader;
+            this.processor = processor;
+            this.parser = parser;
+            this.writer = writer;
         }
 
         string commandAsString = null;
@@ -48,14 +55,14 @@ namespace AnimaniaConsole.Core.Engine
             }
         }
 
-        private List<string> StringifyModelProperties(Object obj)
-        {
-            var props = obj.GetType().GetProperties();
-            foreach (var item in collection)
-            {
+        //private List<string> StringifyModelProperties(Object obj)
+        //{
+        //    var props = obj.GetType().GetProperties();
+        //    foreach (var item in collection)
+        //    {
 
-            }
-        }
+        //    }
+        //}
     }
 }
 
