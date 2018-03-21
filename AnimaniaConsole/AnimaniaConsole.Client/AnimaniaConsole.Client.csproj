@@ -88,6 +88,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AnimaniaConsole.Core\AnimaniaConsole.Core.csproj">
+      <Project>{662037F8-5D6C-4C89-A24E-5ED49F22EC1C}</Project>
+      <Name>AnimaniaConsole.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AnimaniaConsole.Data\AnimaniaConsole.Data.csproj">
       <Project>{e8719406-f072-4214-93b2-45f7c995dad3}</Project>
       <Name>AnimaniaConsole.Data</Name>

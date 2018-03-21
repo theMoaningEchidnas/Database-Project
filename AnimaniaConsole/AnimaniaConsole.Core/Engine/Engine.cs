@@ -1,60 +1,68 @@
-﻿using System;
+﻿using AnimaniaConsole.Core.Commands.CommandContracts;
+using AnimaniaConsole.Core.Contracts;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace AnimaniaConsole.Core.Engine
 {
-    public class Engine
+    public class Engine:IEngine
     {
-        public Engine()
-        {
+        private const string TerminationCommand = "exit";
 
+        private IReader reader;
+        private ICommandParser parser;
+        private ICommandProcessor processor;
+        private IWriter writer;
+
+        public Engine(IReader reader,
+            ICommandProcessor processor,
+            ICommandParser parser,
+            IWriter writer
+ )
+        {
+            this.reader = reader;
+            this.processor = processor;
+            this.parser = parser;
+            this.writer = writer;
         }
+
+        string commandAsString = null;
 
         public void Run()
+
         {
-            //var inputLine = ReadCommand();
-
-            //var commandParameters = new string[] { string.Empty };
-
-
-            //while (inputLine != "exit")
-            //{
-
-            //    commandParameters = ParseCommand(inputLine);
-
-            //try
-            //{
-            //ICommand command = this.CommandFactory.CreateCommand(commandParameters[0]);
-            //command.ExecuteThisCommand(commandParameters);
-            //}
-            //catch (NotSupportedException e) { this.writer.Write(e.Message); }
-            //catch (InvalidOperationException e) { this.writer.Write(e.Message); }
-            //catch (InvalidIdException e) { this.writer.Write(e.Message); }
-            //catch (ArgumentException e) { this.writer.Write(e.Message); }
-            //catch (ComponentNotRegisteredException) { this.writer.Write($"There is no command named [{inputLine}] implemented! Please contact Dev team to implement it :)"); }
-
-            //this.writer.Write(Environment.NewLine + "<>-<>-<>-<>-<>-<>-<>-<>---<>-<>-<>-<>-<>-<>-<>-<>" + Environment.NewLine);
-            //this.writer.Write("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=");
-
-            //inputLine = ReadCommand();
-
-            //    }
-            //}
+            while ((commandAsString = this.reader.ReadLine()) != TerminationCommand)
+            {
 
 
-            //private string ReadCommand()
-            //{
-            //    //return this.reader.Read();
-            //}
+                try
+                {
+                    var command = this.parser.ParseCommand(commandAsString);
 
-            //private string[] ParseCommand(string command)
-            //{
-            //    return command.Split(new string[] { ";" }, StringSplitOptions.None);
-            //}
+                    if (command != null)
+                    {
+                        var commandResult = this.processor.ProcessSingleCommand(command, commandAsString);
+                        this.writer.WriteLine(commandResult);
+                    }
 
-
-
+                 
+                }
+                catch (Exception ex)
+                {
+                    this.writer.WriteLine(ex.Message);
+                }
+            }
         }
 
+        //private List<string> StringifyModelProperties(Object obj)
+        //{
+        //    var props = obj.GetType().GetProperties();
+        //    foreach (var item in collection)
+        //    {
+
+        //    }
+        //}
     }
 }
 

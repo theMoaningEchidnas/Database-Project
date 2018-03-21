@@ -18,3 +18,4 @@ namespace AnimaniaConsole.DTO.Models
         public ICollection<Image> Images { get; set; }
     }
 }
+ 

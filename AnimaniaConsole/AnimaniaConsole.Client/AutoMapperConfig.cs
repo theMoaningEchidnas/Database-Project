@@ -16,6 +16,8 @@ namespace Client
             Mapper.Initialize(config =>
             {
                 config.CreateMap<PostModel, Post>().ReverseMap();
+                config.CreateMap<CreateUserModel, User>().ReverseMap();
+
                 config.CreateMap<CreatePostModel, Post>().ReverseMap();
             });
 
