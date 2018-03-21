@@ -6,7 +6,8 @@
 	https://stackoverflow.com/questions/10219864/ef-code-first-how-do-i-see-entityvalidationerrors-property-from-the-nuget-pac
 4. How to fix error in PackageManager console - A dependent property in a ReferentialConstraint is mapped to a store-generated column
 	https://stackoverflow.com/questions/19793572/ef-migrations-exception-a-dependent-property-in-a-referentialconstraint-is-mapp
-
+5. Error in PackageManager: Column 'LocationName' in table 'dbo.Locations' is of a type that is invalid for use as a key column in an index.
+	https://stackoverflow.com/questions/27687080/creating-string-index-with-code-first 	
 
 PLAN for splitting the tasks:
 	Together create the DB backbone 

@@ -246,6 +246,14 @@
     <Compile Include="Migrations\201803181202346_AddUserIdInPost.Designer.cs">
       <DependentUpon>201803181202346_AddUserIdInPost.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803201654194_ChangeNameToLocationName.cs" />
+    <Compile Include="Migrations\201803201654194_ChangeNameToLocationName.Designer.cs">
+      <DependentUpon>201803201654194_ChangeNameToLocationName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803201718006_MakeLocationNameUniqueAndRequired.cs" />
+    <Compile Include="Migrations\201803201718006_MakeLocationNameUniqueAndRequired.Designer.cs">
+      <DependentUpon>201803201718006_MakeLocationNameUniqueAndRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\EntityValidationErrorsOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -407,6 +415,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803181202346_AddUserIdInPost.resx">
       <DependentUpon>201803181202346_AddUserIdInPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803201654194_ChangeNameToLocationName.resx">
+      <DependentUpon>201803201654194_ChangeNameToLocationName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803201718006_MakeLocationNameUniqueAndRequired.resx">
+      <DependentUpon>201803201718006_MakeLocationNameUniqueAndRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

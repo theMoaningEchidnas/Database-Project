@@ -35,7 +35,7 @@ namespace AnimaniaConsole.Data.Migrations
 
             var maxBreedTypeId = context.BreedTypes.Max(x => x.Id);
 
-            var location = new Location() { Name = "Sofia" };
+            var location = new Location() { LocationName = "Sofia" };
             context.Locations.AddOrUpdate(l => l.Id, location);
             context.SaveChanges();
 
@@ -46,7 +46,7 @@ namespace AnimaniaConsole.Data.Migrations
             ; var user = new Models.Models.User()
             {
                 UserName = "cheficha" + rand,
-                Password = "12345SmartPass",
+                Password = "12345Annnnnnn",
                 FirstName = "Stefan",
                 LastName = "Zhekov",
                 Email = "asdas" + rand + "@abv.bg",

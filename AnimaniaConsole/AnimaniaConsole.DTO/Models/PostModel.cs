@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using User = AnimaniaConsole.Data.Migrations.User;
 
-namespace AnimaniaConsole.DTO
+namespace AnimaniaConsole.DTO.Models
 {
     public class PostModel
     {

@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PostModel.cs" />
+    <Compile Include="Models\AnimalModel.cs" />
+    <Compile Include="Models\CreatePostModel.cs" />
+    <Compile Include="Models\PostModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
