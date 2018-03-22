@@ -13,9 +13,8 @@ namespace AnimaniaConsole.DTO.Models
         public decimal Price { get; set; }
         public bool Status { get; set; }
         public int UserId { get; set; }
-        public User User { get; set; }
-        public Animal Animal { get; set; }
-        public ICollection<Image> Images { get; set; }
+        public UserModel User { get; set; }
+        public AnimalModel Animal { get; set; }
     }
 }
  
