@@ -53,6 +53,7 @@
     <Compile Include="Commands\CommandContracts\ICommandParser.cs" />
     <Compile Include="Commands\CommandProcessor.cs" />
     <Compile Include="Commands\CommandContracts\ICommandProcessor.cs" />
+    <Compile Include="Commands\LogInUserCommand.cs" />
     <Compile Include="Commands\RegisterUserCommand.cs" />
     <Compile Include="Contracts\IEngine.cs" />
     <Compile Include="Contracts\IReader.cs" />
