@@ -25,6 +25,7 @@ namespace AnimaniaConsole.Client
 
             var engine = container.Resolve<IEngine>();
             engine.Run();
+
             //TEST FOR CREATING USER AND ADDING IT TO THE DATABASE
             //var userservice = container.Resolve<IUserService>();
             //var user = new CreateUserModel();
@@ -47,7 +48,7 @@ namespace AnimaniaConsole.Client
                 Price = 250,
                 Status = true,
                 
-                AnimalName = "Baby",
+                AnimalName = "New Baby",
                 Birthday = DateTime.Parse("2017-03-20"),
                 BreedTypeName = "Pudel2",
                 AnimalTypeName = "Dog",
