@@ -56,7 +56,7 @@
 |Disable User|Ангел|4|-|3|-|11|
 |Edit User|Everyone|5|-|4|-|11|
 |Create Post|Ангел|10|-|10|-|31|
-|Activate/Deactivate User|Стефан, Георги|5|-|3|-|7|
+|Activate/Deactivate Post|Стефан, Георги|5|-|3|-|7|
 |Edit Post|Everyone|5|-|3|-|17|
 |Search in title and desc|Ангел|5|-|4|-|31|
 |Sort by animal type|Георги|2|-|1|-|1|
