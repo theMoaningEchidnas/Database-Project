@@ -41,7 +41,7 @@ namespace AnimaniaConsole.Core.Commands
                         message = $"User with Username:{UserToRegister.UserName} added !";
                         
                     }
-                    catch (Exception x)
+                    catch (Exception)
                     {
 
                         message="Something went wrong try again!";

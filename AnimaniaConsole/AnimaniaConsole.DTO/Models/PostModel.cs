@@ -13,7 +13,7 @@ namespace AnimaniaConsole.DTO.Models
         public decimal Price { get; set; }
         public bool Status { get; set; }
         public int UserId { get; set; }
-        public UserModel User { get; set; }
+        //public UserModel User { get; set; }
         public AnimalModel Animal { get; set; }
     }
 }

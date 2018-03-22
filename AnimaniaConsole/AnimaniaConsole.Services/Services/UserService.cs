@@ -13,12 +13,12 @@ using AnimaniaConsole.DTO.Models;
 
 namespace AnimaniaConsole.Services.Services
 {
-    public class UserService:IUserService
+    public class UserService : IUserService
     {
         private readonly IAnimaniaConsoleContext ctx;
         private readonly IMapper mapper;
 
-        public UserService(IAnimaniaConsoleContext ctx,IMapper mapper)
+        public UserService(IAnimaniaConsoleContext ctx, IMapper mapper)
         {
             this.ctx = ctx;
             this.mapper = mapper;
@@ -58,6 +58,13 @@ namespace AnimaniaConsole.Services.Services
             userSession.Id = 0;
             userSession.UserName = null;
         }
-    
+        public void ChangePassword(UserSessionModel userSession,string newPassword)
+        {
+            var user = this.Context.Users.Where(x => x.Id == userSession.Id).Single();
+            user.Password = newPassword;
+            this.Context.SaveChanges();
+
+        }
+
     }
 }

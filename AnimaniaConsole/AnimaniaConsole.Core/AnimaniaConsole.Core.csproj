@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\ChangePasswordCommand.cs" />
     <Compile Include="Commands\CommandContracts\ICommand.cs" />
     <Compile Include="Commands\CommandParser.cs" />
     <Compile Include="Commands\CommandContracts\ICommandParser.cs" />
