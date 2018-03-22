@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using AutoMapper.QueryableExtensions;
 using AnimaniaConsole.Services.Contracts;
 using AutoMapper;
+using AnimaniaConsole.DTO.Models;
 
 namespace AnimaniaConsole.Services.Services
 {
@@ -35,6 +36,27 @@ namespace AnimaniaConsole.Services.Services
             var newUser = Mapper.Map<User>(userDTO);
             this.Context.Users.Add(newUser);
             Context.SaveChanges();
+        }
+
+        public void LogInUser(string userName, string password, UserSessionModel userSession)
+        {
+            User user;
+            try
+            {
+                user = this.Context.Users.Where(x => x.UserName == userName && x.Password == password).Single();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Failed to find user in database.");
+            }
+            userSession.Id = user.Id;
+            userSession.UserName = user.UserName;
+        }
+
+        public void LogOutUser(UserSessionModel userSession)
+        {
+            userSession.Id = 0;
+            userSession.UserName = null;
         }
     
     }

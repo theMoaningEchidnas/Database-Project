@@ -34,8 +34,6 @@ namespace AnimaniaConsole.Core.Engine
         {
             while ((commandAsString = this.reader.ReadLine()) != TerminationCommand)
             {
-
-
                 try
                 {
                     var command = this.parser.ParseCommand(commandAsString);
@@ -55,14 +53,17 @@ namespace AnimaniaConsole.Core.Engine
             }
         }
 
-        //private List<string> StringifyModelProperties(Object obj)
-        //{
-        //    var props = obj.GetType().GetProperties();
-        //    foreach (var item in collection)
-        //    {
+        private List<string> StringifyModelProperties(Object obj)
+        {
+            List<string> propertyNames = new List<string>();
+            var props = obj.GetType().GetProperties();
+            foreach (var prop in props)
+            {
+                propertyNames.Add(prop.Name);
+            }
 
-        //    }
-        //}
+            return propertyNames;
+        }
     }
 }
 
