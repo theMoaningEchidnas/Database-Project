@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using AnimaniaConsole.Core.Commands.CommandContracts;
 
-namespace AnimaniaConsole.Core.Commands.CommandContracts
+namespace AnimaniaConsole.Core.CommandContracts
 {
     public interface ICommandProcessor
     {

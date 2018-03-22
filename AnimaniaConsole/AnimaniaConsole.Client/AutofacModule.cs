@@ -1,26 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AnimaniaConsole.Core.CommandContracts;
+using AnimaniaConsole.Core.Commands;
+using AnimaniaConsole.Core.Contracts;
+using AnimaniaConsole.Core.Engine;
+using AnimaniaConsole.Core.Factories;
+using AnimaniaConsole.Core.Providers;
+using AnimaniaConsole.Core.Wrappers;
 using AnimaniaConsole.Data;
 using AnimaniaConsole.Services.Contracts;
 using AnimaniaConsole.Services.Services;
 using Autofac;
-using Module = Autofac.Module;
 using AutoMapper;
-using AnimaniaConsole.Core.Engine;
-using AnimaniaConsole.Core.Contracts;
-using AnimaniaConsole.Core.Commands.CommandContracts;
-using AnimaniaConsole.Core.Commands;
-using AnimaniaConsole.Core;
-using AnimaniaConsole.Core.Wrappers;
-using AnimaniaConsole.Core.Factories;
+using Module = Autofac.Module;
 
 namespace Client
 {
-    public class AutofacModule: Module
+    public class AutofacModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
@@ -36,11 +30,12 @@ namespace Client
 
             builder.RegisterType<AnimaniaConsoleContext>().As<IAnimaniaConsoleContext>().InstancePerDependency();
             builder.RegisterType<PostService>().As<IPostService>();
-        
-            builder.Register(x=>Mapper.Instance);
+
+            builder.Register(x => Mapper.Instance);
             builder.RegisterType<UserService>().As<IUserService>();
 
-            builder.RegisterType<RegisterUserCommand>().Named<ICommand>("RegisterUser");
+            builder.RegisterType<RegisterUserCommand>().Named<ICommand>("RegisterUser").SingleInstance();
+            builder.RegisterType<CreatePostCommand>().Named<ICommand>("CreatePost").SingleInstance();
 
 
         }

@@ -1,4 +1,4 @@
-﻿using AnimaniaConsole.Core.Commands.CommandContracts;
+﻿using AnimaniaConsole.Core.CommandContracts;
 
 namespace AnimaniaConsole.Core.Factories
 {

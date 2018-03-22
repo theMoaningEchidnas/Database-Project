@@ -1,5 +1,4 @@
-﻿using AnimaniaConsole.Core.Commands.CommandContracts;
-using AnimaniaConsole.DTO;
+﻿using AnimaniaConsole.DTO;
 using AnimaniaConsole.Services.Contracts;
 using AnimaniaConsole.Services.Services;
 using System;
@@ -7,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AnimaniaConsole.Core.CommandContracts;
 
 namespace AnimaniaConsole.Core.Commands
 {

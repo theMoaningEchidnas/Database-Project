@@ -47,11 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\CommandContracts\ICommand.cs" />
-    <Compile Include="Commands\CommandParser.cs" />
-    <Compile Include="Commands\CommandContracts\ICommandParser.cs" />
-    <Compile Include="Commands\CommandProcessor.cs" />
-    <Compile Include="Commands\CommandContracts\ICommandProcessor.cs" />
+    <Compile Include="CommandContracts\ICommand.cs" />
+    <Compile Include="Commands\CreatePostCommand.cs" />
+    <Compile Include="Providers\CommandParser.cs" />
+    <Compile Include="CommandContracts\ICommandParser.cs" />
+    <Compile Include="Providers\CommandProcessor.cs" />
+    <Compile Include="CommandContracts\ICommandProcessor.cs" />
     <Compile Include="Commands\RegisterUserCommand.cs" />
     <Compile Include="Contracts\IEngine.cs" />
     <Compile Include="Contracts\IReader.cs" />
