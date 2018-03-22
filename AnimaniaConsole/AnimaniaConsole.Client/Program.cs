@@ -38,15 +38,15 @@ namespace AnimaniaConsole.Client
 
 
 
-            Console.WriteLine(posts.Count());
+            //Console.WriteLine(posts.Count());
 
-            var createPostModel = new CreatePostModel
-            {
-                Title = "My first post",
-                Description = "This is the description of my first post",
-                PostDate = DateTime.Parse("2018-03-20"),
-                Price = 250,
-                Status = true,
+            //var createPostModel = new CreatePostModel
+            //{
+            //    Title = "My first post",
+            //    Description = "This is the description of my first post",
+            //    PostDate = DateTime.Parse("2018-03-20"),
+            //    Price = 250,
+            //    Status = true,
                 
                 AnimalName = "New Baby",
                 Birthday = DateTime.Parse("2017-03-20"),
@@ -54,9 +54,9 @@ namespace AnimaniaConsole.Client
                 AnimalTypeName = "Dog",
                 LocationName = "Sofia"
 
-            };
+            //};
 
-            postService.CreatePost(createPostModel);
+            //postService.CreatePost(createPostModel);
 
         }
     }

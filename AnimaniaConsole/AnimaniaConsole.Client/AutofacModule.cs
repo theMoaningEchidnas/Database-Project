@@ -40,6 +40,8 @@ namespace Client
             builder.Register(x=>Mapper.Instance);
             builder.RegisterType<UserService>().As<IUserService>();
 
+            builder.RegisterType<RegisterUserCommand>().Named<ICommand>("RegisterUser");
+
 
         }
     }

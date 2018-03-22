@@ -52,6 +52,7 @@
     <Compile Include="Commands\CommandContracts\ICommandParser.cs" />
     <Compile Include="Commands\CommandProcessor.cs" />
     <Compile Include="Commands\CommandContracts\ICommandProcessor.cs" />
+    <Compile Include="Commands\RegisterUserCommand.cs" />
     <Compile Include="Contracts\IEngine.cs" />
     <Compile Include="Contracts\IReader.cs" />
     <Compile Include="Contracts\IRenderer.cs" />
@@ -65,7 +66,16 @@
     <Compile Include="Wrappers\Reader.cs" />
     <Compile Include="Wrappers\Writer.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\AnimaniaConsole.DTO\AnimaniaConsole.DTO.csproj">
+      <Project>{5DAD449B-5C8E-448A-9DD9-D8E54B8DB5A6}</Project>
+      <Name>AnimaniaConsole.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnimaniaConsole.Services\AnimaniaConsole.Services.csproj">
+      <Project>{4E5041FF-4BB2-4DD9-97E7-6E351C5173F7}</Project>
+      <Name>AnimaniaConsole.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

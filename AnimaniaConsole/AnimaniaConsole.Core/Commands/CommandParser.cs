@@ -23,7 +23,7 @@ namespace AnimaniaConsole.Core
 
             public ICommand ParseCommand(string commandLine)
             {
-                var lineParameters = commandLine.Trim().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                var lineParameters = commandLine.Trim().Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
 
                 var commandName = lineParameters[0];
 
