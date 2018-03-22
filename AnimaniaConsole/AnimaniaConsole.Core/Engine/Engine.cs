@@ -1,3 +1,6 @@
+﻿using AnimaniaConsole.Core.Commands.CommandContracts;
+using AnimaniaConsole.Core.Contracts;
+using AnimaniaConsole.DTO.Models;
 ﻿using AnimaniaConsole.Core.Contracts;
 using System;
 using System.Collections.Generic;
@@ -6,7 +9,7 @@ using AnimaniaConsole.Core.CommandContracts;
 
 namespace AnimaniaConsole.Core.Engine
 {
-    public class Engine:IEngine
+    public class Engine : IEngine
     {
         private const string TerminationCommand = "exit";
 
@@ -14,17 +17,21 @@ namespace AnimaniaConsole.Core.Engine
         private ICommandParser parser;
         private ICommandProcessor processor;
         private IWriter writer;
+        private UserSessionModel session;
 
         public Engine(IReader reader,
             ICommandProcessor processor,
             ICommandParser parser,
-            IWriter writer
- )
+            IWriter writer,
+            UserSessionModel session
+
+             )
         {
             this.reader = reader;
             this.processor = processor;
             this.parser = parser;
             this.writer = writer;
+            this.session = session;
         }
 
         string commandAsString = null;
@@ -44,7 +51,7 @@ namespace AnimaniaConsole.Core.Engine
                         this.writer.WriteLine(commandResult);
                     }
 
-                 
+
                 }
                 catch (Exception ex)
                 {

@@ -10,6 +10,14 @@ using AnimaniaConsole.Services.Contracts;
 using AnimaniaConsole.Services.Services;
 using Autofac;
 using AutoMapper;
+using AnimaniaConsole.Core.Engine;
+using AnimaniaConsole.Core.Contracts;
+using AnimaniaConsole.Core.Commands.CommandContracts;
+using AnimaniaConsole.Core.Commands;
+using AnimaniaConsole.Core;
+using AnimaniaConsole.Core.Wrappers;
+using AnimaniaConsole.Core.Factories;
+using AnimaniaConsole.DTO.Models;
 using Module = Autofac.Module;
 
 namespace Client
@@ -33,7 +41,11 @@ namespace Client
 
             builder.Register(x => Mapper.Instance);
             builder.RegisterType<UserService>().As<IUserService>();
+            builder.RegisterType<SessionService>().As<ISessionService>();
 
+            builder.RegisterType<UserSessionModel>().AsSelf();
+            builder.RegisterType<RegisterUserCommand>().Named<ICommand>("RegisterUser");
+            builder.RegisterType<ChangePasswordCommand>().Named<ICommand>("ChangePassword");
             builder.RegisterType<RegisterUserCommand>().Named<ICommand>("RegisterUser").SingleInstance();
             builder.RegisterType<CreatePostCommand>().Named<ICommand>("CreatePost").SingleInstance();
 

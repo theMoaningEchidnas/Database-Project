@@ -1,4 +1,5 @@
 ﻿using AnimaniaConsole.DTO.Models;
+using AnimaniaConsole.Services.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AnimaniaConsole.Services.Services
 {
-    public class SessionService
+    public class SessionService : ISessionService
     {
         public bool ValidateUser(UserSessionModel userSession)
         {
