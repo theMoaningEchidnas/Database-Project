@@ -18,7 +18,7 @@ namespace AnimaniaConsole.Core.Commands
 
         public string ProcessSingleCommand(ICommand command, string commandParameters)
         {
-            var lineParameters = commandParameters.Trim().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            var lineParameters = commandParameters.Trim().Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
 
             var result = command.Execute(lineParameters);
             var normalizedOutput = this.NormalizeOutput(result);
