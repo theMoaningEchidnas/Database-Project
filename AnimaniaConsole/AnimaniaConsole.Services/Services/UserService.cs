@@ -58,11 +58,17 @@ namespace AnimaniaConsole.Services.Services
             userSession.Id = 0;
             userSession.UserName = null;
         }
-        public void ChangePassword(UserSessionModel userSession,string newPassword)
+        public void ChangePassword(UserSessionModel userSession, string newPassword)
         {
             var user = this.Context.Users.Where(x => x.Id == userSession.Id).Single();
             user.Password = newPassword;
             this.Context.SaveChanges();
+
+        }
+        public IList<Post> GetAllPosts(UserSessionModel userSession)
+        {
+            var posts = this.Context.Posts.Where(x => x.UserId == userSession.Id).ToList();
+            return posts;
 
         }
 
