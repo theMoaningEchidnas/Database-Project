@@ -41,8 +41,9 @@ namespace Client
             builder.Register(x=>Mapper.Instance);
             builder.RegisterType<UserService>().As<IUserService>();
             builder.RegisterType<SessionService>().As<ISessionService>();
-
-            builder.RegisterType<UserSessionModel>().AsSelf();
+            builder.RegisterType<LogInUserCommand>().Named<ICommand>("LogIn");
+            builder.RegisterType<GetPostsInPDF>().Named<ICommand>("PostsInPDF");
+            builder.RegisterType<UserSessionModel>().AsSelf().SingleInstance();
             builder.RegisterType<RegisterUserCommand>().Named<ICommand>("RegisterUser");
             builder.RegisterType<ChangePasswordCommand>().Named<ICommand>("ChangePassword");
 

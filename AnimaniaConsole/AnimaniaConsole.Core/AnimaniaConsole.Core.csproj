@@ -33,6 +33,9 @@
     <Reference Include="Autofac, Version=4.6.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.4.6.2\lib\net45\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -53,6 +56,7 @@
     <Compile Include="Commands\CommandContracts\ICommandParser.cs" />
     <Compile Include="Commands\CommandProcessor.cs" />
     <Compile Include="Commands\CommandContracts\ICommandProcessor.cs" />
+    <Compile Include="Commands\GetPostsInPDF.cs" />
     <Compile Include="Commands\LogInUserCommand.cs" />
     <Compile Include="Commands\RegisterUserCommand.cs" />
     <Compile Include="Contracts\IEngine.cs" />
@@ -73,13 +77,21 @@
       <Project>{5DAD449B-5C8E-448A-9DD9-D8E54B8DB5A6}</Project>
       <Name>AnimaniaConsole.DTO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AnimaniaConsole.Models\AnimaniaConsole.Models.csproj">
+      <Project>{1C1DD402-36D5-4A11-86EB-BBDC7ACF63ED}</Project>
+      <Name>AnimaniaConsole.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AnimaniaConsole.Services\AnimaniaConsole.Services.csproj">
       <Project>{4E5041FF-4BB2-4DD9-97E7-6E351C5173F7}</Project>
       <Name>AnimaniaConsole.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PDFReports\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
