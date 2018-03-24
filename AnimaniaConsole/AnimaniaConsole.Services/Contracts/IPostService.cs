@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using AnimaniaConsole.DTO.Models;
+﻿using AnimaniaConsole.DTO.Models;
+using System.Collections.Generic;
 
 namespace AnimaniaConsole.Services.Contracts
 {

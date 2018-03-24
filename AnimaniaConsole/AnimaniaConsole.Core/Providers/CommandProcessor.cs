@@ -1,7 +1,7 @@
-﻿using System;
+﻿using AnimaniaConsole.Core.CommandContracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using AnimaniaConsole.Core.CommandContracts;
 
 namespace AnimaniaConsole.Core.Providers
 {

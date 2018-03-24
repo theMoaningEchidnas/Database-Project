@@ -1,6 +1,6 @@
 ﻿using AnimaniaConsole.Core.CommandContracts;
 
-namespace AnimaniaConsole.Core.Factories
+namespace AnimaniaConsole.Core.Factories.Contracts
 {
     public interface ICommandFactory
     {

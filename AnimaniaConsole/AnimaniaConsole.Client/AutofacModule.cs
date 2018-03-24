@@ -3,6 +3,7 @@ using AnimaniaConsole.Core.Commands;
 using AnimaniaConsole.Core.Contracts;
 using AnimaniaConsole.Core.Engine;
 using AnimaniaConsole.Core.Factories;
+using AnimaniaConsole.Core.Factories.Contracts;
 using AnimaniaConsole.Core.Providers;
 using AnimaniaConsole.Core.Wrappers;
 using AnimaniaConsole.Data;
@@ -10,15 +11,8 @@ using AnimaniaConsole.Services.Contracts;
 using AnimaniaConsole.Services.Services;
 using Autofac;
 using AutoMapper;
-using AnimaniaConsole.Core.Engine;
-using AnimaniaConsole.Core.Contracts;
-using AnimaniaConsole.Core.Commands.CommandContracts;
-using AnimaniaConsole.Core.Commands;
-using AnimaniaConsole.Core;
-using AnimaniaConsole.Core.Wrappers;
-using AnimaniaConsole.Core.Factories;
-using AnimaniaConsole.DTO.Models;
 using Module = Autofac.Module;
+using AnimaniaConsole.DTO.Models;
 
 namespace Client
 {

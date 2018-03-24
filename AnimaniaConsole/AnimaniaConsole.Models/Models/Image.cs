@@ -6,7 +6,7 @@ namespace AnimaniaConsole.Models.Models
     {
         public Image()
         {
-         
+
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

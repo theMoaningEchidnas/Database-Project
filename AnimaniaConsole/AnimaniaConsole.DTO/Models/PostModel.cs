@@ -1,7 +1,4 @@
-﻿using AnimaniaConsole.Models.Models;
-using System;
-using System.Collections.Generic;
-using User = AnimaniaConsole.Data.Migrations.User;
+﻿using System;
 
 namespace AnimaniaConsole.DTO.Models
 {
@@ -16,4 +13,3 @@ namespace AnimaniaConsole.DTO.Models
         public AnimalModel Animal { get; set; }
     }
 }
- 

@@ -1,12 +1,8 @@
-﻿using AnimaniaConsole.DTO;
+﻿using AnimaniaConsole.Core.CommandContracts;
+using AnimaniaConsole.DTO;
 using AnimaniaConsole.Services.Contracts;
-using AnimaniaConsole.Services.Services;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AnimaniaConsole.Core.CommandContracts;
 
 namespace AnimaniaConsole.Core.Commands
 {
@@ -39,13 +35,13 @@ namespace AnimaniaConsole.Core.Commands
                     {
                         this.Service.RegisterUser(UserToRegister);
                         message = $"User with Username:{UserToRegister.UserName} added !";
-                        
+
                     }
                     catch (Exception)
                     {
 
-                        message="Something went wrong try again!";
-                    
+                        message = "Something went wrong try again!";
+
                     }
 
                     break;
@@ -62,7 +58,7 @@ namespace AnimaniaConsole.Core.Commands
                 //    break;
 
                 default:
-                    
+
                     break;
             }
             return message;

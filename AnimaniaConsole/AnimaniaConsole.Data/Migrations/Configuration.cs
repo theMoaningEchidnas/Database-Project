@@ -1,7 +1,3 @@
-using AnimaniaConsole.Models.Models;
-using System;
-using System.Linq;
-
 namespace AnimaniaConsole.Data.Migrations
 {
     using System.Data.Entity.Migrations;
@@ -33,6 +29,6 @@ namespace AnimaniaConsole.Data.Migrations
             EntityValidationErrorsOutput.SaveChanges(context);*/
 
         }
-        
+
     }
 }

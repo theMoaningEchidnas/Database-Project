@@ -22,7 +22,7 @@ namespace AnimaniaConsole.Core.Commands
 
             //CreatePost;New Post Title;The shortest post DESCRIPTION for my sweet pupy;10000;20.10.2017;SnoopDogy;Dog;Pudel2;Sofia
 
-            CreatePostModel postToCreate = new CreatePostModel();
+            var postToCreate = new CreatePostModel();
 
             var BD = DateTime.ParseExact(parameters[4], "d.M.yyyy", CultureInfo.InvariantCulture);
 

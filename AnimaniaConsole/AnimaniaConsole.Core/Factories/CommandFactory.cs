@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AnimaniaConsole.Core.CommandContracts;
+using AnimaniaConsole.Core.Factories.Contracts;
 
 namespace AnimaniaConsole.Core.Factories
 {

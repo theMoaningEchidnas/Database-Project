@@ -1,6 +1,6 @@
-﻿using AnimaniaConsole.Core.CommandContracts;
-using AnimaniaConsole.Core.Factories;
-using System;
+﻿using System;
+using AnimaniaConsole.Core.CommandContracts;
+using AnimaniaConsole.Core.Factories.Contracts;
 
 namespace AnimaniaConsole.Core.Providers
 {

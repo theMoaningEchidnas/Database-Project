@@ -97,7 +97,7 @@
       <Name>AnimaniaConsole.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\AnimaniaConsole.DTO\AnimaniaConsole.DTO.csproj">
-      <Project>{5DAD449B-5C8E-448A-9DD9-D8E54B8DB5A6}</Project>
+      <Project>{5dad449b-5c8e-448a-9dd9-d8e54b8db5a6}</Project>
       <Name>AnimaniaConsole.DTO</Name>
     </ProjectReference>
     <ProjectReference Include="..\AnimaniaConsole.Models\AnimaniaConsole.Models.csproj">

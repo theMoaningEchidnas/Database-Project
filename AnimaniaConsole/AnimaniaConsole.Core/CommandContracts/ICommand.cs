@@ -2,7 +2,7 @@
 
 namespace AnimaniaConsole.Core.CommandContracts
 {
-   public interface ICommand
+    public interface ICommand
     {
         string Execute(IList<string> parameters);
     }
