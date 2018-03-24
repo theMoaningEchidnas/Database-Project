@@ -37,11 +37,12 @@ namespace Client
             builder.RegisterType<UserService>().As<IUserService>();
             builder.RegisterType<SessionService>().As<ISessionService>();
 
-            builder.RegisterType<UserSessionModel>().AsSelf();
+            builder.RegisterType<UserSessionModel>().AsSelf().SingleInstance();
             builder.RegisterType<RegisterUserCommand>().Named<ICommand>("RegisterUser");
             builder.RegisterType<ChangePasswordCommand>().Named<ICommand>("ChangePassword");
             builder.RegisterType<RegisterUserCommand>().Named<ICommand>("RegisterUser").SingleInstance();
             builder.RegisterType<CreatePostCommand>().Named<ICommand>("CreatePost").SingleInstance();
+            builder.RegisterType<LogInUserCommand>().Named<ICommand>("LogInUser").SingleInstance();
 
 
         }

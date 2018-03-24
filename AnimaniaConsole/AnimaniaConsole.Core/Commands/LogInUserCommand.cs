@@ -18,6 +18,8 @@ namespace AnimaniaConsole.Core.Commands
             this.sessionService = sessionService;
             this.session = session;
         }
+
+        //LogInUser;Buser;Bpassword123
         public string Execute(IList<string> parameters)
         {
             string username = parameters[1];

@@ -9,15 +9,27 @@ namespace AnimaniaConsole.Core.Commands
 {
     public class CreatePostCommand : ICommand
     {
-        public CreatePostCommand(IPostService postService)
+        private readonly UserSessionModel session;
+        private readonly IUserService userService;
+
+        public CreatePostCommand(IPostService postService, UserSessionModel session, IUserService userService)
         {
+            this.session = session;
+            this.userService = userService;
             this.PostService = postService;
         }
+
+        public bool CheckUserIsLogged => this.userService.VerifyUserIsAlreadyLoggedIn(session);
 
         public IPostService PostService { get; }
 
         public string Execute(IList<string> parameters)
         {
+            if (!CheckUserIsLogged)
+            {
+                throw new ArgumentException("You are not logged in! Please, log in and try again!");
+            }
+
             string message = null;
 
             //CreatePost;New Post Title;The shortest post DESCRIPTION for my sweet pupy;10000;20.10.2017;SnoopDogy;Dog;Pudel2;Sofia

@@ -16,7 +16,7 @@ namespace AnimaniaConsole.Core.Commands
         public IUserService Service { get; }
 
 
-
+        //RegisterUser;Buser;Bpassword123;Kremvirsh;Boni;obichame.kremvirshi@meso.edu
         public string Execute(IList<string> parameters)
         {
             string message = null;

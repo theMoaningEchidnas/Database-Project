@@ -8,6 +8,10 @@
 	https://stackoverflow.com/questions/19793572/ef-migrations-exception-a-dependent-property-in-a-referentialconstraint-is-mapp
 5. Error in PackageManager: Column 'LocationName' in table 'dbo.Locations' is of a type that is invalid for use as a key column in an index.
 	https://stackoverflow.com/questions/27687080/creating-string-index-with-code-first 	
+6. Many Build Errors after pull incl. Metadata File sOmEnAmE.DLL could not be found
+	https://stackoverflow.com/questions/898559/metadata-file-release-project-dll-could-not-be-found-in-visual-studio/13031884#13031884
+
+
 
 PLAN for splitting the tasks:
 	Together create the DB backbone 
