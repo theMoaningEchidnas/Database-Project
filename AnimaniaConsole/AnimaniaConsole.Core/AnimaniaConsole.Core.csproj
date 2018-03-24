@@ -33,12 +33,20 @@
     <Reference Include="Autofac, Version=4.6.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.4.6.2\lib\net45\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandContracts\ICommand.cs" />
     <Compile Include="Commands\CreatePostCommand.cs" />
+    <Compile Include="Commands\SearchPostsCommand.cs" />
     <Compile Include="Providers\CommandParser.cs" />
     <Compile Include="CommandContracts\ICommandParser.cs" />
     <Compile Include="Providers\CommandProcessor.cs" />
@@ -60,9 +68,17 @@
     <Compile Include="Wrappers\Writer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AnimaniaConsole.Data\AnimaniaConsole.Data.csproj">
+      <Project>{E8719406-F072-4214-93B2-45F7C995DAD3}</Project>
+      <Name>AnimaniaConsole.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AnimaniaConsole.DTO\AnimaniaConsole.DTO.csproj">
       <Project>{5dad449b-5c8e-448a-9dd9-d8e54b8db5a6}</Project>
       <Name>AnimaniaConsole.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnimaniaConsole.Models\AnimaniaConsole.Models.csproj">
+      <Project>{1C1DD402-36D5-4A11-86EB-BBDC7ACF63ED}</Project>
+      <Name>AnimaniaConsole.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\AnimaniaConsole.Services\AnimaniaConsole.Services.csproj">
       <Project>{4E5041FF-4BB2-4DD9-97E7-6E351C5173F7}</Project>
@@ -70,6 +86,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -43,6 +43,7 @@ namespace Client
             builder.RegisterType<RegisterUserCommand>().Named<ICommand>("RegisterUser").SingleInstance();
             builder.RegisterType<CreatePostCommand>().Named<ICommand>("CreatePost").SingleInstance();
             builder.RegisterType<LogInUserCommand>().Named<ICommand>("LogInUser").SingleInstance();
+            builder.RegisterType<SearchPostsCommand>().Named<ICommand>("SearchPosts").SingleInstance();
 
 
         }

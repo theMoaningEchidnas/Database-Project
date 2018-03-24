@@ -7,5 +7,6 @@ namespace AnimaniaConsole.Services.Contracts
     {
         IEnumerable<PostModel> GetAll();
         void CreatePost(CreatePostModel createPostModel);
+        IEnumerable<PostModel> SearchPosts(string searchedText);
     }
 }

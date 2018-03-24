@@ -11,5 +11,6 @@ namespace AnimaniaConsole.DTO.Models
         public bool Status { get; set; }
         public int UserId { get; set; }
         public AnimalModel Animal { get; set; }
+        public LocationModel Location { get; set; }
     }
 }

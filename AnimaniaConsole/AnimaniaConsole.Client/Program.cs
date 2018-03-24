@@ -16,11 +16,12 @@ namespace AnimaniaConsole.Client
             builder.RegisterAssemblyModules(Assembly.GetExecutingAssembly());
 
             var container = builder.Build();
-
             var postService = container.Resolve<IPostService>();
 
             var engine = container.Resolve<IEngine>();
             engine.Run();
+
+            
 
         }
     }

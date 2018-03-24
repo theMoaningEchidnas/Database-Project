@@ -63,5 +63,11 @@ namespace AnimaniaConsole.Services.Services
             this.context.SaveChanges();
         }
 
+        public IEnumerable<PostModel> SearchPosts(string searchedText)
+        {
+            var posts = this.context.Posts.ProjectTo<PostModel>();
+            var searchResult = posts.Where(x => x.Title.Contains(searchedText) || x.Description.Contains(searchedText)).ToList();
+            return searchResult;
+        }
     }
 }
