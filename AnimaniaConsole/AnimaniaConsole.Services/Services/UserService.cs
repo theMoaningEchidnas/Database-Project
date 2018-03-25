@@ -69,10 +69,9 @@ namespace AnimaniaConsole.Services.Services
 
         }
 
-        public bool VerifyUserIsAlreadyLoggedIn(UserSessionModel userSession)
+        public int GetLoggedUserId(UserSessionModel userSession)
         {
-            bool userIsLogged = (userSession.Id != 0) ? true : false;
-            return userIsLogged;
+            return userSession.Id;
         }
 
     }

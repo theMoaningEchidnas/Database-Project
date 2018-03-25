@@ -12,6 +12,6 @@ namespace AnimaniaConsole.Services.Contracts
         void LogInUser(string userName, string password, UserSessionModel userSession);
         void LogOutUser(UserSessionModel userSession);
         IList<Post> GetAllPosts(UserSessionModel userSession);
-        bool VerifyUserIsAlreadyLoggedIn(UserSessionModel userSession);
+        int GetLoggedUserId(UserSessionModel userSession);
     }
 }

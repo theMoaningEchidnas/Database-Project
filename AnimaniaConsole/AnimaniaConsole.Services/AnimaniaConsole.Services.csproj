@@ -63,11 +63,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IAnimalTypeServices.cs" />
     <Compile Include="Contracts\IPostService.cs" />
     <Compile Include="Contracts\IUserService.cs" />
     <Compile Include="Services\AnimalServices.cs" />
     <Compile Include="Contracts\IAnimalService.cs" />
     <Compile Include="Contracts\ISessionService.cs" />
+    <Compile Include="Contracts\ILocationServices.cs" />
+    <Compile Include="Services\AnimalTypeServices.cs" />
+    <Compile Include="Services\BreedTypeServices.cs" />
+    <Compile Include="Contracts\IBreedTypeServices.cs" />
+    <Compile Include="Services\LocationServices.cs" />
     <Compile Include="Services\PostService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\SessionService.cs" />

@@ -7,6 +7,9 @@ using System.Globalization;
 
 namespace AnimaniaConsole.Core.Commands
 {
+
+    //CreatePost;New Post Title;The shortest post DESCRIPTION for my sweet pupy;10000;20.10.2017;SnoopDogy;Dog;Pudel2;Sofia
+
     public class CreatePostCommand : ICommand
     {
         private readonly UserSessionModel session;
@@ -19,50 +22,42 @@ namespace AnimaniaConsole.Core.Commands
             this.PostService = postService;
         }
 
-        public bool CheckUserIsLogged => this.userService.VerifyUserIsAlreadyLoggedIn(session);
-
         public IPostService PostService { get; }
 
         public string Execute(IList<string> parameters)
         {
-            if (!CheckUserIsLogged)
+            var userId = this.userService.GetLoggedUserId(session);
+            if (userId == 0)
             {
                 throw new ArgumentException("You are not logged in! Please, log in and try again!");
             }
 
-            string message = null;
-
-            //CreatePost;New Post Title;The shortest post DESCRIPTION for my sweet pupy;10000;20.10.2017;SnoopDogy;Dog;Pudel2;Sofia
-
-
-            var postToCreate = new CreatePostModel();
-
             var BD = DateTime.ParseExact(parameters[4], "d.M.yyyy", CultureInfo.InvariantCulture);
 
-            postToCreate.Title = parameters[1];
-            postToCreate.Description = parameters[2];
-            postToCreate.Price = decimal.Parse(parameters[3]);
-            postToCreate.Birthday = BD;
-            postToCreate.AnimalName = parameters[5];
-            postToCreate.AnimalTypeName = parameters[6];
-            postToCreate.BreedTypeName = parameters[7];
-            postToCreate.LocationName = parameters[8];
+            var postToCreate = new CreatePostModel()
+            {
+                Title = parameters[1],
+                Description = parameters[2],
+                Price = decimal.Parse(parameters[3]),
+                Birthday = BD,
+                AnimalName = parameters[5],
+                AnimalTypeName = parameters[6],
+                BreedTypeName = parameters[7],
+                LocationName = parameters[8],
+                PostDate = DateTime.Now,
+                Status = true
+            };
 
-            postToCreate.PostDate = DateTime.Now;
-            postToCreate.Status = true;
 
             try
             {
-                this.PostService.CreatePost(postToCreate);
-                message = $"Post was created successfully!";
+                this.PostService.CreatePost(postToCreate, userId);
+                return $"Post was created successfully!";
             }
             catch
             {
-                message = "Something went wrong try again!";
+                return "Something went wrong, please check input and try again!";
             }
-
-            return message;
-
 
         }
     }

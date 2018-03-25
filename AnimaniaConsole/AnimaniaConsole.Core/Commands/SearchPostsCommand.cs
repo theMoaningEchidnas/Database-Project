@@ -8,6 +8,8 @@ using System.Text;
 
 namespace AnimaniaConsole.Core.Commands
 {
+    //SearchPosts;DESCRIPTION
+
     public class SearchPostsCommand : ICommand
     {
         private readonly IPostService postService;
@@ -19,21 +21,21 @@ namespace AnimaniaConsole.Core.Commands
             this.context = context;
         }
 
-        //SearchPosts;DESCRIPTION
         public string Execute(IList<string> parameters)
         {
-
             var searchedText = parameters[1];
             var listOfFoundPosts = postService.SearchPosts(searchedText);
-            var searchResult = new StringBuilder();
-            searchResult = listOfFoundPosts.Any()
-                ? searchResult.AppendLine($"{listOfFoundPosts.Count()} posts found.") : searchResult.AppendLine("No posts found!");
+            var numberOfPostsFound = listOfFoundPosts.Count();
 
-            var counter = 0;
+            var searchResult = new StringBuilder();
+            searchResult = listOfFoundPosts.Any() ?
+                searchResult.AppendLine($"{numberOfPostsFound} posts found.") : searchResult.AppendLine("No posts found!");
+
+            var indexOfPostsFound = 0;
 
             foreach (var foundPost in listOfFoundPosts)
             {
-                counter++;
+                indexOfPostsFound++;
                 var location = context.Locations.Where(x => x.Id == foundPost.Animal.LocationId)
                     .Select(x => x.LocationName).Single();
                 searchResult.AppendLine(string.Format("Post No:{5}{4}" +
@@ -42,10 +44,9 @@ namespace AnimaniaConsole.Core.Commands
                                                       "#Price: {2}{4}" +
                                                       "#Location: {3}{4}" +
                                                       "--------------------{4}",
-                        foundPost.Title, foundPost.Description, foundPost.Price, location, Environment.NewLine, counter));
+                        foundPost.Title, foundPost.Description, foundPost.Price, location, Environment.NewLine, indexOfPostsFound));
             }
             return searchResult.ToString();
-
         }
 
     }

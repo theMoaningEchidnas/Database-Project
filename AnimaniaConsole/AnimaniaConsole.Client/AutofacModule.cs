@@ -7,12 +7,12 @@ using AnimaniaConsole.Core.Factories.Contracts;
 using AnimaniaConsole.Core.Providers;
 using AnimaniaConsole.Core.Wrappers;
 using AnimaniaConsole.Data;
+using AnimaniaConsole.DTO.Models;
 using AnimaniaConsole.Services.Contracts;
 using AnimaniaConsole.Services.Services;
 using Autofac;
 using AutoMapper;
 using Module = Autofac.Module;
-using AnimaniaConsole.DTO.Models;
 
 namespace Client
 {
@@ -32,6 +32,10 @@ namespace Client
 
             builder.RegisterType<AnimaniaConsoleContext>().As<IAnimaniaConsoleContext>().InstancePerDependency();
             builder.RegisterType<PostService>().As<IPostService>();
+            //the following three are single instance because we do not expect to change (add/ remove items) them during user interactions
+            builder.RegisterType<LocationServices>().As<ILocationServices>().SingleInstance();
+            builder.RegisterType<AnimalTypeServices>().As<IAnimalTypeServices>().SingleInstance();
+            builder.RegisterType<BreedTypeServices>().As<IBreedTypeServices>().SingleInstance();
 
             builder.Register(x => Mapper.Instance);
             builder.RegisterType<UserService>().As<IUserService>();

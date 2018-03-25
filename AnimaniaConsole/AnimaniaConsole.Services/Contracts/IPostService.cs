@@ -5,8 +5,8 @@ namespace AnimaniaConsole.Services.Contracts
 {
     public interface IPostService
     {
-        IEnumerable<PostModel> GetAll();
-        void CreatePost(CreatePostModel createPostModel);
+        IEnumerable<PostModel> GetAllPosts();
+        void CreatePost(CreatePostModel createPostModel, int userId);
         IEnumerable<PostModel> SearchPosts(string searchedText);
     }
 }

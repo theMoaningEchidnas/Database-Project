@@ -13,51 +13,43 @@ namespace AnimaniaConsole.Services.Services
     public class PostService : IPostService
     {
         private readonly IAnimaniaConsoleContext context;
+        private readonly ILocationServices locationServices;
+        private readonly IAnimalTypeServices animalTypeServices;
+        private readonly IBreedTypeServices breedTypeServices;
 
-        public PostService(IAnimaniaConsoleContext context)
+        public PostService(IAnimaniaConsoleContext context, ILocationServices locationServices, IAnimalTypeServices animalTypeServices, IBreedTypeServices breedTypeServices)
         {
             this.context = context;
+            this.locationServices = locationServices;
+            this.animalTypeServices = animalTypeServices;
+            this.breedTypeServices = breedTypeServices;
         }
 
-        public IEnumerable<PostModel> GetAll()
+        public IEnumerable<PostModel> GetAllPosts()
         {
             var posts = this.context.Posts.ProjectTo<PostModel>();
             return posts;
         }
 
-        public void CreatePost(CreatePostModel createPostModel)
+        public void CreatePost(CreatePostModel createPostModel, int userId)
         {
-            var locationId = context.Locations.Any(x => x.LocationName == createPostModel.LocationName) ?
-                context.Locations.Where(x => x.LocationName == createPostModel.LocationName).Select(x => x.Id).Single() :
-            throw new ArgumentException("Such Location does not exist");
-
-            var animalTypeId = context.AnimalTypes.Any(x => x.AnimalTypeName == createPostModel.AnimalTypeName) ?
-                context.AnimalTypes.Where(x => x.AnimalTypeName == createPostModel.AnimalTypeName).Select(x => x.Id).Single() :
-                throw new ArgumentNullException("Such type of Animal does not exist");
-
-            var breedTypeId = context.BreedTypes.Any(x => x.BreedTypeName == createPostModel.BreedTypeName) ?
-                context.BreedTypes.Where(x => x.BreedTypeName == createPostModel.BreedTypeName).Select(x => x.Id).Single() :
-                throw new ArgumentNullException("Such type of Breed does not exist");
-
-            //TODO: add the ID of the logged user
-            var userId = 1;
+            var locationId = locationServices.GetLocationIdByLocationName(context, createPostModel.LocationName);
+            var animalTypeId = animalTypeServices.GetAnimalTypeIdByAnimalTypeName(context, createPostModel.AnimalTypeName);
+            var breedTypeId = breedTypeServices.GetBreedTypeIdByBreedTypeName(context, createPostModel.BreedTypeName);
 
             var animal = new Animal
             {
                 AnimalName = createPostModel.AnimalName,
                 Birthday = DateTime.Parse(createPostModel.Birthday.ToString()),
-                AnimalTypeId = byte.Parse(animalTypeId.ToString()),
-                BreedTypeId = int.Parse(breedTypeId.ToString()),
-                LocationId = int.Parse(locationId.ToString()),
+                AnimalTypeId = animalTypeId,
+                BreedTypeId = breedTypeId,
+                LocationId = locationId,
                 UserId = userId
             };
-
-            var post = new Post();
 
             var postToCreate = AutoMapper.Mapper.Map<Post>(createPostModel);
             postToCreate.Animal = animal;
             postToCreate.User = context.Users.Find(userId);
-
 
             this.context.Posts.Add(postToCreate);
             this.context.SaveChanges();
@@ -67,6 +59,7 @@ namespace AnimaniaConsole.Services.Services
         {
             var posts = this.context.Posts.ProjectTo<PostModel>();
             var searchResult = posts.Where(x => x.Title.Contains(searchedText) || x.Description.Contains(searchedText)).ToList();
+
             return searchResult;
         }
     }
