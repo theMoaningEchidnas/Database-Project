@@ -46,7 +46,11 @@
   <ItemGroup>
     <Compile Include="CommandContracts\ICommand.cs" />
     <Compile Include="Commands\CreatePostCommand.cs" />
+    <Compile Include="Commands\EditPostDescriptionCommand.cs" />
+    <Compile Include="Commands\EditPostPriceCommand.cs" />
+    <Compile Include="Commands\EditPostTitleCommand.cs" />
     <Compile Include="Commands\SearchPostsCommand.cs" />
+    <Compile Include="Commands\ShowMyPostsCommand.cs" />
     <Compile Include="Providers\CommandParser.cs" />
     <Compile Include="CommandContracts\ICommandParser.cs" />
     <Compile Include="Providers\CommandProcessor.cs" />

@@ -48,6 +48,10 @@ namespace Client
             builder.RegisterType<CreatePostCommand>().Named<ICommand>("CreatePost").SingleInstance();
             builder.RegisterType<LogInUserCommand>().Named<ICommand>("LogInUser").SingleInstance();
             builder.RegisterType<SearchPostsCommand>().Named<ICommand>("SearchPosts").SingleInstance();
+            builder.RegisterType<ShowMyPostsCommand>().Named<ICommand>("ShowMyPosts").SingleInstance();
+            builder.RegisterType<EditPostTitleCommand>().Named<ICommand>("EditPostTitle").SingleInstance();
+            builder.RegisterType<EditPostDescriptionCommand>().Named<ICommand>("EditPostDescription").SingleInstance();
+            builder.RegisterType<EditPostPriceCommand>().Named<ICommand>("EditPostPrice").SingleInstance();
 
 
         }

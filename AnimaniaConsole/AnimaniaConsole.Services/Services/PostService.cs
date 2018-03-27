@@ -6,6 +6,7 @@ using AutoMapper.QueryableExtensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace AnimaniaConsole.Services.Services
 
@@ -25,9 +26,9 @@ namespace AnimaniaConsole.Services.Services
             this.breedTypeServices = breedTypeServices;
         }
 
-        public IEnumerable<PostModel> GetAllPosts()
+        public IEnumerable<PostModel> ShowMyPosts(int userId)
         {
-            var posts = this.context.Posts.ProjectTo<PostModel>();
+            var posts = this.context.Posts.Where(x => x.UserId == userId).ProjectTo<PostModel>();
             return posts;
         }
 
@@ -61,6 +62,57 @@ namespace AnimaniaConsole.Services.Services
             var searchResult = posts.Where(x => x.Title.Contains(searchedText) || x.Description.Contains(searchedText)).ToList();
 
             return searchResult;
+        }
+
+        public string PrintPostsToConsole(IEnumerable<PostModel> listOfFoundPosts)
+        {
+            var numberOfPostsFound = listOfFoundPosts.Count();
+            var searchResult = new StringBuilder();
+            searchResult = listOfFoundPosts.Any() ?
+                searchResult.AppendLine($"{numberOfPostsFound} posts found.") : searchResult.AppendLine("No posts found!");
+
+            foreach (var foundPost in listOfFoundPosts)
+            {
+                var location = context.Locations.Where(x => x.Id == foundPost.Animal.LocationId)
+                    .Select(x => x.LocationName).Single();
+                searchResult.AppendLine(string.Format(
+                    "#PostId: {0}{5}" +
+                    "#Title: {1}{5}" +
+                    "#Description: {2}{5}" +
+                    "#Price: {3}{5}" +
+                    "#Location: {4}{5}" +
+                    "--------------------{5}",
+                    foundPost.Id, foundPost.Title, foundPost.Description, foundPost.Price, location, Environment.NewLine));
+            }
+            return searchResult.ToString();
+        }
+
+        public string EditPostTitle(EditPostModel editPostModel)
+        {
+            var postForEdit = this.context.Posts.Find(editPostModel.Id);
+            postForEdit.Title = editPostModel.Title;
+            context.SaveChanges();
+
+            return "Post Title was successfully edited";
+        }
+
+        public string EditPostDescription(EditPostModel editPostModel)
+        {
+            var postForEdit = this.context.Posts.Find(editPostModel.Id);
+            postForEdit.Description = editPostModel.Description;
+            context.SaveChanges();
+
+            return "Post Description was successfully edited";
+        }
+
+        public string EditPostPrice(EditPostModel editPostModel)
+        {
+            var postForEdit = this.context.Posts.Find(editPostModel.Id);
+            postForEdit.Price = editPostModel.Price;
+            context.SaveChanges();
+
+            return "Post Price was successfully edited";
+
         }
     }
 }
