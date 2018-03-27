@@ -1,15 +1,12 @@
 ﻿using AnimaniaConsole.Data;
 using AnimaniaConsole.DTO;
+using AnimaniaConsole.DTO.Models;
 using AnimaniaConsole.Models.Models;
+using AnimaniaConsole.Services.Contracts;
+using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper.QueryableExtensions;
-using AnimaniaConsole.Services.Contracts;
-using AutoMapper;
-using AnimaniaConsole.DTO.Models;
 
 namespace AnimaniaConsole.Services.Services
 {
@@ -72,5 +69,12 @@ namespace AnimaniaConsole.Services.Services
 
         }
 
+        public int GetLoggedUserId(UserSessionModel userSession)
+        {
+            return userSession.Id;
+        }
+
     }
+
 }
+

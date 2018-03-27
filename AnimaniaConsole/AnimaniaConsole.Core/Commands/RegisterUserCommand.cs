@@ -1,12 +1,8 @@
-﻿using AnimaniaConsole.Core.Commands.CommandContracts;
+﻿using AnimaniaConsole.Core.CommandContracts;
 using AnimaniaConsole.DTO;
 using AnimaniaConsole.Services.Contracts;
-using AnimaniaConsole.Services.Services;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AnimaniaConsole.Core.Commands
 {
@@ -20,17 +16,18 @@ namespace AnimaniaConsole.Core.Commands
         public IUserService Service { get; }
 
 
-
+        //RegisterUser;Buser;Bpassword123;Kremvirsh;Boni;obichame.kremvirshi@meso.edu
         public string Execute(IList<string> parameters)
         {
             string message = null;
-            CreateUserModel UserToRegister = new CreateUserModel();
-
-            UserToRegister.UserName = parameters[1];
-            UserToRegister.Password = parameters[2];
-            UserToRegister.FirstName = parameters[3];
-            UserToRegister.LastName = parameters[4];
-            UserToRegister.Email = parameters[5];
+            CreateUserModel UserToRegister = new CreateUserModel
+            {
+                UserName = parameters[1],
+                Password = parameters[2],
+                FirstName = parameters[3],
+                LastName = parameters[4],
+                Email = parameters[5]
+            };
             switch (parameters.Count)
             {
                 //No additional Info
@@ -39,13 +36,13 @@ namespace AnimaniaConsole.Core.Commands
                     {
                         this.Service.RegisterUser(UserToRegister);
                         message = $"User with Username:{UserToRegister.UserName} added !";
-                        
+
                     }
                     catch (Exception)
                     {
 
-                        message="Something went wrong try again!";
-                    
+                        message = "Something went wrong try again!";
+
                     }
 
                     break;
@@ -62,7 +59,7 @@ namespace AnimaniaConsole.Core.Commands
                 //    break;
 
                 default:
-                    
+
                     break;
             }
             return message;

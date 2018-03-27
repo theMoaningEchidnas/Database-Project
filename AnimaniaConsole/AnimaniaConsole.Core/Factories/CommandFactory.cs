@@ -1,10 +1,6 @@
-﻿using AnimaniaConsole.Core.Commands.CommandContracts;
+﻿using AnimaniaConsole.Core.CommandContracts;
+using AnimaniaConsole.Core.Factories.Contracts;
 using Autofac;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AnimaniaConsole.Core.Factories
 {

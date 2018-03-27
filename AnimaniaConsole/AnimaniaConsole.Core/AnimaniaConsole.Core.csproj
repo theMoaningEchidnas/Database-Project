@@ -36,20 +36,28 @@
     <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.IO.Compression.FileSystem" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandContracts\ICommand.cs" />
+    <Compile Include="Commands\CreatePostCommand.cs" />
+    <Compile Include="Commands\EditPostDescriptionCommand.cs" />
+    <Compile Include="Commands\EditPostPriceCommand.cs" />
+    <Compile Include="Commands\EditPostTitleCommand.cs" />
+    <Compile Include="Commands\SearchPostsCommand.cs" />
+    <Compile Include="Commands\ShowMyPostsCommand.cs" />
+    <Compile Include="Providers\CommandParser.cs" />
+    <Compile Include="CommandContracts\ICommandParser.cs" />
+    <Compile Include="Providers\CommandProcessor.cs" />
+    <Compile Include="CommandContracts\ICommandProcessor.cs" />
     <Compile Include="Commands\ChangePasswordCommand.cs" />
     <Compile Include="Commands\CommandContracts\ICommand.cs" />
     <Compile Include="Commands\CommandParser.cs" />
@@ -73,8 +81,12 @@
     <Compile Include="Wrappers\Writer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AnimaniaConsole.Data\AnimaniaConsole.Data.csproj">
+      <Project>{E8719406-F072-4214-93B2-45F7C995DAD3}</Project>
+      <Name>AnimaniaConsole.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AnimaniaConsole.DTO\AnimaniaConsole.DTO.csproj">
-      <Project>{5DAD449B-5C8E-448A-9DD9-D8E54B8DB5A6}</Project>
+      <Project>{5dad449b-5c8e-448a-9dd9-d8e54b8db5a6}</Project>
       <Name>AnimaniaConsole.DTO</Name>
     </ProjectReference>
     <ProjectReference Include="..\AnimaniaConsole.Models\AnimaniaConsole.Models.csproj">
@@ -87,7 +99,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

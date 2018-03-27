@@ -6,6 +6,7 @@ using AutoMapper.QueryableExtensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace AnimaniaConsole.Services.Services
 
@@ -13,55 +14,105 @@ namespace AnimaniaConsole.Services.Services
     public class PostService : IPostService
     {
         private readonly IAnimaniaConsoleContext context;
+        private readonly ILocationServices locationServices;
+        private readonly IAnimalTypeServices animalTypeServices;
+        private readonly IBreedTypeServices breedTypeServices;
 
-        public PostService(IAnimaniaConsoleContext context)
+        public PostService(IAnimaniaConsoleContext context, ILocationServices locationServices, IAnimalTypeServices animalTypeServices, IBreedTypeServices breedTypeServices)
         {
             this.context = context;
+            this.locationServices = locationServices;
+            this.animalTypeServices = animalTypeServices;
+            this.breedTypeServices = breedTypeServices;
         }
 
-        public IEnumerable<PostModel> GetAll()
+        public IEnumerable<PostModel> ShowMyPosts(int userId)
         {
-            var posts = this.context.Posts.ProjectTo<PostModel>();
+            var posts = this.context.Posts.Where(x => x.UserId == userId).ProjectTo<PostModel>();
             return posts;
         }
 
-        public void CreatePost(CreatePostModel createPostModel)
+        public void CreatePost(CreatePostModel createPostModel, int userId)
         {
-            var locationId = context.Locations.Any(x => x.LocationName == createPostModel.LocationName) ?
-                context.Locations.Where(x => x.LocationName == createPostModel.LocationName).Select(x => x.Id).Single() :
-            throw new ArgumentException("Such Location does not exist");
-            
-            var animalTypeId = context.AnimalTypes.Any(x => x.AnimalTypeName == createPostModel.AnimalTypeName) ?
-                context.AnimalTypes.Where(x => x.AnimalTypeName == createPostModel.AnimalTypeName).Select(x => x.Id).Single() :
-                throw new ArgumentNullException("Such type of Animal does not exist");
-            
-            var breedTypeId = context.BreedTypes.Any(x => x.BreedTypeName == createPostModel.BreedTypeName) ?
-                context.BreedTypes.Where(x => x.BreedTypeName == createPostModel.BreedTypeName).Select(x => x.Id).Single() :
-                throw new ArgumentNullException("Such type of Breed does not exist");
+            var locationId = locationServices.GetLocationIdByLocationName(context, createPostModel.LocationName);
+            var animalTypeId = animalTypeServices.GetAnimalTypeIdByAnimalTypeName(context, createPostModel.AnimalTypeName);
+            var breedTypeId = breedTypeServices.GetBreedTypeIdByBreedTypeName(context, createPostModel.BreedTypeName);
 
-            //TODO: add the ID of the logged user
-            var userId = 1;
-               
             var animal = new Animal
             {
                 AnimalName = createPostModel.AnimalName,
                 Birthday = DateTime.Parse(createPostModel.Birthday.ToString()),
-                AnimalTypeId = byte.Parse(animalTypeId.ToString()),
-                BreedTypeId = int.Parse(breedTypeId.ToString()),
-                LocationId = int.Parse(locationId.ToString()),
+                AnimalTypeId = animalTypeId,
+                BreedTypeId = breedTypeId,
+                LocationId = locationId,
                 UserId = userId
             };
-
-            var post = new Post();
 
             var postToCreate = AutoMapper.Mapper.Map<Post>(createPostModel);
             postToCreate.Animal = animal;
             postToCreate.User = context.Users.Find(userId);
-            
 
             this.context.Posts.Add(postToCreate);
             this.context.SaveChanges();
         }
 
+        public IEnumerable<PostModel> SearchPosts(string searchedText)
+        {
+            var posts = this.context.Posts.ProjectTo<PostModel>();
+            var searchResult = posts.Where(x => x.Title.Contains(searchedText) || x.Description.Contains(searchedText)).ToList();
+
+            return searchResult;
+        }
+
+        public string PrintPostsToConsole(IEnumerable<PostModel> listOfFoundPosts)
+        {
+            var numberOfPostsFound = listOfFoundPosts.Count();
+            var searchResult = new StringBuilder();
+            searchResult = listOfFoundPosts.Any() ?
+                searchResult.AppendLine($"{numberOfPostsFound} posts found.") : searchResult.AppendLine("No posts found!");
+
+            foreach (var foundPost in listOfFoundPosts)
+            {
+                var location = context.Locations.Where(x => x.Id == foundPost.Animal.LocationId)
+                    .Select(x => x.LocationName).Single();
+                searchResult.AppendLine(string.Format(
+                    "#PostId: {0}{5}" +
+                    "#Title: {1}{5}" +
+                    "#Description: {2}{5}" +
+                    "#Price: {3}{5}" +
+                    "#Location: {4}{5}" +
+                    "--------------------{5}",
+                    foundPost.Id, foundPost.Title, foundPost.Description, foundPost.Price, location, Environment.NewLine));
+            }
+            return searchResult.ToString();
+        }
+
+        public string EditPostTitle(EditPostModel editPostModel)
+        {
+            var postForEdit = this.context.Posts.Find(editPostModel.Id);
+            postForEdit.Title = editPostModel.Title;
+            context.SaveChanges();
+
+            return "Post Title was successfully edited";
+        }
+
+        public string EditPostDescription(EditPostModel editPostModel)
+        {
+            var postForEdit = this.context.Posts.Find(editPostModel.Id);
+            postForEdit.Description = editPostModel.Description;
+            context.SaveChanges();
+
+            return "Post Description was successfully edited";
+        }
+
+        public string EditPostPrice(EditPostModel editPostModel)
+        {
+            var postForEdit = this.context.Posts.Find(editPostModel.Id);
+            postForEdit.Price = editPostModel.Price;
+            context.SaveChanges();
+
+            return "Post Price was successfully edited";
+
+        }
     }
 }

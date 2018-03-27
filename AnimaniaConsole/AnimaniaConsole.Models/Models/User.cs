@@ -18,7 +18,7 @@ namespace AnimaniaConsole.Models.Models
 
         [Required]
         [Index(IsUnique = true)]
-        [StringLength(30, MinimumLength = 6, ErrorMessage = "Invalid username! It must be between 6 and 30 characters")]
+        [StringLength(30, MinimumLength = 4, ErrorMessage = "Invalid username! It must be between 4 and 30 characters")]
         [RegularExpression(@"^[a-zA-Z0-9]+$", ErrorMessage = "Invalid username! It must contain letters and digits only")]
         public string UserName { get; set; }
 

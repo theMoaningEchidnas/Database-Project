@@ -1,11 +1,9 @@
-﻿using AnimaniaConsole.Core.Commands.CommandContracts;
+﻿using AnimaniaConsole.Core.CommandContracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace AnimaniaConsole.Core.Commands
+namespace AnimaniaConsole.Core.Providers
 {
     public class CommandProcessor : ICommandProcessor
     {

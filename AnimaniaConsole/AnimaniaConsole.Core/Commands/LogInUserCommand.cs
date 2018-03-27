@@ -1,14 +1,13 @@
-﻿using AnimaniaConsole.Core.Commands.CommandContracts;
+﻿using AnimaniaConsole.Core.CommandContracts;
 using AnimaniaConsole.DTO.Models;
 using AnimaniaConsole.Services.Contracts;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AnimaniaConsole.Core.Commands
 {
+    //LogInUser;Buser;Bpassword123
+
     public class LogInUserCommand : ICommand
     {
         private readonly IUserService userService;
@@ -21,6 +20,7 @@ namespace AnimaniaConsole.Core.Commands
             this.sessionService = sessionService;
             this.session = session;
         }
+
         public string Execute(IList<string> parameters)
         {
             string username = parameters[1];

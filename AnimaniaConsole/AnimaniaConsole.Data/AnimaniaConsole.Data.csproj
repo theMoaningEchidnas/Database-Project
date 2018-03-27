@@ -254,6 +254,10 @@
     <Compile Include="Migrations\201803201718006_MakeLocationNameUniqueAndRequired.Designer.cs">
       <DependentUpon>201803201718006_MakeLocationNameUniqueAndRequired.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803241213405_MakeUserNameSmallerFrom6To4Chars.cs" />
+    <Compile Include="Migrations\201803241213405_MakeUserNameSmallerFrom6To4Chars.Designer.cs">
+      <DependentUpon>201803241213405_MakeUserNameSmallerFrom6To4Chars.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\EntityValidationErrorsOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -421,6 +425,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803201718006_MakeLocationNameUniqueAndRequired.resx">
       <DependentUpon>201803201718006_MakeLocationNameUniqueAndRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803241213405_MakeUserNameSmallerFrom6To4Chars.resx">
+      <DependentUpon>201803241213405_MakeUserNameSmallerFrom6To4Chars.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

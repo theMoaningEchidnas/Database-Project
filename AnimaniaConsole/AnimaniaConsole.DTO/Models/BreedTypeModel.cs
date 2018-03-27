@@ -1,9 +1,9 @@
 ﻿namespace AnimaniaConsole.DTO.Models
 {
-    public class UserSessionModel
+    public class BreedTypeModel
     {
         public int Id { get; set; }
+        public string BreedTypeName { get; set; }
 
-        public string UserName { get; set; }
     }
 }

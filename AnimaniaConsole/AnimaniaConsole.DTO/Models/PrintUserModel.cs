@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AnimaniaConsole.Core.Commands.CommandContracts
+namespace AnimaniaConsole.DTO.Models
 {
-   public interface ICommand
+    public class PrintUserModel
     {
-        string Execute(IList<string> parameters);
+        public string UserName { get; set; }
     }
 }
