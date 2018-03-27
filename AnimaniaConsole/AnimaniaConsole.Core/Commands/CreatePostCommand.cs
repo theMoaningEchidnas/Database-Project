@@ -27,10 +27,6 @@ namespace AnimaniaConsole.Core.Commands
         public string Execute(IList<string> parameters)
         {
             var userId = this.userService.GetLoggedUserId(session);
-            if (userId == 0)
-            {
-                throw new ArgumentException("You are not logged in! Please, log in and try again!");
-            }
 
             var BD = DateTime.ParseExact(parameters[4], "d.M.yyyy", CultureInfo.InvariantCulture);
 

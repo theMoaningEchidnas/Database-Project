@@ -114,5 +114,26 @@ namespace AnimaniaConsole.Services.Services
             return "Post Price was successfully edited";
 
         }
+
+        public EditPostModel FindPostById(int postId)
+        {
+            var post = context.Posts.Find(postId);
+            if (post == null)
+            {
+                throw new ArgumentException("Such post doesn't exist. Please check the id and try again!");
+            }
+            var postToEdit = AutoMapper.Mapper.Map<EditPostModel>(post);
+
+            return postToEdit;
+        }
+
+        public void VerifyPostOwnerId(int userIdOwnerOfPostToBeEdited, int loggedUserId)
+        {
+            if (loggedUserId != userIdOwnerOfPostToBeEdited)
+            {
+                throw new ArgumentException("Post Id provided is not correct. Please check the id and try again!");
+            }
+        }
+
     }
 }

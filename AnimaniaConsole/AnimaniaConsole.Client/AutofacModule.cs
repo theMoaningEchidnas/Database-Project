@@ -43,7 +43,6 @@ namespace Client
 
             builder.RegisterType<UserSessionModel>().AsSelf().SingleInstance();
             builder.RegisterType<GetPostsInPDF>().Named<ICommand>("PostsInPDF").SingleInstance();
-
             builder.RegisterType<ChangePasswordCommand>().Named<ICommand>("ChangePassword").SingleInstance();
             builder.RegisterType<RegisterUserCommand>().Named<ICommand>("RegisterUser").SingleInstance();
             builder.RegisterType<CreatePostCommand>().Named<ICommand>("CreatePost").SingleInstance();

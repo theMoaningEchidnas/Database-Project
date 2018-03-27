@@ -12,6 +12,8 @@ namespace AnimaniaConsole.Services.Contracts
         string EditPostTitle(EditPostModel editPostModel);
         string EditPostDescription(EditPostModel editPostModel);
         string EditPostPrice(EditPostModel editPostModel);
+        EditPostModel FindPostById(int postId);
+        void VerifyPostOwnerId(int userIdOwnerOfPostToBeEdited, int loggedUserId);
 
     }
 }

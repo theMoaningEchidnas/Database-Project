@@ -66,11 +66,14 @@ namespace AnimaniaConsole.Services.Services
         {
             var posts = this.Context.Posts.Where(x => x.UserId == userSession.Id).ToList();
             return posts;
-
         }
 
         public int GetLoggedUserId(UserSessionModel userSession)
         {
+            if (userSession.Id == 0)
+            {
+                throw new ArgumentException("You are not logged in! Please, log in and try again!");
+            }
             return userSession.Id;
         }
 
