@@ -1,4 +1,4 @@
-﻿using AnimaniaConsole.Core.Commands.CommandContracts;
+﻿using AnimaniaConsole.Core.Commands;
 using AnimaniaConsole.DTO.Models;
 using AnimaniaConsole.Services.Contracts;
 using System;
@@ -10,7 +10,7 @@ using iTextSharp;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
-
+using AnimaniaConsole.Core.CommandContracts;
 
 namespace AnimaniaConsole.Core.Commands
 {

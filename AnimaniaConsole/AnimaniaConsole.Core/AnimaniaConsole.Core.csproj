@@ -33,14 +33,9 @@
     <Reference Include="Autofac, Version=4.6.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.4.6.2\lib\net45\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -52,6 +47,7 @@
     <Compile Include="Commands\EditPostDescriptionCommand.cs" />
     <Compile Include="Commands\EditPostPriceCommand.cs" />
     <Compile Include="Commands\EditPostTitleCommand.cs" />
+    <Compile Include="Commands\GetPostsInPDF.cs" />
     <Compile Include="Commands\SearchPostsCommand.cs" />
     <Compile Include="Commands\ShowMyPostsCommand.cs" />
     <Compile Include="Providers\CommandParser.cs" />
@@ -59,12 +55,6 @@
     <Compile Include="Providers\CommandProcessor.cs" />
     <Compile Include="CommandContracts\ICommandProcessor.cs" />
     <Compile Include="Commands\ChangePasswordCommand.cs" />
-    <Compile Include="Commands\CommandContracts\ICommand.cs" />
-    <Compile Include="Commands\CommandParser.cs" />
-    <Compile Include="Commands\CommandContracts\ICommandParser.cs" />
-    <Compile Include="Commands\CommandProcessor.cs" />
-    <Compile Include="Commands\CommandContracts\ICommandProcessor.cs" />
-    <Compile Include="Commands\GetPostsInPDF.cs" />
     <Compile Include="Commands\LogInUserCommand.cs" />
     <Compile Include="Commands\RegisterUserCommand.cs" />
     <Compile Include="Contracts\IEngine.cs" />
