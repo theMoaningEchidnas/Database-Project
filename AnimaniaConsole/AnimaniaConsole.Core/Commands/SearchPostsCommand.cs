@@ -9,10 +9,10 @@ namespace AnimaniaConsole.Core.Commands
 
     public class SearchPostsCommand : ICommand
     {
-        private readonly IPostService postService;
+        private readonly IPostServices postService;
         private readonly IAnimaniaConsoleContext context;
 
-        public SearchPostsCommand(IPostService postService, IAnimaniaConsoleContext context)
+        public SearchPostsCommand(IPostServices postService, IAnimaniaConsoleContext context)
         {
             this.postService = postService;
             this.context = context;

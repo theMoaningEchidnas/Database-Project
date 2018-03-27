@@ -28,6 +28,7 @@ namespace AnimaniaConsole.Core.Commands
                 LastName = parameters[4],
                 Email = parameters[5]
             };
+
             switch (parameters.Count)
             {
                 //No additional Info
@@ -35,8 +36,7 @@ namespace AnimaniaConsole.Core.Commands
                     try
                     {
                         this.Service.RegisterUser(UserToRegister);
-                        message = $"User with Username:{UserToRegister.UserName} added !";
-
+                        message = $"User with Username:{UserToRegister.UserName} registered successfully!";
                     }
                     catch (Exception)
                     {

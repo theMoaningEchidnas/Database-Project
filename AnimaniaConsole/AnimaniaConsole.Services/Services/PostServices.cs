@@ -11,25 +11,19 @@ using System.Text;
 namespace AnimaniaConsole.Services.Services
 
 {
-    public class PostService : IPostService
+    public class PostServices : IPostServices
     {
         private readonly IAnimaniaConsoleContext context;
         private readonly ILocationServices locationServices;
         private readonly IAnimalTypeServices animalTypeServices;
         private readonly IBreedTypeServices breedTypeServices;
 
-        public PostService(IAnimaniaConsoleContext context, ILocationServices locationServices, IAnimalTypeServices animalTypeServices, IBreedTypeServices breedTypeServices)
+        public PostServices(IAnimaniaConsoleContext context, ILocationServices locationServices, IAnimalTypeServices animalTypeServices, IBreedTypeServices breedTypeServices)
         {
             this.context = context;
             this.locationServices = locationServices;
             this.animalTypeServices = animalTypeServices;
             this.breedTypeServices = breedTypeServices;
-        }
-
-        public IEnumerable<PostModel> ShowMyPosts(int userId)
-        {
-            var posts = this.context.Posts.Where(x => x.UserId == userId).ProjectTo<PostModel>();
-            return posts;
         }
 
         public void CreatePost(CreatePostModel createPostModel, int userId)
@@ -54,6 +48,18 @@ namespace AnimaniaConsole.Services.Services
 
             this.context.Posts.Add(postToCreate);
             this.context.SaveChanges();
+        }
+
+        //public IList<Post> GetAllPosts(UserSessionModel userSession)
+        //{
+        //    var posts = this.context.Posts.Where(x => x.UserId == userSession.Id).ToList();
+        //    return posts;
+        //}
+
+        public IEnumerable<PostModel> GetAllMyPosts(int userId)
+        {
+            var posts = this.context.Posts.Where(x => x.UserId == userId).ProjectTo<PostModel>();
+            return posts;
         }
 
         public IEnumerable<PostModel> SearchPosts(string searchedText)
@@ -122,6 +128,12 @@ namespace AnimaniaConsole.Services.Services
             {
                 throw new ArgumentException("Such post doesn't exist. Please check the id and try again!");
             }
+
+            if (post.Status == false)
+            {
+                throw new ArgumentException("This post has been removed!");
+            }
+
             var postToEdit = AutoMapper.Mapper.Map<EditPostModel>(post);
 
             return postToEdit;

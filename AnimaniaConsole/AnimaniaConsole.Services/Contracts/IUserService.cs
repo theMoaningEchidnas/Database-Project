@@ -11,7 +11,7 @@ namespace AnimaniaConsole.Services.Contracts
         void ChangePassword(UserSessionModel userSession, string newPassword);
         void LogInUser(string userName, string password, UserSessionModel userSession);
         void LogOutUser(UserSessionModel userSession);
-        IList<Post> GetAllPosts(UserSessionModel userSession);
         int GetLoggedUserId(UserSessionModel userSession);
+        void DeactivateUser(int userId);
     }
 }

@@ -1,0 +1,20 @@
+RegisterUser;Auser;Apassword123;Kremvirsh;KenBoni;obichame.kremvirshken.vseki.den@meso.edu
+
+LogInUser;Buser;Bpassword123
+EditPostTitle;10;NEW NEW NEW Title
+ShowMyPosts
+
+LogInUser;Buser;Bpassword123
+EditPostDescription;10;New description description NEW
+ShowMyPosts
+
+LogInUser;Buser;Bpassword123
+EditPostPrice;11;25
+ShowMyPosts
+
+GetPostsInPDF
+
+
+
+
+Преместване на AutofacModule и AutoMapperConfig в Core 

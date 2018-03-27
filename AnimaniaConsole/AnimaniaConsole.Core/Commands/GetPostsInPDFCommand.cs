@@ -1,46 +1,43 @@
-﻿using AnimaniaConsole.Core.Commands;
+﻿using AnimaniaConsole.Core.CommandContracts;
 using AnimaniaConsole.DTO.Models;
 using AnimaniaConsole.Services.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using iTextSharp;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using System;
+using System.Collections.Generic;
 using System.IO;
-using AnimaniaConsole.Core.CommandContracts;
+using System.Text;
 
 namespace AnimaniaConsole.Core.Commands
 {
-    public class GetPostsInPDF : ICommand
+    public class GetPostsInPDFCommand : ICommand
     {
-        public GetPostsInPDF(IUserService userService,ISessionService sessionSerivce,UserSessionModel sessionUser)
+        private readonly IPostServices postServices;
+
+        public GetPostsInPDFCommand(ISessionService sessionSerivce, UserSessionModel sessionUser, IPostServices postServices)
         {
-            UserService = userService;
+            this.postServices = postServices;
             SessionSerivce = sessionSerivce;
             SessionUser = sessionUser;
         }
 
-        public IUserService UserService { get; }
         public ISessionService SessionSerivce { get; }
         public UserSessionModel SessionUser { get; }
 
         public string Execute(IList<string> parameters)
         {
-            var userPosts = UserService.GetAllPosts(SessionUser);
+            var userPosts = postServices.GetAllMyPosts(SessionUser.Id);
             var random = new Random().Next();
-            var builder = new StringBuilder();
-             string fileName = $"../../../AnimaniaConsole.Core/PDFReports/{random}.pdf";
-            
-            FileStream fs = new FileStream(fileName, FileMode.Create);
+            string filePath = "../../../AnimaniaConsole.Core/PDFReports/";
+            string fileName = $"{random}.pdf";
+
+            FileStream fs = new FileStream(filePath + fileName, FileMode.Create);
             // Create an instance of the document class which represents the PDF document itself.
             Document document = new Document(PageSize.A4, 25, 25, 30, 30);
             // Create an instance to the PDF file by creating an instance of the PDF
             // Writer class using the document and the filestrem in the constructor.
             PdfWriter writer = PdfWriter.GetInstance(document, fs);
-            document.AddSubject("This is a PDF showing current orders");
+            document.AddSubject("This is a PDF showing current posts");
             // Open the document to enable you to write to the document
 
             document.Open();
@@ -71,7 +68,7 @@ namespace AnimaniaConsole.Core.Commands
             writer.Close();
             // Always close open filehandles explicity
             fs.Close();
-            return "Here you go!";
+            return $"PDF File has been created! You can find it in the following folder: {filePath}";
         }
     }
 }

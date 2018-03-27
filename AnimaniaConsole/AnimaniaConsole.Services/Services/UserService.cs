@@ -12,25 +12,20 @@ namespace AnimaniaConsole.Services.Services
 {
     public class UserService : IUserService
     {
-        private readonly IAnimaniaConsoleContext ctx;
-        private readonly IMapper mapper;
-
         public UserService(IAnimaniaConsoleContext ctx, IMapper mapper)
         {
-            this.ctx = ctx;
-            this.mapper = mapper;
+            this.Context = ctx;
+            this.Mapper = mapper;
         }
-        public IAnimaniaConsoleContext Context
-        {
-            get { return this.ctx; }
-        }
-        public IMapper Mapper
-        {
-            get { return this.mapper; }
-        }
+
+        public IAnimaniaConsoleContext Context { get; }
+
+        public IMapper Mapper { get; }
+
         public void RegisterUser(CreateUserModel userDTO)
         {
             var newUser = Mapper.Map<User>(userDTO);
+            newUser.Status = true;
             this.Context.Users.Add(newUser);
             Context.SaveChanges();
         }
@@ -40,11 +35,11 @@ namespace AnimaniaConsole.Services.Services
             User user;
             try
             {
-                user = this.Context.Users.Where(x => x.UserName == userName && x.Password == password).Single();
+                user = this.Context.Users.Where(x => x.UserName == userName && x.Password == password && x.Status == true).Single();
             }
             catch (Exception)
             {
-                throw new Exception("Failed to find user in database.");
+                throw new Exception("Failed to find such active user in database.");
             }
             userSession.Id = user.Id;
             userSession.UserName = user.UserName;
@@ -55,17 +50,12 @@ namespace AnimaniaConsole.Services.Services
             userSession.Id = 0;
             userSession.UserName = null;
         }
+
         public void ChangePassword(UserSessionModel userSession, string newPassword)
         {
             var user = this.Context.Users.Where(x => x.Id == userSession.Id).Single();
             user.Password = newPassword;
             this.Context.SaveChanges();
-
-        }
-        public IList<Post> GetAllPosts(UserSessionModel userSession)
-        {
-            var posts = this.Context.Posts.Where(x => x.UserId == userSession.Id).ToList();
-            return posts;
         }
 
         public int GetLoggedUserId(UserSessionModel userSession)
@@ -75,6 +65,19 @@ namespace AnimaniaConsole.Services.Services
                 throw new ArgumentException("You are not logged in! Please, log in and try again!");
             }
             return userSession.Id;
+        }
+
+        public void DeactivateUser(int userId)
+        {
+            var userToBeDeactivated = this.Context.Users.SingleOrDefault(x => x.Id == userId && x.Status == true);
+            if (userToBeDeactivated == null)
+            {
+                throw new ArgumentException("No such active user!");
+            }
+            userToBeDeactivated.Status = false;
+            Context.SaveChanges();  
+
+
         }
 
     }

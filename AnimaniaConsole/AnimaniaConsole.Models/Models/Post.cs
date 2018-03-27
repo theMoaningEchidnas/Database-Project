@@ -30,8 +30,8 @@ namespace AnimaniaConsole.Models.Models
         [Range(0, 100000, ErrorMessage = "Please, provide a price in range of 0 to 100,000")]
         public decimal Price { get; set; }
 
-        //TODO: check whether we can provide default value here
-        public bool Status { get; set; }
+        [Required]
+        public bool Status { get; set; } //True = Active    False = Archived 
 
         public int UserId { get; set; }
         public virtual User User { get; set; }

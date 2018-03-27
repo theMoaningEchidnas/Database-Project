@@ -15,14 +15,14 @@ namespace AnimaniaConsole.Core.Commands
         private readonly UserSessionModel session;
         private readonly IUserService userService;
 
-        public CreatePostCommand(IPostService postService, UserSessionModel session, IUserService userService)
+        public CreatePostCommand(IPostServices postService, UserSessionModel session, IUserService userService)
         {
             this.session = session;
             this.userService = userService;
             this.PostService = postService;
         }
 
-        public IPostService PostService { get; }
+        public IPostServices PostService { get; }
 
         public string Execute(IList<string> parameters)
         {

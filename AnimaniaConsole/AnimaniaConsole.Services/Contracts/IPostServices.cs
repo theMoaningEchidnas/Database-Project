@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace AnimaniaConsole.Services.Contracts
 {
-    public interface IPostService
+    public interface IPostServices
     {
-        IEnumerable<PostModel> ShowMyPosts(int userId);
+        IEnumerable<PostModel> GetAllMyPosts(int userId);
         void CreatePost(CreatePostModel createPostModel, int userId);
         IEnumerable<PostModel> SearchPosts(string searchedText);
         string PrintPostsToConsole(IEnumerable<PostModel> postsToPrint);

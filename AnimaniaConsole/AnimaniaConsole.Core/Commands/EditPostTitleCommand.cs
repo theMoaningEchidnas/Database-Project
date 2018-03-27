@@ -7,11 +7,11 @@ namespace AnimaniaConsole.Core.Commands
 {
     public class EditPostTitleCommand : ICommand
     {
-        private readonly IPostService postService;
+        private readonly IPostServices postService;
         private readonly UserSessionModel session;
         private readonly IUserService userService;
 
-        public EditPostTitleCommand(IPostService postService, UserSessionModel session, IUserService userService)
+        public EditPostTitleCommand(IPostServices postService, UserSessionModel session, IUserService userService)
         {
             this.postService = postService;
             this.session = session;

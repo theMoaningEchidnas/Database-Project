@@ -44,10 +44,11 @@
   <ItemGroup>
     <Compile Include="CommandContracts\ICommand.cs" />
     <Compile Include="Commands\CreatePostCommand.cs" />
+    <Compile Include="Commands\DeactivateUserCommand.cs" />
     <Compile Include="Commands\EditPostDescriptionCommand.cs" />
     <Compile Include="Commands\EditPostPriceCommand.cs" />
     <Compile Include="Commands\EditPostTitleCommand.cs" />
-    <Compile Include="Commands\GetPostsInPDF.cs" />
+    <Compile Include="Commands\GetPostsInPDFCommand.cs" />
     <Compile Include="Commands\SearchPostsCommand.cs" />
     <Compile Include="Commands\ShowMyPostsCommand.cs" />
     <Compile Include="Providers\CommandParser.cs" />
