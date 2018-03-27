@@ -45,11 +45,24 @@ namespace AnimaniaConsole.Core.Commands
 
             document.Open();
             // Add a simple and wellknown phrase to the document in a flow layout manner
-            document.Add(new Paragraph("Those are the current orders:"));
+            document.Add(new Paragraph("Those are the current posts:"));
             foreach (var item in userPosts)
             {
+                var date = item.PostDate.ToString();
+                string status = null; ;
+                if (item.Status)
+                {
+                    status = "ACTIVE";
+                }
+                else
+                {
+                    status = "INACTIVE";
+                }
+                document.Add(new Paragraph((date)));
+                document.Add(new Paragraph((status)));
+
                 document.Add(new Paragraph(item.Title));
-                document.Add(new Paragraph(item.Title));
+                document.Add(new Paragraph(item.Description));
 
             }
             // Close the document
