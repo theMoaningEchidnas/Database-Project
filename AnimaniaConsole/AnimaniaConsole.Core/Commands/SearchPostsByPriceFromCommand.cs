@@ -11,8 +11,8 @@ namespace AnimaniaConsole.Core.Commands
     public class SearchPostsByPriceFromCommand : ICommand
     {
 
-        private IPostService postService;
-        public SearchPostsByPriceFromCommand(IPostService postService)
+        private IPostServices postService;
+        public SearchPostsByPriceFromCommand(IPostServices postService)
         {
             this.postService = postService;
         }

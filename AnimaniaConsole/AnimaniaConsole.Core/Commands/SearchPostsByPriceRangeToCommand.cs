@@ -10,9 +10,9 @@ namespace AnimaniaConsole.Core.Commands
 {
     public class SearchPostsByPriceRangeToCommand : ICommand
     {
-        private readonly IPostService postService;
+        private readonly IPostServices postService;
 
-        public SearchPostsByPriceRangeToCommand(IPostService postService)
+        public SearchPostsByPriceRangeToCommand(IPostServices postService)
         {
             this.postService = postService;
         }

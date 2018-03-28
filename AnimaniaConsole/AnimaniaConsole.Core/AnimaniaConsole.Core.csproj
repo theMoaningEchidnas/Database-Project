@@ -49,7 +49,10 @@
     <Compile Include="Commands\EditPostPriceCommand.cs" />
     <Compile Include="Commands\EditPostTitleCommand.cs" />
     <Compile Include="Commands\GetPostsInPDFCommand.cs" />
+    <Compile Include="Commands\SearchPostsByPriceFromCommand.cs" />
+    <Compile Include="Commands\SearchPostsByPriceRangeToCommand.cs" />
     <Compile Include="Commands\SearchPostsCommand.cs" />
+    <Compile Include="Commands\SearchPostsInPriceRangeCommand.cs" />
     <Compile Include="Commands\ShowMyPostsCommand.cs" />
     <Compile Include="Providers\CommandParser.cs" />
     <Compile Include="CommandContracts\ICommandParser.cs" />
