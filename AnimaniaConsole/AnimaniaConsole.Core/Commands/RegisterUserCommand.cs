@@ -26,43 +26,14 @@ namespace AnimaniaConsole.Core.Commands
                 Password = parameters[2],
                 FirstName = parameters[3],
                 LastName = parameters[4],
-                Email = parameters[5]
+                Email = parameters[5],
+                Tel=parameters[6],
+                Facebook=parameters[7],
+                Skype=parameters[8]
             };
+            Service.RegisterUser(UserToRegister);
 
-            switch (parameters.Count)
-            {
-                //No additional Info
-                case 6:
-                    try
-                    {
-                        this.Service.RegisterUser(UserToRegister);
-                        message = $"User with Username:{UserToRegister.UserName} registered successfully!";
-                    }
-                    catch (Exception)
-                    {
-
-                        message = "Something went wrong try again!";
-
-                    }
-
-                    break;
-                ////Just Tel
-                //case 7:
-
-                //    break;
-                ////Tel and Skype
-                //case 8:
-
-                //    break;
-                ////Tel,Skype and Facebook
-                //case 9:
-                //    break;
-
-                default:
-
-                    break;
-            }
-            return message;
+            return message = $"WELCOME: | {UserToRegister.UserName} | Enjoy your Account : )";
 
         }
     }

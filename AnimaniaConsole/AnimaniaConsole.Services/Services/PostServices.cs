@@ -69,6 +69,24 @@ namespace AnimaniaConsole.Services.Services
 
             return searchResult;
         }
+        public IEnumerable<PostModel> SearchPostsFrom(string searchedText,int minPrice)
+        {
+            var searchResult = this.SearchPosts(searchedText);
+            var postsInThePriceRange = searchResult.Where(x => x.Price >= minPrice).ToList();
+            return postsInThePriceRange;
+        }
+        public IEnumerable<PostModel> SearchPostsTo(string searchedText, int maxPrice)
+        {
+            var searchResult = this.SearchPosts(searchedText);
+            var postsInThePriceRange = searchResult.Where(x => x.Price <= maxPrice).ToList();
+            return postsInThePriceRange;
+        }
+        public IEnumerable<PostModel> SearchPostsFromTo(string searchedText, int minPrice,int maxPrice)
+        {
+            var searchResult = this.SearchPosts(searchedText);
+            var postsInThePriceRange = searchResult.Where(x => x.Price <= maxPrice && x.Price >=minPrice).ToList();
+            return postsInThePriceRange;
+        }
 
         public string PrintPostsToConsole(IEnumerable<PostModel> listOfFoundPosts)
         {

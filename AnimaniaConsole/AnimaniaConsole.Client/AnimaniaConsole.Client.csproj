@@ -105,7 +105,7 @@
       <Name>AnimaniaConsole.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\AnimaniaConsole.Services\AnimaniaConsole.Services.csproj">
-      <Project>{4e5041ff-4bb2-4dd9-97e7-6e351c5173f7}</Project>
+      <Project>{4E5041FF-4BB2-4DD9-97E7-6E351C5173F7}</Project>
       <Name>AnimaniaConsole.Services</Name>
     </ProjectReference>
   </ItemGroup>

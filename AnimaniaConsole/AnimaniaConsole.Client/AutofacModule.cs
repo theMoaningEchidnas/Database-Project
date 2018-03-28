@@ -26,10 +26,6 @@ namespace Client
             builder.RegisterType<Writer>().As<IWriter>().SingleInstance();
             builder.RegisterType<Reader>().As<IReader>().SingleInstance();
             builder.RegisterType<Engine>().As<IEngine>().SingleInstance();
-
-
-
-
             builder.RegisterType<AnimaniaConsoleContext>().As<IAnimaniaConsoleContext>().InstancePerDependency();
             builder.RegisterType<PostServices>().As<IPostServices>();
             //the following three are single instance because we do not expect to change (add/ remove items) them during user interactions
@@ -54,6 +50,9 @@ namespace Client
             builder.RegisterType<EditPostDescriptionCommand>().Named<ICommand>("EditPostDescription").SingleInstance();
             builder.RegisterType<EditPostPriceCommand>().Named<ICommand>("EditPostPrice").SingleInstance();
             builder.RegisterType<DeactivateUserCommand>().Named<ICommand>("DeactivateUser").SingleInstance();
+            builder.RegisterType<SearchPostsByPriceFromCommand>().Named<ICommand>("SearchPostsByPriceFrom").SingleInstance();
+            builder.RegisterType<SearchPostsByPriceRangeToCommand>().Named<ICommand>("SearchPostsByPriceTo").SingleInstance();
+            builder.RegisterType<SearchPostsInPriceRangeCommand>().Named<ICommand>("SearchPostsByPriceInRange").SingleInstance();
 
 
         }
