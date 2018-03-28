@@ -32,7 +32,6 @@ namespace AnimaniaConsole.Core.Commands
                 Id = postId,
                 Title = newTitle
             };
-
             var loggedUserId = this.userService.GetLoggedUserId(session);
             if (loggedUserId == 0) { throw new ArgumentException("You are not logged in! Please, log in and try again!"); }
 
