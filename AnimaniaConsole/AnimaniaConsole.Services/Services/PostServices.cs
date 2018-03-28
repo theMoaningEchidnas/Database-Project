@@ -75,6 +75,13 @@ namespace AnimaniaConsole.Services.Services
             this.context.SaveChanges();
         }
 
+        public void DeactivatePost(int postId, int userId)
+        {
+            var postToDeactivate = this.context.Posts.Where(x => x.Id == postId && x.UserId == userId).Single();
+            postToDeactivate.Status = false;
+            this.context.SaveChanges();
+        }
+
         public IEnumerable<PostModel> SearchPosts(string searchedText)
         {
             var posts = this.context.Posts
@@ -90,12 +97,14 @@ namespace AnimaniaConsole.Services.Services
             var postsInThePriceRange = searchResult.Where(x => x.Price >= minPrice).ToList();
             return postsInThePriceRange;
         }
+
         public IEnumerable<PostModel> SearchPostsTo(string searchedText, int maxPrice)
         {
             var searchResult = this.SearchPosts(searchedText);
             var postsInThePriceRange = searchResult.Where(x => x.Price <= maxPrice).ToList();
             return postsInThePriceRange;
         }
+
         public IEnumerable<PostModel> SearchPostsFromTo(string searchedText, int minPrice, int maxPrice)
         {
             var searchResult = this.SearchPosts(searchedText);

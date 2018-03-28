@@ -45,6 +45,7 @@
     <Compile Include="CommandContracts\ICommand.cs" />
     <Compile Include="Commands\ActivatePostCommand.cs" />
     <Compile Include="Commands\CreatePostCommand.cs" />
+    <Compile Include="Commands\DeactivatePostCommand.cs" />
     <Compile Include="Commands\DeactivateUserCommand.cs" />
     <Compile Include="Commands\EditPostDescriptionCommand.cs" />
     <Compile Include="Commands\EditPostPriceCommand.cs" />

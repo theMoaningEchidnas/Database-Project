@@ -54,8 +54,8 @@ namespace Client
             builder.RegisterType<SearchPostsInPriceRangeCommand>().Named<ICommand>("SearchPostsByPriceInRange").SingleInstance();
             builder.RegisterType<ShowMyDeactivatedPostsCommand>().Named<ICommand>("ShowDeactivatedPosts").SingleInstance();
             builder.RegisterType<ActivatePostCommand>().Named<ICommand>("ActivatePost").SingleInstance();
-
-            
+            builder.RegisterType<ShowMyActivePostsCommand>().Named<ICommand>("ShowActivePosts").SingleInstance();
+            builder.RegisterType<DeactivatePostCommand>().Named<ICommand>("DeactivatePost").SingleInstance();        
         }
     }
 }

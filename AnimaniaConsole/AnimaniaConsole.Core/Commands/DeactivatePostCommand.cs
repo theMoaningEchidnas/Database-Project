@@ -1,5 +1,4 @@
 ﻿using AnimaniaConsole.Core.CommandContracts;
-using AnimaniaConsole.DTO.Models;
 using AnimaniaConsole.Services.Contracts;
 using System;
 using System.Collections.Generic;
@@ -9,23 +8,22 @@ using System.Threading.Tasks;
 
 namespace AnimaniaConsole.Core.Commands
 {
-    public class ShowMyActivePostsCommand : ICommand
+    public class DeactivatePostCommand : ICommand
     {
         private readonly IPostServices postService;
         private readonly IUserService userService;
 
-        public ShowMyActivePostsCommand(IPostServices postService, IUserService userService)
+        public DeactivatePostCommand(IPostServices postService, IUserService userService)
         {
             this.postService = postService;
             this.userService = userService;
         }
         public string Execute(IList<string> parameters)
         {
-            var userId = userService.GetLoggedUserId();
+            var postToDeactivate = int.Parse(parameters[1]);
+            this.postService.DeactivatePost(postToDeactivate, userService.GetLoggedUserId());
 
-            var posts = postService.GetActivePosts(userId);
-
-            return postService.PrintPostsToConsole(posts);
+            return $"Post With ID:{postToDeactivate} was deactivated!";
         }
     }
 }

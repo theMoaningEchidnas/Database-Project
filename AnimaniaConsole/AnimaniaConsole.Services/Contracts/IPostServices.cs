@@ -18,6 +18,7 @@ namespace AnimaniaConsole.Services.Contracts
         IEnumerable<PostModel> GetActivePosts(int userId);
         IEnumerable<PostModel> GetAllDeactivetedPosts(int userId);
         void ActivatePost(int postId);
+        void DeactivatePost(int postId, int userId);
 
 
         EditPostModel FindPostById(int postId);
