@@ -59,15 +59,21 @@ namespace AnimaniaConsole.Services.Services
         public IEnumerable<PostModel> GetAllMyPosts(int userId)
         {
             var posts = this.context.Posts.Where(x => x.UserId == userId).ProjectTo<PostModel>();
+            foreach (var item in posts)
+            {
+                Console.WriteLine(item.Title);
+            }
             return posts;
         }
 
         public IEnumerable<PostModel> SearchPosts(string searchedText)
         {
-            var posts = this.context.Posts.ProjectTo<PostModel>();
-            var searchResult = posts.Where(x => x.Title.Contains(searchedText) || x.Description.Contains(searchedText)).ToList();
+            var posts = this.context.Posts
+                .Where(x => x.Title.Contains(searchedText) || x.Description.Contains(searchedText))
+                .ProjectTo<PostModel>();
+            //var searchResult = posts.ToList();
 
-            return searchResult;
+            return posts;
         }
         public IEnumerable<PostModel> SearchPostsFrom(string searchedText,int minPrice)
         {
