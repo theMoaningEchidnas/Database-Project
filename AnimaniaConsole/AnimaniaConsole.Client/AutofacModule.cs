@@ -31,7 +31,7 @@ namespace Client
 
 
             builder.RegisterType<AnimaniaConsoleContext>().As<IAnimaniaConsoleContext>().InstancePerDependency();
-            builder.RegisterType<PostService>().As<IPostService>();
+            builder.RegisterType<PostServices>().As<IPostServices>();
             //the following three are single instance because we do not expect to change (add/ remove items) them during user interactions
             builder.RegisterType<LocationServices>().As<ILocationServices>().SingleInstance();
             builder.RegisterType<AnimalTypeServices>().As<IAnimalTypeServices>().SingleInstance();
@@ -39,11 +39,11 @@ namespace Client
 
             builder.Register(x => Mapper.Instance);
             builder.RegisterType<UserService>().As<IUserService>();
-            builder.RegisterType<SessionService>().As<ISessionService>();
+            builder.RegisterType<SessionService>().As<ISessionService>().SingleInstance();
+            //If above is not single then the different commands related to same user will not work properly, e.g. we deactivate user and then try to show his/her posts :)
 
             builder.RegisterType<UserSessionModel>().AsSelf().SingleInstance();
-            builder.RegisterType<GetPostsInPDF>().Named<ICommand>("PostsInPDF").SingleInstance();
-
+            builder.RegisterType<GetPostsInPDFCommand>().Named<ICommand>("GetPostsInPDF").SingleInstance();
             builder.RegisterType<ChangePasswordCommand>().Named<ICommand>("ChangePassword").SingleInstance();
             builder.RegisterType<RegisterUserCommand>().Named<ICommand>("RegisterUser").SingleInstance();
             builder.RegisterType<CreatePostCommand>().Named<ICommand>("CreatePost").SingleInstance();
@@ -53,9 +53,7 @@ namespace Client
             builder.RegisterType<EditPostTitleCommand>().Named<ICommand>("EditPostTitle").SingleInstance();
             builder.RegisterType<EditPostDescriptionCommand>().Named<ICommand>("EditPostDescription").SingleInstance();
             builder.RegisterType<EditPostPriceCommand>().Named<ICommand>("EditPostPrice").SingleInstance();
-            builder.RegisterType<SearchPostsByPriceFromCommand>().Named<ICommand>("SearchPostsByPriceFrom").SingleInstance();
-            builder.RegisterType<SearchPostsByPriceRangeToCommand>().Named<ICommand>("SearchPostsByPriceTo").SingleInstance();
-            builder.RegisterType<SearchPostsInPriceRangeCommand>().Named<ICommand>("SearchPostsByPriceInRange").SingleInstance();
+            builder.RegisterType<DeactivateUserCommand>().Named<ICommand>("DeactivateUser").SingleInstance();
 
 
         }

@@ -8,11 +8,11 @@ namespace AnimaniaConsole.Core.Commands
 {
     public class ShowMyPostsCommand : ICommand
     {
-        private readonly IPostService postService;
+        private readonly IPostServices postService;
         private readonly UserSessionModel session;
         private readonly IUserService userService;
 
-        public ShowMyPostsCommand(IPostService postService, UserSessionModel session, IUserService userService)
+        public ShowMyPostsCommand(IPostServices postService, UserSessionModel session, IUserService userService)
         {
             this.postService = postService;
             this.session = session;
@@ -22,12 +22,8 @@ namespace AnimaniaConsole.Core.Commands
         public string Execute(IList<string> parameters)
         {
             var userId = this.userService.GetLoggedUserId(session);
-            if (userId == 0)
-            {
-                throw new ArgumentException("You are not logged in! Please, log in and try again!");
-            }
 
-            var myPosts = postService.ShowMyPosts(userId);
+            var myPosts = postService.GetAllMyPosts(userId);
             return postService.PrintPostsToConsole(myPosts);
         }
     }

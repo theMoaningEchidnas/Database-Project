@@ -258,6 +258,14 @@
     <Compile Include="Migrations\201803241213405_MakeUserNameSmallerFrom6To4Chars.Designer.cs">
       <DependentUpon>201803241213405_MakeUserNameSmallerFrom6To4Chars.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803271549371_AddStatusToUserTable.cs" />
+    <Compile Include="Migrations\201803271549371_AddStatusToUserTable.Designer.cs">
+      <DependentUpon>201803271549371_AddStatusToUserTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803271556266_MakeStatusColumnsInUserAndPostTableRequred.cs" />
+    <Compile Include="Migrations\201803271556266_MakeStatusColumnsInUserAndPostTableRequred.Designer.cs">
+      <DependentUpon>201803271556266_MakeStatusColumnsInUserAndPostTableRequred.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\EntityValidationErrorsOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -428,6 +436,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803241213405_MakeUserNameSmallerFrom6To4Chars.resx">
       <DependentUpon>201803241213405_MakeUserNameSmallerFrom6To4Chars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803271549371_AddStatusToUserTable.resx">
+      <DependentUpon>201803271549371_AddStatusToUserTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803271556266_MakeStatusColumnsInUserAndPostTableRequred.resx">
+      <DependentUpon>201803271556266_MakeStatusColumnsInUserAndPostTableRequred.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

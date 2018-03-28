@@ -44,6 +44,9 @@ namespace AnimaniaConsole.Models.Models
         [StringLength(100, MinimumLength = 3, ErrorMessage = "Invalid Email! It must be between 1 and 100 characters")]
         public string Email { get; set; }
 
+        [Required]
+        public bool Status { get; set; } //True = Active    False = Disabled
+
         public virtual ICollection<Post> Posts { get; set; }
         public virtual ICollection<Animal> Animals { get; set; }
 

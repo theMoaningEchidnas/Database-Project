@@ -14,7 +14,7 @@ namespace Client
                 config.CreateMap<PostModel, Post>().ReverseMap();
                 config.CreateMap<CreateUserModel, User>().ReverseMap();
                 config.CreateMap<CreatePostModel, Post>().ReverseMap();
-                //config.CreateMap<EditPostModel, Post>().ReverseMap();
+                config.CreateMap<EditPostModel, Post>().ReverseMap();
                 config.CreateMap<LocationModel, Location>().ReverseMap();
             });
 

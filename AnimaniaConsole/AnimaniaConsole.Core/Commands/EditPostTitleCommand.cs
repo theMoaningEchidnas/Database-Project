@@ -1,23 +1,19 @@
 ﻿using AnimaniaConsole.Core.CommandContracts;
-using AnimaniaConsole.Data;
 using AnimaniaConsole.DTO.Models;
 using AnimaniaConsole.Services.Contracts;
-using System;
 using System.Collections.Generic;
 
 namespace AnimaniaConsole.Core.Commands
 {
     public class EditPostTitleCommand : ICommand
     {
-        private readonly IPostService postService;
-        private readonly IAnimaniaConsoleContext context;
+        private readonly IPostServices postService;
         private readonly UserSessionModel session;
         private readonly IUserService userService;
 
-        public EditPostTitleCommand(IPostService postService, IAnimaniaConsoleContext context, UserSessionModel session, IUserService userService)
+        public EditPostTitleCommand(IPostServices postService, UserSessionModel session, IUserService userService)
         {
             this.postService = postService;
-            this.context = context;
             this.session = session;
             this.userService = userService;
         }
@@ -25,23 +21,17 @@ namespace AnimaniaConsole.Core.Commands
         public string Execute(IList<string> parameters)
         {
             var postId = int.Parse(parameters[1]);
-            var newTitle = parameters[2];
 
-            var editPostModel = new EditPostModel()
-            {
-                Id = postId,
-                Title = newTitle
-            };
             var loggedUserId = this.userService.GetLoggedUserId(session);
-            if (loggedUserId == 0) { throw new ArgumentException("You are not logged in! Please, log in and try again!"); }
 
-            var postToBeEdited = context.Posts.Find(postId);
-            if (postToBeEdited == null) { throw new ArgumentException("Such post doesn't exist. Please check the id and try again!"); }
+            var postToBeEdited = this.postService.FindPostById(postId);
 
-            var userIdOwnerOfPostToBeEdited = postToBeEdited.UserId;
-            if (loggedUserId != userIdOwnerOfPostToBeEdited) { return "Post Id provided is not correct. Please check the id and try again!"; }
+            postToBeEdited.Title = parameters[2];
 
-            var result = postService.EditPostTitle(editPostModel);
+            this.postService.VerifyPostOwnerId(postToBeEdited.UserId, loggedUserId);
+
+            var result = postService.EditPostTitle(postToBeEdited);
+
             return result;
         }
     }
