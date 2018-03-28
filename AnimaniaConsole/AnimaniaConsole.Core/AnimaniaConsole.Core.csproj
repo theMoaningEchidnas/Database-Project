@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandContracts\ICommand.cs" />
+    <Compile Include="Commands\ActivatePostCommand.cs" />
     <Compile Include="Commands\CreatePostCommand.cs" />
     <Compile Include="Commands\DeactivateUserCommand.cs" />
     <Compile Include="Commands\EditPostDescriptionCommand.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Commands\SearchPostsByPriceRangeToCommand.cs" />
     <Compile Include="Commands\SearchPostsCommand.cs" />
     <Compile Include="Commands\SearchPostsInPriceRangeCommand.cs" />
+    <Compile Include="Commands\ShowMyDeactivatedPostsCommand.cs" />
     <Compile Include="Commands\ShowMyPostsCommand.cs" />
     <Compile Include="Providers\CommandParser.cs" />
     <Compile Include="CommandContracts\ICommandParser.cs" />

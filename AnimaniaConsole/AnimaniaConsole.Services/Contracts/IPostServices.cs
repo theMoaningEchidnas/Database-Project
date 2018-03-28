@@ -15,6 +15,8 @@ namespace AnimaniaConsole.Services.Contracts
         IEnumerable<PostModel> SearchPostsFrom(string searchedText, int minPrice);
         IEnumerable<PostModel> SearchPostsTo(string searchedText, int maxPrice);
         IEnumerable<PostModel> SearchPostsFromTo(string searchedText, int minPrice,int maxPrice);
+        IEnumerable<PostModel> GetAllDeactivetedPosts(int userId);
+        void ActivatePost(int postId);
 
 
         EditPostModel FindPostById(int postId);

@@ -50,16 +50,21 @@ namespace AnimaniaConsole.Services.Services
             this.context.SaveChanges();
         }
 
-        //public IList<Post> GetAllPosts(UserSessionModel userSession)
-        //{
-        //    var posts = this.context.Posts.Where(x => x.UserId == userSession.Id).ToList();
-        //    return posts;
-        //}
-
         public IEnumerable<PostModel> GetAllMyPosts(int userId)
         {
             var posts = this.context.Posts.Where(x => x.UserId == userId).ProjectTo<PostModel>();
             return posts;
+        }
+        public IEnumerable<PostModel> GetAllDeactivetedPosts(int userId)
+        {
+            var posts = this.context.Posts.Where(x => x.UserId == userId && x.Status == false).ProjectTo<PostModel>();
+            return posts;
+        }
+        public void ActivatePost(int postId)
+        {
+            var postToActivate = this.context.Posts.Where(x => x.Id == postId).Single();
+            postToActivate.Status = true;
+            this.context.SaveChanges();
         }
 
         public IEnumerable<PostModel> SearchPosts(string searchedText)
@@ -69,7 +74,7 @@ namespace AnimaniaConsole.Services.Services
 
             return searchResult;
         }
-        public IEnumerable<PostModel> SearchPostsFrom(string searchedText,int minPrice)
+        public IEnumerable<PostModel> SearchPostsFrom(string searchedText, int minPrice)
         {
             var searchResult = this.SearchPosts(searchedText);
             var postsInThePriceRange = searchResult.Where(x => x.Price >= minPrice).ToList();
@@ -81,10 +86,10 @@ namespace AnimaniaConsole.Services.Services
             var postsInThePriceRange = searchResult.Where(x => x.Price <= maxPrice).ToList();
             return postsInThePriceRange;
         }
-        public IEnumerable<PostModel> SearchPostsFromTo(string searchedText, int minPrice,int maxPrice)
+        public IEnumerable<PostModel> SearchPostsFromTo(string searchedText, int minPrice, int maxPrice)
         {
             var searchResult = this.SearchPosts(searchedText);
-            var postsInThePriceRange = searchResult.Where(x => x.Price <= maxPrice && x.Price >=minPrice).ToList();
+            var postsInThePriceRange = searchResult.Where(x => x.Price <= maxPrice && x.Price >= minPrice).ToList();
             return postsInThePriceRange;
         }
 
