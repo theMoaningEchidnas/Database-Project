@@ -53,14 +53,14 @@
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |Register User|Стефан|6|-|4|-|31|
 |Log In User|Георги|4|-|2|-|31|
-|Disable User|Ангел|4|-|3|-|11|
-|Edit User|Everyone|5|-|4|-|11|
+|Deactivate User|Ангел|4|-|3|-|11|
+|Change User Password|Everyone|5|-|4|-|11|
 |Create Post|Ангел|10|-|10|-|31|
 |Activate/Deactivate Post|Стефан, Георги|5|-|3|-|7|
 |Edit Post|Everyone|5|-|3|-|17|
 |Search in title and desc|Ангел|5|-|4|-|31|
-|Sort by animal type|Георги|2|-|1|-|1|
-|Sort by price range|Стефан|2|-|3|-|1|
+|Search by animal type|Георги|2|-|1|-|1|
+|Search by price range|Стефан|2|-|3|-|1|
 |Database Setup|Everyone|4|-|-|-|53|
 |Setup Core|Everyone|10|-|10|-|53|
 |JSON Breed|Георги|8|-|5|-|31|
