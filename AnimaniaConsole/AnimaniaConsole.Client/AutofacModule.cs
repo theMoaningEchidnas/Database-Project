@@ -56,7 +56,7 @@ namespace Client
             builder.RegisterType<ShowMyDeactivatedPostsCommand>().Named<ICommand>("ShowDeactivatedPosts").SingleInstance();
             builder.RegisterType<ActivatePostCommand>().Named<ICommand>("ActivatePost").SingleInstance();
 
-
+            
         }
     }
 }
