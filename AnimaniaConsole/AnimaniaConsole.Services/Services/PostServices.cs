@@ -97,16 +97,18 @@ namespace AnimaniaConsole.Services.Services
 
             foreach (var foundPost in listOfFoundPosts)
             {
+                var postStatus = foundPost.Status ? "Active" : "Inactive";
                 var location = context.Locations.Where(x => x.Id == foundPost.Animal.LocationId)
                     .Select(x => x.LocationName).Single();
                 searchResult.AppendLine(string.Format(
-                    "#PostId: {0}{5}" +
-                    "#Title: {1}{5}" +
-                    "#Description: {2}{5}" +
-                    "#Price: {3}{5}" +
-                    "#Location: {4}{5}" +
-                    "--------------------{5}",
-                    foundPost.Id, foundPost.Title, foundPost.Description, foundPost.Price, location, Environment.NewLine));
+                    "#PostId: {0}{6}" +
+                    "#Post Status: {5}{6}" +
+                    "#Title: {1}{6}" +
+                    "#Description: {2}{6}" +
+                    "#Price: {3}{6}" +
+                    "#Location: {4}{6}" +
+                    "--------------------{6}",
+                    foundPost.Id, foundPost.Title, foundPost.Description, foundPost.Price, location, postStatus, Environment.NewLine));
             }
             return searchResult.ToString();
         }
