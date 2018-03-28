@@ -8,10 +8,12 @@ namespace AnimaniaConsole.Services.Contracts
     public interface IUserService
     {
         void RegisterUser(CreateUserModel user);
-        void ChangePassword(UserSessionModel userSession, string newPassword);
-        void LogInUser(string userName, string password, UserSessionModel userSession);
-        void LogOutUser(UserSessionModel userSession);
-        int GetLoggedUserId(UserSessionModel userSession);
+        void ChangePassword(string newPassword);
+        void LogInUser(string userName, string password);
+        void LogOutUser();
+        int GetLoggedUserId();
         void DeactivateUser(int userId);
+        string GetLoggedUserName();
+        bool ValidateUser();
     }
 }

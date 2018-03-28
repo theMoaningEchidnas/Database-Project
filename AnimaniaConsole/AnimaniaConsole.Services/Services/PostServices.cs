@@ -53,10 +53,14 @@ namespace AnimaniaConsole.Services.Services
         public IEnumerable<PostModel> GetAllMyPosts(int userId)
         {
             var posts = this.context.Posts.Where(x => x.UserId == userId).ProjectTo<PostModel>();
-            foreach (var item in posts)
-            {
-                Console.WriteLine(item.Title);
-            }
+            
+            return posts;
+        }
+
+        public IEnumerable<PostModel> GetActivePosts(int userId)
+        {
+            var posts = this.context.Posts.Where(x => x.UserId == userId && x.Status == true).ProjectTo<PostModel>();
+
             return posts;
         }
         public IEnumerable<PostModel> GetAllDeactivetedPosts(int userId)

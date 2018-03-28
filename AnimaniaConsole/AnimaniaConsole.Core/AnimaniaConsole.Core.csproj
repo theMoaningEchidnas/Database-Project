@@ -55,6 +55,7 @@
     <Compile Include="Commands\SearchPostsCommand.cs" />
     <Compile Include="Commands\SearchPostsInPriceRangeCommand.cs" />
     <Compile Include="Commands\ShowMyDeactivatedPostsCommand.cs" />
+    <Compile Include="Commands\ShowMyActivePostsCommand.cs" />
     <Compile Include="Commands\ShowMyPostsCommand.cs" />
     <Compile Include="Providers\CommandParser.cs" />
     <Compile Include="CommandContracts\ICommandParser.cs" />

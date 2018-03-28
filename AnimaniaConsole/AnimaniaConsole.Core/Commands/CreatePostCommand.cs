@@ -12,12 +12,10 @@ namespace AnimaniaConsole.Core.Commands
 
     public class CreatePostCommand : ICommand
     {
-        private readonly UserSessionModel session;
         private readonly IUserService userService;
 
-        public CreatePostCommand(IPostServices postService, UserSessionModel session, IUserService userService)
+        public CreatePostCommand(IPostServices postService, IUserService userService)
         {
-            this.session = session;
             this.userService = userService;
             this.PostService = postService;
         }
@@ -26,7 +24,7 @@ namespace AnimaniaConsole.Core.Commands
 
         public string Execute(IList<string> parameters)
         {
-            var userId = this.userService.GetLoggedUserId(session);
+            var userId = this.userService.GetLoggedUserId();
 
             var BD = DateTime.ParseExact(parameters[4], "d.M.yyyy", CultureInfo.InvariantCulture);
 

@@ -9,21 +9,22 @@ using System.Threading.Tasks;
 
 namespace AnimaniaConsole.Core.Commands
 {
-    public class ShowMyDeactivatedPostsCommand : ICommand
+    class ShowMyActivePostsCommand : ICommand
     {
-        private readonly IUserService userService;
         private readonly IPostServices postService;
+        private readonly IUserService userService;
 
-        public ShowMyDeactivatedPostsCommand(IUserService userService,IPostServices postService)
+        public ShowMyActivePostsCommand(IPostServices postService, IUserService userService)
         {
-            this.userService = userService;
             this.postService = postService;
+            this.userService = userService;
         }
         public string Execute(IList<string> parameters)
         {
-            var userID = userService.GetLoggedUserId();
-            var postsToShow = postService.GetAllDeactivetedPosts(userID);
-            return postService.PrintPostsToConsole(postsToShow);
+            var userId = userService.GetLoggedUserId();
+
+           // var posts  = 
+            return "";
         }
     }
 }

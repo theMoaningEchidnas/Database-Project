@@ -11,23 +11,20 @@ namespace AnimaniaConsole.Core.Commands
         private readonly IWriter consoleWriter;
         private readonly IReader consoleReader;
         private readonly IUserService userService;
-        private readonly UserSessionModel session;
 
 
-        public DeactivateUserCommand(IWriter consoleWriter, IReader consoleReader, IUserService userService, UserSessionModel session)
+        public DeactivateUserCommand(IWriter consoleWriter, IReader consoleReader, IUserService userService)
         {
             this.consoleWriter = consoleWriter;
             this.consoleReader = consoleReader;
-            this.userService = userService;
-            this.session = session;
-            
+            this.userService = userService;           
         }
 
 
         public string Execute(IList<string> parameters)
         {
 
-            this.userService.GetLoggedUserId(session);
+            this.userService.GetLoggedUserId();
 
             consoleWriter.WriteLine("Are you sure? Please confirm: 'Yes' or 'No' ");
             var response = consoleReader.ReadLine();
@@ -40,14 +37,14 @@ namespace AnimaniaConsole.Core.Commands
             if (response == "Yes")
             {
                 //Deactivate
-                var userName = session.UserName;
-                userService.DeactivateUser(session.Id);
-                userService.LogOutUser(session);
+                var userName = userService.GetLoggedUserName();
+                userService.DeactivateUser(userService.GetLoggedUserId());
+                userService.LogOutUser();
                 return $"User {userName} was successfully deactivated!";
             }
             else
             {
-                return $"User {session.UserName} remains ACTIVE!";
+                return $"User {userService.GetLoggedUserName()} remains ACTIVE!";
             }
 
 

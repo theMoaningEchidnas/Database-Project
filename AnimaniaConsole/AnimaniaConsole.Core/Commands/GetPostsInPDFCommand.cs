@@ -13,20 +13,18 @@ namespace AnimaniaConsole.Core.Commands
     public class GetPostsInPDFCommand : ICommand
     {
         private readonly IPostServices postServices;
+        private readonly IUserService userService;
 
-        public GetPostsInPDFCommand(ISessionService sessionSerivce, UserSessionModel sessionUser, IPostServices postServices)
+        public GetPostsInPDFCommand(IPostServices postServices, IUserService userService)
         {
             this.postServices = postServices;
-            SessionSerivce = sessionSerivce;
-            SessionUser = sessionUser;
+            this.userService = userService;
         }
-
-        public ISessionService SessionSerivce { get; }
-        public UserSessionModel SessionUser { get; }
+        
 
         public string Execute(IList<string> parameters)
         {
-            var userPosts = postServices.GetAllMyPosts(SessionUser.Id);
+            var userPosts = postServices.GetAllMyPosts(userService.GetLoggedUserId());
             var random = new Random().Next();
             string filePath = "../../../AnimaniaConsole.Core/PDFReports/";
             string fileName = $"{random}.pdf";

@@ -15,21 +15,17 @@ namespace AnimaniaConsole.Core.Engine
         private ICommandParser parser;
         private ICommandProcessor processor;
         private IWriter writer;
-        private UserSessionModel session;
 
         public Engine(IReader reader,
             ICommandProcessor processor,
             ICommandParser parser,
-            IWriter writer,
-            UserSessionModel session
-
-             )
+            IWriter writer
+            )
         {
             this.reader = reader;
             this.processor = processor;
             this.parser = parser;
             this.writer = writer;
-            this.session = session;
         }
 
         string commandAsString = null;

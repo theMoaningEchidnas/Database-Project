@@ -10,13 +10,11 @@ namespace AnimaniaConsole.Core.Commands
     public class EditPostDescriptionCommand : ICommand
     {
         private readonly IPostServices postService;
-        private readonly UserSessionModel session;
         private readonly IUserService userService;
 
-        public EditPostDescriptionCommand(IPostServices postService, UserSessionModel session, IUserService userService)
+        public EditPostDescriptionCommand(IPostServices postService, IUserService userService)
         {
             this.postService = postService;
-            this.session = session;
             this.userService = userService;
         }
 
@@ -24,7 +22,7 @@ namespace AnimaniaConsole.Core.Commands
         {
             var postId = int.Parse(parameters[1]);
 
-            var loggedUserId = this.userService.GetLoggedUserId(session);
+            var loggedUserId = this.userService.GetLoggedUserId();
 
             var postToBeEdited = this.postService.FindPostById(postId);
 

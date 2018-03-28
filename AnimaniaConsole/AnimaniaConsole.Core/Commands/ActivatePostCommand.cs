@@ -13,12 +13,10 @@ namespace AnimaniaConsole.Core.Commands
     public class ActivatePostCommand : ICommand
     {
         private readonly IPostServices postService;
-        private readonly UserSessionModel user;
 
-        public ActivatePostCommand(IPostServices postService,UserSessionModel user)
+        public ActivatePostCommand(IPostServices postService)
         {
             this.postService = postService;
-            this.user = user;
         }
         public string Execute(IList<string> parameters)
         {

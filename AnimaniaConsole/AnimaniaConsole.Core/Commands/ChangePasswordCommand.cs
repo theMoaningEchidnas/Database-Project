@@ -8,24 +8,20 @@ namespace AnimaniaConsole.Core.Commands
     public class ChangePasswordCommand : ICommand
     {
 
-        public ChangePasswordCommand(IUserService userService, ISessionService sessionService, UserSessionModel session)
+        public ChangePasswordCommand(IUserService userService)
         {
             this.UserService = userService;
-            this.SessionService = sessionService;
-            this.Session = session;
         }
 
         public IUserService UserService { get; }
-        public ISessionService SessionService { get; }
-        public UserSessionModel Session { get; }
 
         public string Execute(IList<string> parameters)
         {
-            var result = SessionService.ValidateUser(this.Session);
+            var result = UserService.ValidateUser();
             if (result == true)
             {
                 var password = parameters[1];
-                UserService.ChangePassword(this.Session, password);
+                UserService.ChangePassword(password);
                 return "Password changed!"; ;
             }
             else
