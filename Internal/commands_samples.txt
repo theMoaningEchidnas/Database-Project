@@ -1,5 +1,8 @@
 RegisterUser;Auser;Apassword123;Kremvirsh;KenBoni;obichame.kremvirshken.vseki.den@meso.edu
 
+RegisterUser;Cuser;Cpassword123;Kremvirsh;KenBoni;obichame.kremvirsh.ken@meso.edu
+RegisterUser;Duser;Dpassword123;Kremvirsh;Sachi;sachi@meso.edu
+
 LogInUser;Buser;Bpassword123
 EditPostTitle;10;NEW NEW NEW Title
 ShowMyPosts
@@ -18,3 +21,5 @@ GetPostsInPDF
 
 
 Преместване на AutofacModule и AutoMapperConfig в Core 
+LogInUser - session both in Command and UserService
+No such command, please type 'Help' to see all available commands!
