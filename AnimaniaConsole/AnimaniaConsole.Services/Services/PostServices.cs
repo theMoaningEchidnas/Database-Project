@@ -53,6 +53,10 @@ namespace AnimaniaConsole.Services.Services
         public IEnumerable<PostModel> GetAllMyPosts(int userId)
         {
             var posts = this.context.Posts.Where(x => x.UserId == userId).ProjectTo<PostModel>();
+            foreach (var item in posts)
+            {
+                Console.WriteLine(item.Title);
+            }
             return posts;
         }
         public IEnumerable<PostModel> GetAllDeactivetedPosts(int userId)
@@ -69,10 +73,12 @@ namespace AnimaniaConsole.Services.Services
 
         public IEnumerable<PostModel> SearchPosts(string searchedText)
         {
-            var posts = this.context.Posts.ProjectTo<PostModel>();
-            var searchResult = posts.Where(x => x.Title.Contains(searchedText) || x.Description.Contains(searchedText)).ToList();
+            var posts = this.context.Posts
+                .Where(x => x.Title.Contains(searchedText) || x.Description.Contains(searchedText))
+                .ProjectTo<PostModel>();
+            //var searchResult = posts.ToList();
 
-            return searchResult;
+            return posts;
         }
         public IEnumerable<PostModel> SearchPostsFrom(string searchedText, int minPrice)
         {
@@ -102,16 +108,18 @@ namespace AnimaniaConsole.Services.Services
 
             foreach (var foundPost in listOfFoundPosts)
             {
+                var postStatus = foundPost.Status ? "Active" : "Inactive";
                 var location = context.Locations.Where(x => x.Id == foundPost.Animal.LocationId)
                     .Select(x => x.LocationName).Single();
                 searchResult.AppendLine(string.Format(
-                    "#PostId: {0}{5}" +
-                    "#Title: {1}{5}" +
-                    "#Description: {2}{5}" +
-                    "#Price: {3}{5}" +
-                    "#Location: {4}{5}" +
-                    "--------------------{5}",
-                    foundPost.Id, foundPost.Title, foundPost.Description, foundPost.Price, location, Environment.NewLine));
+                    "#PostId: {0}{6}" +
+                    "#Post Status: {5}{6}" +
+                    "#Title: {1}{6}" +
+                    "#Description: {2}{6}" +
+                    "#Price: {3}{6}" +
+                    "#Location: {4}{6}" +
+                    "--------------------{6}",
+                    foundPost.Id, foundPost.Title, foundPost.Description, foundPost.Price, location, postStatus, Environment.NewLine));
             }
             return searchResult.ToString();
         }

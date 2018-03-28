@@ -3,6 +3,7 @@ using AnimaniaConsole.Core.Contracts;
 using AnimaniaConsole.DTO.Models;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace AnimaniaConsole.Core.Engine
 {
@@ -41,14 +42,12 @@ namespace AnimaniaConsole.Core.Engine
                 try
                 {
                     var command = this.parser.ParseCommand(commandAsString);
-
+                    
                     if (command != null)
                     {
                         var commandResult = this.processor.ProcessSingleCommand(command, commandAsString);
                         this.writer.WriteLine(commandResult);
                     }
-
-
                 }
                 catch (Exception ex)
                 {
