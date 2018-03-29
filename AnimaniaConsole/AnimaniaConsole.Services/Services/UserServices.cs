@@ -10,9 +10,9 @@ using System.Linq;
 
 namespace AnimaniaConsole.Services.Services
 {
-    public class UserService : IUserService
+    public class UserServices : IUserService
     {
-        public UserService(IAnimaniaConsoleContext ctx, IMapper mapper, UserSessionModel session)
+        public UserServices(IAnimaniaConsoleContext ctx, IMapper mapper, UserSessionModel session)
         {
             this.Session = session;
             this.Context = ctx;

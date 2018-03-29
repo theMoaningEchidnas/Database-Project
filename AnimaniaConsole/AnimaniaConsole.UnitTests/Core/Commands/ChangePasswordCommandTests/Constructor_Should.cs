@@ -1,10 +1,5 @@
 ﻿using AnimaniaConsole.DTO.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AnimaniaConsole.UnitTests.Core.Commands.ChangePasswordCommandTests
 {
@@ -24,7 +19,7 @@ namespace AnimaniaConsole.UnitTests.Core.Commands.ChangePasswordCommandTests
         [TestMethod]
         public void Throw_Exception_IfUserService_IsNull()
         {
-            
+
         }
 
         [TestMethod]

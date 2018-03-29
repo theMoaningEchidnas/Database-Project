@@ -15,6 +15,7 @@ namespace AnimaniaConsole.Models.Models
 
         [ForeignKey("AnimalType")]
         public byte AnimalTypeId { get; set; }
+
         public virtual AnimalType AnimalType { get; set; }
 
     }
