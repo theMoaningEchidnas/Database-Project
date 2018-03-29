@@ -34,8 +34,14 @@ namespace AnimaniaConsole.Models.Models
         [StringLength(12, MinimumLength = 1, ErrorMessage = "Invalid LastName! It must be between 1 and 12 characters")]
         public string LastName { get; set; }
 
+
+        [RegularExpression(@"^[0-9\-\+]{7,15}$", ErrorMessage = "Invalid Phonenumber!")]
         public string Tel { get; set; }
+
+        [StringLength(30, MinimumLength = 4, ErrorMessage = "Invalid skypename! It must be between 4 and 30 characters")]
         public string Skype { get; set; }
+
+        [StringLength(30, MinimumLength = 4, ErrorMessage = "Invalid facebookname! It must be between 4 and 30 characters")]
         public string Facebook { get; set; }
 
         [Required]

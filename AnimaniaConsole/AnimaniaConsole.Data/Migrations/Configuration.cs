@@ -14,19 +14,12 @@ namespace AnimaniaConsole.Data.Migrations
 
         protected override void Seed(AnimaniaConsole.Data.AnimaniaConsoleContext context)
         {
-            /*string dogString = "Dog";
-            var dog = context.AnimalTypes.Where(x => x.AnimalTypeName == dogString).Single();
-
-            using (var webClient = new System.Net.WebClient())
-            {
-                var json = webClient.DownloadString("https://dog.ceo/api/breeds/list/all");
-                // Now parse with JSON.Net
-            }
+                       
             context.BreedTypes.AddOrUpdate();
             context.SaveChanges();
 
             //Method outputs the EntityValidationErrors in PackageManager
-            EntityValidationErrorsOutput.SaveChanges(context);*/
+            EntityValidationErrorsOutput.SaveChanges(context);
 
         }
 
