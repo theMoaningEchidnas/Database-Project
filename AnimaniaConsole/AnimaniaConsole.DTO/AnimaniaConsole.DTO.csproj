@@ -43,6 +43,7 @@
     <Compile Include="Models\AnimalModel.cs" />
     <Compile Include="Models\AnimalTypeModel.cs" />
     <Compile Include="Models\BreedTypeModel.cs" />
+    <Compile Include="Models\CreateBreedModel.cs" />
     <Compile Include="Models\CreatePostModel.cs" />
     <Compile Include="Models\EditPostModel.cs" />
     <Compile Include="Models\LocationModel.cs" />

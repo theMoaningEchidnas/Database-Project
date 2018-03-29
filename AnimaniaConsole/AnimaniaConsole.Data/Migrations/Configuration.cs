@@ -14,9 +14,6 @@ namespace AnimaniaConsole.Data.Migrations
 
         protected override void Seed(AnimaniaConsole.Data.AnimaniaConsoleContext context)
         {
-                       
-            context.BreedTypes.AddOrUpdate();
-            context.SaveChanges();
 
             //Method outputs the EntityValidationErrors in PackageManager
             EntityValidationErrorsOutput.SaveChanges(context);
