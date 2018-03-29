@@ -73,8 +73,8 @@
     <Compile Include="Contracts\IAnimalService.cs" />
     <Compile Include="Contracts\ILocationServices.cs" />
     <Compile Include="Services\AnimalTypeServices.cs" />
-    <Compile Include="Services\BreedTypeServices.cs" />
     <Compile Include="Contracts\IBreedTypeServices.cs" />
+    <Compile Include="Services\BreedTypeServices.cs" />
     <Compile Include="Services\LocationServices.cs" />
     <Compile Include="Services\PostServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
