@@ -9,9 +9,9 @@ namespace AnimaniaConsole.Core.Commands
     public class ShowMyPostsCommand : ICommand
     {
         private readonly IPostServices postService;
-        private readonly IUserService userService;
+        private readonly IUserServices userService;
 
-        public ShowMyPostsCommand(IPostServices postService, IUserService userService)
+        public ShowMyPostsCommand(IPostServices postService, IUserServices userService)
         {
             this.postService = postService;
             this.userService = userService;

@@ -34,7 +34,7 @@ namespace Client
             builder.RegisterType<BreedTypeServices>().As<IBreedTypeServices>().SingleInstance();
 
             builder.Register(x => Mapper.Instance);
-            builder.RegisterType<UserServices>().As<IUserService>();
+            builder.RegisterType<UserServices>().As<IUserServices>();
             //If above is not single then the different commands related to same user will not work properly, e.g. we deactivate user and then try to show his/her posts :)
 
             builder.RegisterType<UserSessionModel>().AsSelf().SingleInstance();

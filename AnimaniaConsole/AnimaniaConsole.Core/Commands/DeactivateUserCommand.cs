@@ -10,10 +10,10 @@ namespace AnimaniaConsole.Core.Commands
     {
         private readonly IWriter consoleWriter;
         private readonly IReader consoleReader;
-        private readonly IUserService userService;
+        private readonly IUserServices userService;
 
 
-        public DeactivateUserCommand(IWriter consoleWriter, IReader consoleReader, IUserService userService)
+        public DeactivateUserCommand(IWriter consoleWriter, IReader consoleReader, IUserServices userService)
         {
             this.consoleWriter = consoleWriter;
             this.consoleReader = consoleReader;

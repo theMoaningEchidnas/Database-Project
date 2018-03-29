@@ -11,10 +11,10 @@ namespace AnimaniaConsole.Core.Commands
 {
     public class ShowMyDeactivatedPostsCommand : ICommand
     {
-        private readonly IUserService userService;
+        private readonly IUserServices userService;
         private readonly IPostServices postService;
 
-        public ShowMyDeactivatedPostsCommand(IUserService userService,IPostServices postService)
+        public ShowMyDeactivatedPostsCommand(IUserServices userService,IPostServices postService)
         {
             this.userService = userService;
             this.postService = postService;

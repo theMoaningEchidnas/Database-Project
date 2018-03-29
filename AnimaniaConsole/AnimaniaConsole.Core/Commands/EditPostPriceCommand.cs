@@ -1,6 +1,6 @@
 ﻿using AnimaniaConsole.Core.CommandContracts;
-using AnimaniaConsole.DTO.Models;
 using AnimaniaConsole.Services.Contracts;
+using System;
 using System.Collections.Generic;
 
 namespace AnimaniaConsole.Core.Commands
@@ -8,12 +8,12 @@ namespace AnimaniaConsole.Core.Commands
     public class EditPostPriceCommand : ICommand
     {
         private readonly IPostServices postService;
-        private readonly IUserService userService;
+        private readonly IUserServices userService;
 
-        public EditPostPriceCommand(IPostServices postService, IUserService userService)
+        public EditPostPriceCommand(IPostServices postService, IUserServices userService)
         {
-            this.postService = postService;
-            this.userService = userService;
+            this.postService = postService ?? throw new ArgumentNullException();
+            this.userService = userService ?? throw new ArgumentNullException();
         }
 
         public string Execute(IList<string> parameters)

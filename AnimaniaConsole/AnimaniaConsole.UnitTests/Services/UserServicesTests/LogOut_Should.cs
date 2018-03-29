@@ -21,23 +21,35 @@ namespace AnimaniaConsole.UnitTests.Services.UserServicesTests
             userSession.UserName = "Test";
         }
 
-
         [TestMethod]
-        public void Reset_Session_Id()
+        public void Reset_userSessionId()
         {
+            //Arrange
             var moqContext = new Mock<IAnimaniaConsoleContext>();
             var moqMapper = new Mock<IMapper>();
+            var sut = new UserServices(moqContext.Object, moqMapper.Object, userSession);
 
+            //Act 
+            sut.LogOutUser();
 
-
-            var userService = new UserServices(moqContext.Object, moqMapper.Object, userSession);
-
-            userService.LogOutUser();
-
+            //Assert
             Assert.AreEqual(0, userSession.Id);
-
         }
 
+        [TestMethod]
+        public void Reset_userSessionUserName()
+        {
+            //Arrange
+            var moqContext = new Mock<IAnimaniaConsoleContext>();
+            var moqMapper = new Mock<IMapper>();
+            var sut = new UserServices(moqContext.Object, moqMapper.Object, userSession);
+
+            //Act 
+            sut.LogOutUser();
+
+            //Assert
+            Assert.AreEqual(null, userSession.UserName);
+        }
 
     }
 }

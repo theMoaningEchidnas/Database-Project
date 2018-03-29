@@ -10,9 +10,9 @@ namespace AnimaniaConsole.Core.Commands
 {
     public class LogOutUserCommand : ICommand
     {
-        private readonly IUserService userService;
+        private readonly IUserServices userService;
 
-        public LogOutUserCommand(IUserService userService)
+        public LogOutUserCommand(IUserServices userService)
         {
             this.userService = userService;
         }
