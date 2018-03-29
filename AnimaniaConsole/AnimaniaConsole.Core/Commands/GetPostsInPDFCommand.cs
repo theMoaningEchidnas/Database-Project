@@ -11,9 +11,9 @@ namespace AnimaniaConsole.Core.Commands
     public class GetPostsInPDFCommand : ICommand
     {
         private readonly IPostServices postServices;
-        private readonly IUserService userService;
+        private readonly IUserServices userService;
 
-        public GetPostsInPDFCommand(IPostServices postServices, IUserService userService)
+        public GetPostsInPDFCommand(IPostServices postServices, IUserServices userService)
         {
             this.postServices = postServices;
             this.userService = userService;

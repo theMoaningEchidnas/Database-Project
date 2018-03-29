@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace AnimaniaConsole.Services.Contracts
 {
-    public interface IUserService
+    public interface IUserServices
     {
         void RegisterUser(CreateUserModel user);
         void ChangePassword(string newPassword);

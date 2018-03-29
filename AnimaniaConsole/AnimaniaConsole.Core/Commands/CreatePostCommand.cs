@@ -12,9 +12,9 @@ namespace AnimaniaConsole.Core.Commands
 
     public class CreatePostCommand : ICommand
     {
-        private readonly IUserService userService;
+        private readonly IUserServices userService;
 
-        public CreatePostCommand(IPostServices postService, IUserService userService)
+        public CreatePostCommand(IPostServices postService, IUserServices userService)
         {
             this.userService = userService;
             this.PostService = postService;

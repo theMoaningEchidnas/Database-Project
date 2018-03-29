@@ -8,12 +8,12 @@ namespace AnimaniaConsole.Core.Commands
 {
     public class RegisterUserCommand : ICommand
     {
-        public RegisterUserCommand(IUserService service)
+        public RegisterUserCommand(IUserServices service)
         {
             this.Service = service;
         }
 
-        public IUserService Service { get; }
+        public IUserServices Service { get; }
 
 
         //RegisterUser;Buser;Bpassword123;Kremvirsh;Boni;obichame.kremvirshi@meso.edu;;;

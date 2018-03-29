@@ -10,12 +10,12 @@ namespace AnimaniaConsole.Core.Commands
     public class EditPostDescriptionCommand : ICommand
     {
         private readonly IPostServices postService;
-        private readonly IUserService userService;
+        private readonly IUserServices userService;
 
-        public EditPostDescriptionCommand(IPostServices postService, IUserService userService)
+        public EditPostDescriptionCommand(IPostServices postService, IUserServices userService)
         {
-            this.postService = postService;
-            this.userService = userService;
+            this.postService = postService ?? throw new ArgumentNullException();
+            this.userService = userService ?? throw new ArgumentNullException();
         }
 
         public string Execute(IList<string> parameters)

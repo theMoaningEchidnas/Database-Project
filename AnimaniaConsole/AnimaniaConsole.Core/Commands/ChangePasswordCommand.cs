@@ -8,12 +8,12 @@ namespace AnimaniaConsole.Core.Commands
     public class ChangePasswordCommand : ICommand
     {
 
-        public ChangePasswordCommand(IUserService userService)
+        public ChangePasswordCommand(IUserServices userService)
         {
             this.UserService = userService;
         }
 
-        public IUserService UserService { get; }
+        public IUserServices UserService { get; }
 
         public string Execute(IList<string> parameters)
         {

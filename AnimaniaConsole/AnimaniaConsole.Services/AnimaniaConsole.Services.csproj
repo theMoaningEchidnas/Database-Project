@@ -68,7 +68,7 @@
   <ItemGroup>
     <Compile Include="Contracts\IAnimalTypeServices.cs" />
     <Compile Include="Contracts\IPostServices.cs" />
-    <Compile Include="Contracts\IUserService.cs" />
+    <Compile Include="Contracts\IUserServices.cs" />
     <Compile Include="Services\AnimalServices.cs" />
     <Compile Include="Contracts\IAnimalService.cs" />
     <Compile Include="Contracts\ILocationServices.cs" />

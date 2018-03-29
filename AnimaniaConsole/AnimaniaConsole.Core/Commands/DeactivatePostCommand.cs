@@ -11,9 +11,9 @@ namespace AnimaniaConsole.Core.Commands
     public class DeactivatePostCommand : ICommand
     {
         private readonly IPostServices postService;
-        private readonly IUserService userService;
+        private readonly IUserServices userService;
 
-        public DeactivatePostCommand(IPostServices postService, IUserService userService)
+        public DeactivatePostCommand(IPostServices postService, IUserServices userService)
         {
             this.postService = postService;
             this.userService = userService;
