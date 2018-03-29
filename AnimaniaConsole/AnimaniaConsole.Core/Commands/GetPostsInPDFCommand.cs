@@ -1,12 +1,10 @@
 ﻿using AnimaniaConsole.Core.CommandContracts;
-using AnimaniaConsole.DTO.Models;
 using AnimaniaConsole.Services.Contracts;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace AnimaniaConsole.Core.Commands
 {
@@ -20,7 +18,7 @@ namespace AnimaniaConsole.Core.Commands
             this.postServices = postServices;
             this.userService = userService;
         }
-        
+
 
         public string Execute(IList<string> parameters)
         {
@@ -44,15 +42,8 @@ namespace AnimaniaConsole.Core.Commands
             foreach (var item in userPosts)
             {
                 var date = item.PostDate.ToString();
-                string status = null; ;
-                if (item.Status)
-                {
-                    status = "ACTIVE";
-                }
-                else
-                {
-                    status = "INACTIVE";
-                }
+                string status = (item.Status) ? "ACTIVE" : "INACTIVE";
+
                 document.Add(new Paragraph((date)));
                 document.Add(new Paragraph((status)));
 

@@ -20,8 +20,8 @@ namespace AnimaniaConsole.Core.Commands
             var result = UserService.ValidateUser();
             if (result == true)
             {
-                var password = parameters[1];
-                UserService.ChangePassword(password);
+                var newPassword = parameters[1];
+                UserService.ChangePassword(newPassword);
                 return "Password changed!"; ;
             }
             else

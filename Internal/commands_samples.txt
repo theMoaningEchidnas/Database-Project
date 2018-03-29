@@ -1,4 +1,4 @@
-RegisterUser;Auser;Apassword123;Kremvirsh;KenBoni;obichame.kremvirshken.vseki.den@meso.edu
+﻿RegisterUser;Auser;Apassword123;Kremvirsh;KenBoni;obichame.kremvirshken.vseki.den@meso.edu
 
 RegisterUser;Cuser;Cpassword123;Kremvirsh;KenBoni;obichame.kremvirsh.ken@meso.edu
 RegisterUser;Duser;Dpassword123;Kremvirsh;Sachi;sachi@meso.edu
@@ -18,8 +18,31 @@ ShowMyPosts
 GetPostsInPDF
 
 
-
-
 Преместване на AutofacModule и AutoMapperConfig в Core 
-LogInUser - session both in Command and UserService
 No such command, please type 'Help' to see all available commands!
+Говорящи съобщения за грешка при RegisterUser 
+
+
+
+
+
+ActivatePost(postId)
+CreatePost(Title;Description;Price;Birthday;AnimalName;AnimalTypeName;BreedTypeName;LocationName)
+DeactivatePost(postId)
+DeactivateUser
+EditPostDescription(postId,newDescription)
+EditPostPrice(postId,newPrice)
+EditPostTitle(postId,newTitle)
+GetPostsInPDF
+Help
+SearchPostsByPriceFrom(searchedText;priceFrom)
+SearchPostsByPriceRangeTo(searchedTextpriceTo)
+SearchPosts(searchedText)
+SearchPostsInPriceRange(searchedText;priceFrom;priceTo)
+ShowMyDeactivatedPosts
+ShowMyActivePosts
+ShowMyPosts
+ChangePassword
+LogInUser(userName;password)
+RegisterUser(userName;password;firstName;lastName;email;tel;facebook;skype)
+

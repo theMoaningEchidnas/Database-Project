@@ -20,10 +20,10 @@ namespace AnimaniaConsole.Core.Commands
         }
         public string Execute(IList<string> parameters)
         {
-            var postToDeactivate = int.Parse(parameters[1]);
-            this.postService.DeactivatePost(postToDeactivate, userService.GetLoggedUserId());
+            var postIdToDeactivate = int.Parse(parameters[1]);
+            this.postService.DeactivatePost(postIdToDeactivate, userService.GetLoggedUserId());
 
-            return $"Post With ID:{postToDeactivate} was deactivated!";
+            return $"Post With ID:{postIdToDeactivate} was deactivated!";
         }
     }
 }

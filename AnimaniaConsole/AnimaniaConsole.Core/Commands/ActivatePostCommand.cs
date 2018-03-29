@@ -20,10 +20,10 @@ namespace AnimaniaConsole.Core.Commands
         }
         public string Execute(IList<string> parameters)
         {
-            var postToActivate = int.Parse(parameters[1]);
-            this.postService.ActivatePost(postToActivate);
+            var postIdToActivate = int.Parse(parameters[1]);
+            this.postService.ActivatePost(postIdToActivate);
 
-            return $"Post With ID:{postToActivate} was activated!";
+            return $"Post With ID:{postIdToActivate} was activated!";
         }
     }
 }
