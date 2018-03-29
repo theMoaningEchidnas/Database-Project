@@ -4,7 +4,8 @@ namespace AnimaniaConsole.Services.Contracts
 {
     public interface IBreedTypeServices
     {
-        int GetBreedTypeIdByBreedTypeName(IAnimaniaConsoleContext context, string breedTypeName);
+        int GetBreedTypeIdByBreedTypeName(string breedTypeName);
 
+        void LoadBreedsFromJSON(string path, string animal);
     }
 }

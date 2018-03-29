@@ -10,7 +10,7 @@ namespace AnimaniaConsole.Models.Models
 
         [Required]
         [Index(IsUnique = true)]
-        [StringLength(30, MinimumLength = 3, ErrorMessage = "Invalid BreedName! It must be between 3 and 30 characters")]
+        [StringLength(60, MinimumLength = 2, ErrorMessage = "Invalid BreedName! It must be between 2 and 60 characters")]
         public string BreedTypeName { get; set; }
 
         [ForeignKey("AnimalType")]

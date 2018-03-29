@@ -30,7 +30,7 @@ namespace AnimaniaConsole.Services.Services
         {
             var locationId = locationServices.GetLocationIdByLocationName(context, createPostModel.LocationName);
             var animalTypeId = animalTypeServices.GetAnimalTypeIdByAnimalTypeName(context, createPostModel.AnimalTypeName);
-            var breedTypeId = breedTypeServices.GetBreedTypeIdByBreedTypeName(context, createPostModel.BreedTypeName);
+            var breedTypeId = breedTypeServices.GetBreedTypeIdByBreedTypeName(createPostModel.BreedTypeName);
 
             var animal = new Animal
             {

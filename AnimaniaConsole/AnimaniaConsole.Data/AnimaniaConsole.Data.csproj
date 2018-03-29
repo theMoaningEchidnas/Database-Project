@@ -270,6 +270,10 @@
     <Compile Include="Migrations\201803290744106_User validation, AnimalType validation, BreedType validation.Designer.cs">
       <DependentUpon>201803290744106_User validation, AnimalType validation, BreedType validation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803290827112_BreedType.cs" />
+    <Compile Include="Migrations\201803290827112_BreedType.Designer.cs">
+      <DependentUpon>201803290827112_BreedType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\EntityValidationErrorsOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -449,6 +453,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803290744106_User validation, AnimalType validation, BreedType validation.resx">
       <DependentUpon>201803290744106_User validation, AnimalType validation, BreedType validation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803290827112_BreedType.resx">
+      <DependentUpon>201803290827112_BreedType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
