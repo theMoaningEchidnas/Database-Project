@@ -14,7 +14,7 @@ namespace AnimaniaConsole.Core.Commands
         private IPostServices postService;
         public SearchPostsByPriceFromCommand(IPostServices postService)
         {
-            this.postService = postService;
+            this.postService = postService?? throw new ArgumentNullException();
         }
         public string Execute(IList<string> parameters)
         {
