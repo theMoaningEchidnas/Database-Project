@@ -34,7 +34,7 @@ namespace AnimaniaConsole.Core.Engine
 
         public void Run()
         {
-            //breedService.LoadBreedsFromJSON("breedsjson.txt", "Dog");
+            //breedService.LoadBreedsFromJSON("breedsjson.txt", "og");
             while ((commandAsString = this.reader.ReadLine()) != TerminationCommand)
             {
                 try

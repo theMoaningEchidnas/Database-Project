@@ -11,9 +11,11 @@ namespace AnimaniaConsole.UnitTests.Core.Commands.ChangePasswordCommandTests
         [TestInitialize]
         public void Initialize()
         {
-            userSession = new UserSessionModel();
-            userSession.Id = 1;
-            userSession.UserName = "Test";
+            userSession = new UserSessionModel
+            {
+                Id = 1,
+                UserName = "Test"
+            };
         }
 
         [TestMethod]
