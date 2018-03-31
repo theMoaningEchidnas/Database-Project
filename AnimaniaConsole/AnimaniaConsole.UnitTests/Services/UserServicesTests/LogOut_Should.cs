@@ -16,9 +16,11 @@ namespace AnimaniaConsole.UnitTests.Services.UserServicesTests
         [TestInitialize]
         public void Initialize()
         {
-            userSession = new UserSessionModel();
-            userSession.Id = 1;
-            userSession.UserName = "Test";
+            userSession = new UserSessionModel
+            {
+                Id = 1,
+                UserName = "Test"
+            };
         }
 
         [TestMethod]

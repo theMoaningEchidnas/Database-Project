@@ -5,6 +5,7 @@ using AnimaniaConsole.Core.Engine;
 using AnimaniaConsole.Core.Factories;
 using AnimaniaConsole.Core.Factories.Contracts;
 using AnimaniaConsole.Core.Providers;
+using AnimaniaConsole.Core.Validator;
 using AnimaniaConsole.Core.Wrappers;
 using AnimaniaConsole.Data;
 using AnimaniaConsole.DTO.Models;
@@ -26,6 +27,7 @@ namespace Client
             builder.RegisterType<Writer>().As<IWriter>().SingleInstance();
             builder.RegisterType<Reader>().As<IReader>().SingleInstance();
             builder.RegisterType<Engine>().As<IEngine>().SingleInstance();
+            builder.RegisterType<ValidateCore>().As<IValidateCore>().SingleInstance();
             builder.RegisterType<AnimaniaConsoleContext>().As<IAnimaniaConsoleContext>().InstancePerDependency();
             builder.RegisterType<PostServices>().As<IPostServices>();
             //the following three are single instance because we do not expect to change (add/ remove items) them during user interactions

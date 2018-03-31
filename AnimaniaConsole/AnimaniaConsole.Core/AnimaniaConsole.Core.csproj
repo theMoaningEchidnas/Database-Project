@@ -60,6 +60,7 @@
     <Compile Include="Commands\ShowMyDeactivatedPostsCommand.cs" />
     <Compile Include="Commands\ShowMyActivePostsCommand.cs" />
     <Compile Include="Commands\ShowMyPostsCommand.cs" />
+    <Compile Include="Contracts\IValidateCore.cs" />
     <Compile Include="Providers\CommandParser.cs" />
     <Compile Include="CommandContracts\ICommandParser.cs" />
     <Compile Include="Providers\CommandProcessor.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Factories\CommandFactory.cs" />
     <Compile Include="Factories\Contracts\ICommandFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validator\ValidateCore.cs" />
     <Compile Include="Wrappers\Reader.cs" />
     <Compile Include="Wrappers\Writer.cs" />
   </ItemGroup>
