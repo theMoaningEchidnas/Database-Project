@@ -10,16 +10,9 @@
 	https://stackoverflow.com/questions/27687080/creating-string-index-with-code-first 	
 6. Many Build Errors after pull incl. Metadata File sOmEnAmE.DLL could not be found
 	https://stackoverflow.com/questions/898559/metadata-file-release-project-dll-could-not-be-found-in-visual-studio/13031884#13031884
+7. Why CollectionAssert.AreEqual fails even when both lists contain the same items
+	http://softwareonastring.com/357/why-collectionassert-areequal-fails-even-when-both-lists-contain-the-same-items
 
-
-
-PLAN for splitting the tasks:
-	Together create the DB backbone 
-	Decide what controllers/ views will be available and split them 
-		Everyone first writes the VIEW on paper showing controls => we approve => he starts coding
-		When someone is ready with view => we test it in details => he fixes bugs
-		He decides on UT => we approve => he writes test
-	REFACTORING - everyone refactor his own work and review others with suggestions for code change, if any
 	
 	
 	

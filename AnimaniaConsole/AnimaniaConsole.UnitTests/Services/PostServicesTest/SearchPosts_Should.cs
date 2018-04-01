@@ -44,6 +44,7 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
             //initialize the AutoMapper
             Mapper.Initialize(config => { });
 
+
             postServices = new PostServices(mockContext.Object, stubLocationSerivces.Object,
                 stubAnimalTypeServices.Object, stubBreedTypeServices.Object);
         }
@@ -58,6 +59,10 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
 
             //Assert
             Assert.IsInstanceOfType(foundPosts, typeof(IEnumerable<PostModel>));
+
+            //Cleanup
+            Mapper.Reset();
+
         }
 
         [TestMethod]
@@ -85,6 +90,9 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
 
             //Assert
             CollectionAssert.AreEqual(expectedPostsFound, actualPostsFound, new PostModelComparer());
+
+            //Cleanup
+            Mapper.Reset();
         }
 
 
