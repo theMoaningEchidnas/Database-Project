@@ -1,4 +1,6 @@
-﻿using AnimaniaConsole.Data;
+﻿using System;
+using AnimaniaConsole.Data;
+using AnimaniaConsole.DTO.Models;
 using AnimaniaConsole.Models.Models;
 using AnimaniaConsole.Services.Contracts;
 using AnimaniaConsole.Services.Services;
@@ -6,7 +8,8 @@ using AnimaniaConsole.UnitTests.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;
-using AnimaniaConsole.DTO.Models;
+using System.Data.Entity;
+using System.Linq;
 
 namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
 {
@@ -15,6 +18,7 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
     {
         private Mock<IAnimaniaConsoleContext> mockContext;
         private IPostServices postServices;
+        private Mock<IDbSet<Post>> mockSet;
 
         [TestInitialize]
         public void Initialize()
@@ -26,7 +30,7 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
                 new Post {Id = 3, Title= "Title No 3", Description = "The shortest post description in the database - part 3"}
             };
 
-            var mockSet = data.GetQueryableMockDbSet();
+            mockSet = data.GetQueryableMockDbSet();
 
             mockContext = new Mock<IAnimaniaConsoleContext>();
 
@@ -39,15 +43,15 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
             postServices = new PostServices(mockContext.Object, stubLocationSerivces.Object,
                 stubAnimalTypeServices.Object, stubBreedTypeServices.Object);
         }
-        
+
         [TestMethod]
         public void Returns_InstanceOfTypeString_When_Executed()
         {
-            //NOT COMPLETED ....
-            
             //Arrange
             var editPostModel = new Mock<EditPostModel>();
-            
+            editPostModel.Object.Id = 1;
+            editPostModel.Object.Description = "New New New New New New NewNew New New New New v New";
+
             //Act
             var result = postServices.EditPostDescription(editPostModel.Object);
 
@@ -56,17 +60,24 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
         }
 
         [TestMethod]
-        public void FindTheCorrectPostForEdit_When_Executed()
+        public void EditedPostDescription_IsSavedInDatabase_When_Executed()
         {
+            //Arrange
+            var editPostModel = new Mock<EditPostModel>();
+            editPostModel.Object.Id = 2;
+            var expectedDescription = "New New New New New New NewNew New New New New v New" + DateTime.Now;
+            editPostModel.Object.Description = expectedDescription;
 
+            
+            //Act
+            postServices.EditPostDescription(editPostModel.Object);
+            mockContext.Object.SaveChanges();
 
+            var actualDescription = mockSet.Object.ToList()[editPostModel.Object.Id-1].Description;
+
+            //Assert
+            Assert.AreEqual(expectedDescription, actualDescription);
         }
 
-        [TestMethod]
-        public void EditCorrectly_theDescrition_When_Executed()
-        {
-
-
-        }
     }
 }

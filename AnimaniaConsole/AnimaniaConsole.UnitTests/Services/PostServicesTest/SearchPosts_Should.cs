@@ -16,8 +16,8 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
     public class SearchPosts_Should
     {
 
-        [ClassInitialize]
-        public static void InitilizeM(TestContext context)
+        [AssemblyInitialize]
+        public static void InitilizeAutoMapper(TestContext context)
         {
             Mapper.Initialize(config => { });
         }

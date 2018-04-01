@@ -147,11 +147,11 @@ namespace AnimaniaConsole.Services.Services
 
         public string EditPostDescription(EditPostModel editPostModel)
         {
-            var postForEdit = this.context.Posts.Find(editPostModel.Id);
+            var postForEdit = this.context.Posts.SingleOrDefault(x=>x.Id == editPostModel.Id);
             postForEdit.Description = editPostModel.Description;
             context.SaveChanges();
 
-            return "Post Description was successfully edited";
+            return $"Post Description was successfully edited to {postForEdit.Description}";
         }
 
         public string EditPostPrice(EditPostModel editPostModel)
