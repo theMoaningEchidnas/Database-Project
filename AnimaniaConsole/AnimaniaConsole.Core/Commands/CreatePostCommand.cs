@@ -25,15 +25,24 @@ namespace AnimaniaConsole.Core.Commands
         public string Execute(IList<string> parameters)
         {
             var userId = this.userService.GetLoggedUserId();
+            DateTime birtday;
+            string dateString = "d.M.yyyy";
+            try
+            {
+                birtday = DateTime.ParseExact(parameters[4], dateString, CultureInfo.InvariantCulture);
+            }
+            catch
+            {
+                throw new FormatException($"{dateString} is not in the correct format.");
+            }
 
-            var BD = DateTime.ParseExact(parameters[4], "d.M.yyyy", CultureInfo.InvariantCulture);
 
             var postToCreate = new CreatePostModel()
             {
                 Title = parameters[1],
                 Description = parameters[2],
                 Price = decimal.Parse(parameters[3]),
-                Birthday = BD,
+                Birthday = birtday,
                 AnimalName = parameters[5],
                 AnimalTypeName = parameters[6],
                 BreedTypeName = parameters[7],

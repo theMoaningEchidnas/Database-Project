@@ -21,7 +21,6 @@ namespace AnimaniaConsole.Core.Commands
             var searchedText = parameters[1];
             var listOfFoundPosts = postService.SearchPosts(searchedText);
             return postService.PrintPostsToConsole(listOfFoundPosts);
-
         }
 
     }

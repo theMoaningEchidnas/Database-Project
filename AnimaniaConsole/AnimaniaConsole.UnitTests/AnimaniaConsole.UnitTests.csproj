@@ -85,6 +85,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AnimalTypeServicesTests\GetAnimalTypeIdByAnimalTypeName_Should.cs" />
     <Compile Include="Services\LocationServicesTests\GetLocationIdByLocationName_Should.cs" />
+    <Compile Include="Services\PostServicesTest\PostModelComparer.cs" />
+    <Compile Include="Services\PostServicesTest\SearchPosts_Should.cs" />
     <Compile Include="Services\UserServicesTests\LogOut_Should.cs" />
   </ItemGroup>
   <ItemGroup>

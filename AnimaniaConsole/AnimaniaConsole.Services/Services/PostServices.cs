@@ -86,9 +86,8 @@ namespace AnimaniaConsole.Services.Services
         {
             var posts = this.context.Posts
                 .Where(x => x.Title.Contains(searchedText) || x.Description.Contains(searchedText))
-                .ProjectTo<PostModel>();
-            //var searchResult = posts.ToList();
-
+                .ProjectTo<PostModel>().ToList();
+    
             return posts;
         }
         public IEnumerable<PostModel> SearchPostsFrom(string searchedText, int minPrice)
