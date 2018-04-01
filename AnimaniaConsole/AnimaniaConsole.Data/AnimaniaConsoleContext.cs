@@ -1,4 +1,5 @@
 ﻿using AnimaniaConsole.Models.Models;
+using System.Data.Common;
 using System.Data.Entity;
 
 namespace AnimaniaConsole.Data
@@ -12,6 +13,12 @@ namespace AnimaniaConsole.Data
             //var strategy = new MigrateDatabaseToLatestVersion<AnimaniaConsoleContext, Configuration>();
             //Database.SetInitializer(strategy);
         }
+
+        public AnimaniaConsoleContext(DbConnection connection)
+            : base(connection, true)
+        {
+        }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
