@@ -18,6 +18,12 @@ namespace AnimaniaConsole.Data.Migrations
             //Method outputs the EntityValidationErrors in PackageManager
             EntityValidationErrorsOutput.SaveChanges(context);
 
+
+
+
+
+
+
         }
 
     }

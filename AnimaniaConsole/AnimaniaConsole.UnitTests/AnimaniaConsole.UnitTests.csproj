@@ -90,6 +90,7 @@
     <Compile Include="Core\Commands\SearchByPriceFromCommandTests\Execute_Should.cs" />
     <Compile Include="Core\Commands\SearchPostsCommandTests\Constructor_Should.cs" />
     <Compile Include="Core\Commands\SearchPostsCommandTests\Execute_Should.cs" />
+    <Compile Include="Helpers\DbSetExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AnimalTypeServicesTests\GetAnimalTypeIdByAnimalTypeName_Should.cs" />
     <Compile Include="Services\LocationServicesTests\GetLocationIdByLocationName_Should.cs" />

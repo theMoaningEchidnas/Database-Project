@@ -35,7 +35,7 @@ namespace AnimaniaConsole.Services.Services
             var animal = new Animal
             {
                 AnimalName = createPostModel.AnimalName,
-                Birthday = DateTime.Parse(createPostModel.Birthday.ToString()),
+                Birthday = createPostModel.Birthday,
                 AnimalTypeId = animalTypeId,
                 BreedTypeId = breedTypeId,
                 LocationId = locationId,
@@ -53,7 +53,7 @@ namespace AnimaniaConsole.Services.Services
         public IEnumerable<PostModel> GetAllMyPosts(int userId)
         {
             var posts = this.context.Posts.Where(x => x.UserId == userId).ProjectTo<PostModel>();
-            
+
             return posts;
         }
 
@@ -87,7 +87,7 @@ namespace AnimaniaConsole.Services.Services
             var posts = this.context.Posts
                 .Where(x => x.Title.Contains(searchedText) || x.Description.Contains(searchedText))
                 .ProjectTo<PostModel>().ToList();
-    
+
             return posts;
         }
         public IEnumerable<PostModel> SearchPostsFrom(string searchedText, int minPrice)

@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AnimaniaConsole.Data;
+﻿using AnimaniaConsole.Data;
 using AnimaniaConsole.Models.Models;
 using AnimaniaConsole.Services.Contracts;
 using AnimaniaConsole.Services.Services;
+using AnimaniaConsole.UnitTests.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using System;
+using System.Collections.Generic;
 
 namespace AnimaniaConsole.UnitTests.Services.LocationServicesTests
 {
@@ -26,19 +23,14 @@ namespace AnimaniaConsole.UnitTests.Services.LocationServicesTests
             {
                 new Location {Id = 1, LocationName = "Sofia"},
                 new Location {Id = 2, LocationName = "Plovdiv"},
-            }.AsQueryable();
+            };
 
-            var mockSet = new Mock<IDbSet<Location>>();
-            mockSet.As<IQueryable<Location>>().Setup(m => m.Provider).Returns(data.Provider);
-            mockSet.As<IQueryable<Location>>().Setup(m => m.Expression).Returns(data.Expression);
-            mockSet.As<IQueryable<Location>>().Setup(m => m.ElementType).Returns(data.ElementType);
-            mockSet.As<IQueryable<Location>>().Setup(m => m.GetEnumerator()).Returns(() => data.GetEnumerator());
+            var mockSet = data.GetQueryableMockDbSet();
 
             mockContext = new Mock<IAnimaniaConsoleContext>();
             mockContext.Setup(x => x.Locations).Returns(mockSet.Object);
 
             locationService = new LocationServices();
-
         }
 
         [TestMethod]
