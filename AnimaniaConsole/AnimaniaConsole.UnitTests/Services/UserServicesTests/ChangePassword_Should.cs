@@ -22,6 +22,7 @@ namespace AnimaniaConsole.UnitTests.Services.UserServicesTests
         private Mock<IAnimaniaConsoleContext> mockContext;
         private IUserServices userServices;
         private Mock<IDbSet<User>> mockSet;
+        private Mock<IUserSessionModel> stubUserSessionModel;
 
         [TestInitialize]
         public void Initialize()
@@ -40,45 +41,25 @@ namespace AnimaniaConsole.UnitTests.Services.UserServicesTests
             mockContext.Setup(x => x.Users).Returns(mockSet.Object);
 
             var stubMapper = new Mock<IMapper>();
-            var stubUserSessionModel = new Mock<IUserSessionModel>();
-            var stubAnimalTypeServices = new Mock<IAnimalTypeServices>();
-
+            stubUserSessionModel = new Mock<IUserSessionModel>();
+        
             userServices = new UserServices(mockContext.Object, stubMapper.Object, stubUserSessionModel.Object);
         }
 
         [TestMethod]
-        public void Returns_InstanceOfTypeString_When_Executed()
+        public void ChangesThePasswordInTheDatabase_When_Executed()
         {
             //Arrange
-            var editPostModel = new Mock<EditPostModel>();
-            editPostModel.Object.Id = 1;
-            editPostModel.Object.Description = "New New New New New New NewNew New New New New v New";
+            stubUserSessionModel.Setup(x => x.Id).Returns(2);
 
             //Act
-            //var result = userServices.EditPostDescription(editPostModel.Object);
-
-            //Assert
-            //Assert.IsInstanceOfType(result, typeof(string));
-        }
-
-        [TestMethod]
-        public void EditedPostDescription_IsSavedInDatabase_When_Executed()
-        {
-            //Arrange
-            var editPostModel = new Mock<EditPostModel>();
-            editPostModel.Object.Id = 2;
-            var expectedDescription = "New New New New New New NewNew New New New New v New" + DateTime.Now;
-            editPostModel.Object.Description = expectedDescription;
-
-
-            //Act
-            //userServices.EditPostDescription(editPostModel.Object);
+            userServices.ChangePassword("NewPassword123");
             mockContext.Object.SaveChanges();
 
-            //var actualDescription = mockSet.Object.ToList()[editPostModel.Object.Id - 1].Description;
+            var actualDescription = mockSet.Object.SingleOrDefault(x=>x.Id == 2).Password;
 
             //Assert
-            //Assert.AreEqual(expectedDescription, actualDescription);
+            Assert.AreEqual("NewPassword123", actualDescription);
         }
 
     }
