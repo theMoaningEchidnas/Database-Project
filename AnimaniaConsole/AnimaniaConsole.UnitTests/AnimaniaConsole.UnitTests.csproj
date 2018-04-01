@@ -84,13 +84,11 @@
   <ItemGroup>
     <Compile Include="Core\Commands\ChangePasswordCommandTests\Constructor_Should.cs" />
     <Compile Include="Core\Commands\ChangePasswordCommandTests\Execute_Should.cs" />
+    <Compile Include="Core\Commands\EditPostPriceCommandTests\Constructor_Should.cs" />
+    <Compile Include="Core\Commands\EditPostPriceCommandTests\Execute_Should.cs" />
     <Compile Include="Core\Commands\SearchByPriceFromCommandTests\Constructor_Should.cs" />
     <Compile Include="Core\Commands\SearchByPriceFromCommandTests\Execute_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\AnimalTypeServicesTests\GetAnimalTypeIdByAnimalTypeName_Should.cs" />
-    <Compile Include="Services\LocationServicesTests\GetLocationIdByLocationName_Should.cs" />
-    <Compile Include="Services\PostServicesTest\PostModelComparer.cs" />
-    <Compile Include="Services\PostServicesTest\SearchPosts_Should.cs" />
     <Compile Include="Services\UserServicesTests\LogOut_Should.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -123,7 +121,6 @@
       <Name>AnimaniaConsole.Services</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
