@@ -1,17 +1,9 @@
-﻿using AnimaniaConsole.Core.CommandContracts;
-using AnimaniaConsole.Core.Commands;
-using AnimaniaConsole.Data;
+﻿using AnimaniaConsole.Core.Commands;
 using AnimaniaConsole.DTO.Models;
-using AnimaniaConsole.Models.Models;
 using AnimaniaConsole.Services.Contracts;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AnimaniaConsole.UnitTests.Core.Commands.SearchByPriceFromCommandTests
 {
@@ -38,6 +30,6 @@ namespace AnimaniaConsole.UnitTests.Core.Commands.SearchByPriceFromCommandTests
             service.Verify(a => a.SearchPostsFrom(Params[1], int.Parse(Params[2])), Times.Once());
 
         }
-      
+
     }
 }
