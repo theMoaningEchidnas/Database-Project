@@ -63,9 +63,13 @@ namespace AnimaniaConsole.Services.Services
 
             return posts;
         }
-        public IEnumerable<PostModel> GetAllDeactivetedPosts(int userId)
+        public IEnumerable<PostModel> GetAllDeactivatedPosts(int userId)
         {
-            var posts = this.context.Posts.Where(x => x.UserId == userId && x.Status == false).ProjectTo<PostModel>();
+            var posts = this.context.Posts
+                .Where(x => x.UserId == userId && x.Status == false)
+                .ProjectTo<PostModel>()
+                .ToList();
+
             return posts;
         }
         public void ActivatePost(int postId)
@@ -148,7 +152,7 @@ namespace AnimaniaConsole.Services.Services
 
         public string EditPostDescription(EditPostModel editPostModel)
         {
-            var postForEdit = this.context.Posts.SingleOrDefault(x=>x.Id == editPostModel.Id);
+            var postForEdit = this.context.Posts.SingleOrDefault(x => x.Id == editPostModel.Id);
             postForEdit.Description = editPostModel.Description;
             context.SaveChanges();
 

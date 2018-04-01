@@ -9,33 +9,50 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using AnimaniaConsole.DTO;
 
 namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
 {
     [TestClass]
-    public class SearchPostsТо_Should
+    public class GetAllDeactivatedPosts_Should
     {
         private Mock<IAnimaniaConsoleContext> mockContext;
         private IPostServices postServices;
 
 
-
         [TestInitialize]
         public void Initialize()
         {
+            Mapper.Initialize(config => { });
 
-            Mapper.Initialize(config =>
-            {
-            });
 
-            
             var data = new List<Post>
             {
-                new Post {Id = 1, Title= "Title No A1", Description = "The shortest post description - part 1", Price = 10},
-                new Post {Id = 2, Title= "Title No A2", Description = "The shortest post description - part 2", Price = 20},
-                new Post {Id = 3, Title= "Title No 3", Description = "The shortest post description - part 3", Price = 30}
+                new Post
+                {
+                    Id = 1, Title= "Title No A1",
+                    Description = "The shortest post description - part 1",
+                    Price = 10, 
+                    Status = false,
+                    UserId = 1
+                },
+                new Post
+                {
+                    Id = 2,
+                    Title = "Title No A2",
+                    Description = "The shortest post description - part 2", Price = 20,
+                    Status = false,
+                    UserId = 2
+
+                },
+                new Post
+                {
+                    Id = 3,
+                    Title = "Title No 3",
+                    Description = "The shortest post description - part 3",
+                    Price = 30,
+                    Status = true,
+                    UserId = 1
+                }
             };
 
             var mockSet = data.GetQueryableMockDbSet();
@@ -60,10 +77,10 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
         }
 
         [TestMethod]
-        public void ReturnInstanceOfTypeList_When_Executed()
+        public void ReturnInstanceOfTypeListIfCorrectUserIsProvided_When_Executed()
         {
             //Act
-            var foundPosts = postServices.SearchPostsTo("1", 21);
+            var foundPosts = postServices.GetAllDeactivatedPosts(1);
 
             //Assert
             Assert.IsInstanceOfType(foundPosts, typeof(List<PostModel>));
@@ -71,7 +88,7 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
         }
 
         [TestMethod]
-        public void ReturnCorrectPostOrPostsFromSearch_When_Executed()
+        public void ReturnAllTheCorrectDeactivatedPosts_When_Executed()
         {
             //Arrange
             var expectedPostsFound = new List<PostModel>
@@ -81,19 +98,14 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
                     Id = 1,
                     Title = "Title No A1",
                     Description = "The shortest post description - part 1",
-                    Price = 10
-                },
-                new PostModel
-                {
-                    Id = 2,
-                    Title = "Title No A2",
-                    Description = "The shortest post description - part 2",
-                    Price = 20
+                    Price = 10,
+                    Status = false,
+                    UserId = 1
                 }
             };
 
             //Act
-            var actualPostsFound = postServices.SearchPostsTo("A", 21).ToList();
+            var actualPostsFound = postServices.GetAllDeactivatedPosts(1).ToList();
 
             //Assert
             CollectionAssert.AreEqual(expectedPostsFound, actualPostsFound, new PostModelComparer());
