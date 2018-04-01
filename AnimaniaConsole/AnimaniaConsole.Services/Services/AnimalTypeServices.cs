@@ -15,7 +15,7 @@ namespace AnimaniaConsole.Services.Services
                 .SingleOrDefault();
             if (animalTypeId == 0)
             {
-                throw new ArgumentNullException("Such type of Animal does not exist");
+                throw new ArgumentException("Such type of Animal does not exist");
             }
             return animalTypeId;
 

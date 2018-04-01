@@ -5,7 +5,6 @@ using AnimaniaConsole.Models.Models;
 using AnimaniaConsole.Services.Contracts;
 using AutoMapper;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace AnimaniaConsole.Services.Services
@@ -33,15 +32,12 @@ namespace AnimaniaConsole.Services.Services
 
         public void LogInUser(string userName, string password)
         {
-            User user;
-            try
+            var user = this.Context.Users.SingleOrDefault(x => x.UserName == userName && x.Password == password && x.Status == true);
+            if (user == null)
             {
-                user = this.Context.Users.Where(x => x.UserName == userName && x.Password == password && x.Status == true).Single();
+                throw new ArgumentException("Failed to find such active user in database.");
             }
-            catch (Exception)
-            {
-                throw new Exception("Failed to find such active user in database.");
-            }
+            
             Session.Id = user.Id;
             Session.UserName = user.UserName;
         }
@@ -87,13 +83,14 @@ namespace AnimaniaConsole.Services.Services
                 throw new ArgumentException("No such active user!");
             }
             userToBeDeactivated.Status = false;
-            Context.SaveChanges();  
+            Context.SaveChanges();
 
 
         }
 
         public string GetLoggedUserName()
-        {if (Session.Id == 0)
+        {
+            if (Session.Id == 0)
             {
                 throw new ArgumentException("You are not logged in! Please, log in and try again!");
             }

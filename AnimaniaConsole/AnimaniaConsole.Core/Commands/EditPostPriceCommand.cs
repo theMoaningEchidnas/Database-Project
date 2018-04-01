@@ -1,8 +1,8 @@
 ﻿using AnimaniaConsole.Core.CommandContracts;
+using AnimaniaConsole.Core.Contracts;
 using AnimaniaConsole.Services.Contracts;
 using System;
 using System.Collections.Generic;
-using AnimaniaConsole.Core.Contracts;
 
 namespace AnimaniaConsole.Core.Commands
 {

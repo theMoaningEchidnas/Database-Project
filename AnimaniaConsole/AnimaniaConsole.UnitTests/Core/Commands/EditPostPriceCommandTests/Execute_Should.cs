@@ -1,9 +1,10 @@
-﻿using AnimaniaConsole.Core.Commands;
+﻿using System.Collections.Generic;
+using AnimaniaConsole.Core.Commands;
+using AnimaniaConsole.Core.Contracts;
+using AnimaniaConsole.Data;
 using AnimaniaConsole.Services.Contracts;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System;
-using AnimaniaConsole.Core.Contracts;
 
 namespace AnimaniaConsole.UnitTests.Core.Commands.EditPostPriceCommandTests
 {
@@ -11,22 +12,28 @@ namespace AnimaniaConsole.UnitTests.Core.Commands.EditPostPriceCommandTests
     public class Execute_Should
     {
         [TestMethod]
-        public void Throw_ArgumentException_When_PostId_CannotBeParsetToInt()
+        public void CallValidatorMethodForIntFromString_When_ParsingPostId()
         {
             //Arrange
+
+            var mockValidateCore = new Mock<IValidateCore>();
+            mockValidateCore.Setup(x => x.IntFromString("5", "postId")).Returns(It.IsAny<int>());
+            mockValidateCore.Setup(x => x.DecimalFromString("100.55", "price")).Returns(It.IsAny<decimal>());
+            
             var stubPostServices = new Mock<IPostServices>();
             var stubUserServices = new Mock<IUserServices>();
-            var stubValidateCore = new Mock<IValidateCore>();
 
-            var parameters = new string[] { "abc" };
+            var parameters = new string[] { "EditPostPrice", "5", "100.55" };
 
-            stubValidateCore.Setup(x=>x.IntFromString(parameters[0], "postId")).Verifiable();
-
-            var sut = new EditPostPriceCommand(stubPostServices.Object, stubUserServices.Object, stubValidateCore.Object);
-
-            //Act & Assert
             
-            //Assert.ThrowsException<ArgumentOutOfRangeException>(() => sut.Execute(parameters));
+            var command = new EditPostPriceCommand(stubPostServices.Object, stubUserServices.Object, mockValidateCore.Object);
+            //command..postService.FindPostById(postId);
+            
+            //Act
+            command.Execute(parameters);
+
+            //Assert
+            mockValidateCore.Verify(x => x.IntFromString("5", "postId"), Times.AtLeast(1));
         }
 
         [TestMethod]
