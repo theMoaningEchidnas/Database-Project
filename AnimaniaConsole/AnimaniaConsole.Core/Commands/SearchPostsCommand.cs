@@ -1,6 +1,7 @@
 ﻿using AnimaniaConsole.Core.CommandContracts;
 using AnimaniaConsole.Data;
 using AnimaniaConsole.Services.Contracts;
+using System;
 using System.Collections.Generic;
 
 namespace AnimaniaConsole.Core.Commands
@@ -13,6 +14,10 @@ namespace AnimaniaConsole.Core.Commands
 
         public SearchPostsCommand(IPostServices postService)
         {
+            if (postService == null)
+            {
+                throw new ArgumentNullException("postService is null");
+            }
             this.postService = postService;
         }
 

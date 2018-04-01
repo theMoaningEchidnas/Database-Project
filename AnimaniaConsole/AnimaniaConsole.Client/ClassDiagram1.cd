@@ -11,7 +11,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="AnimaniaConsole.Core.Commands.CreatePostCommand" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="6" Y="6.5" Width="1.5" />
+    <Position X="7.25" Y="6.5" Width="2.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
@@ -26,17 +26,17 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="AnimaniaConsole.Core.Commands.EditPostDescriptionCommand" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="2.5" Y="6.5" Width="1.5" />
+    <Position X="1.5" Y="6.5" Width="2.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="AnimaniaConsole.Core.Commands.EditPostPriceCommand" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="4.25" Y="6.5" Width="1.5" />
+    <Position X="4.25" Y="6.5" Width="2.75" />
     <TypeIdentifier />
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="AnimaniaConsole.Core.Commands.EditPostTitleCommand" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="4.25" Y="7.5" Width="1.5" />
+    <Position X="4.25" Y="7.5" Width="2.75" />
     <TypeIdentifier />
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
@@ -51,22 +51,22 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="AnimaniaConsole.Core.Commands.RegisterUserCommand" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="2.5" Y="7.5" Width="1.5" />
+    <Position X="1.5" Y="7.5" Width="2.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="AnimaniaConsole.Core.Commands.SearchPostsByPriceFromCommand" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="2.5" Y="4.5" Width="1.5" />
+    <Position X="1.5" Y="4.5" Width="2.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="AnimaniaConsole.Core.Commands.SearchPostsByPriceRangeToCommand" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="4.25" Y="4.5" Width="1.5" />
+    <Position X="4.25" Y="4.5" Width="2.75" />
     <TypeIdentifier />
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="AnimaniaConsole.Core.Commands.SearchPostsCommand" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="6" Y="4.5" Width="1.5" />
+    <Position X="7.25" Y="4.5" Width="2.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
@@ -76,17 +76,17 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="AnimaniaConsole.Core.Commands.ShowMyActivePostsCommand" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="4.25" Y="5.5" Width="1.5" />
+    <Position X="4.25" Y="5.5" Width="2.75" />
     <TypeIdentifier />
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="AnimaniaConsole.Core.Commands.ShowMyDeactivatedPostsCommand" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="6" Y="5.5" Width="1.5" />
+    <Position X="7.25" Y="5.5" Width="2.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="AnimaniaConsole.Core.Commands.ShowMyPostsCommand" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="2.5" Y="5.5" Width="1.5" />
+    <Position X="1.5" Y="5.5" Width="2.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
