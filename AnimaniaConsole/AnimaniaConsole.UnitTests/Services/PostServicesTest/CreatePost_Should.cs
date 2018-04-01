@@ -7,10 +7,6 @@ using AutoMapper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
 {
@@ -26,14 +22,20 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
         [ClassInitialize]
         public static void InitilizeAutomapper(TestContext context)
         {
-            Mapper.Initialize(config => {
-                config.CreateMap<CreatePostModel, Post>().ReverseMap();
-            });
+            //Mapper.Initialize(config => {
+            //    config.CreateMap<CreatePostModel, Post>().ReverseMap();
+            //});
         }
+
 
         [TestInitialize]
         public void Initialize()
         {
+            Mapper.Initialize(config =>
+            {
+                config.CreateMap<CreatePostModel, Post>().ReverseMap();
+            });
+
             locationServicesMock = new Mock<ILocationServices>();
             animalTypeServicesMock = new Mock<IAnimalTypeServices>();
             breedTypeServicesMock = new Mock<IBreedTypeServices>();
@@ -48,6 +50,12 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
             };
             effortContext.Users.Add(user);
             effortContext.SaveChanges();
+        }
+
+        [TestCleanup]
+        public void Cleanup()
+        {
+            Mapper.Reset();
         }
 
         [TestMethod]
@@ -76,6 +84,7 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
                 .Returns(0);
 
             postService.CreatePost(createPostModel, 0);
+
         }
     }
 }

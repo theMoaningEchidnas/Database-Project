@@ -101,6 +101,7 @@ namespace AnimaniaConsole.Services.Services
         {
             var searchResult = this.SearchPosts(searchedText);
             var postsInThePriceRange = searchResult.Where(x => x.Price <= maxPrice).ToList();
+
             return postsInThePriceRange;
         }
 
