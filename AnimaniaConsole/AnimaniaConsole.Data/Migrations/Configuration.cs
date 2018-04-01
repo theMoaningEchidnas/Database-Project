@@ -1,7 +1,9 @@
 namespace AnimaniaConsole.Data.Migrations
 {
+    using System;
     using System.Data.Entity.Migrations;
-
+    using System.IO;
+    using System.Linq;
 
     public sealed class Configuration : DbMigrationsConfiguration<AnimaniaConsole.Data.AnimaniaConsoleContext>
     {
@@ -14,9 +16,15 @@ namespace AnimaniaConsole.Data.Migrations
 
         protected override void Seed(AnimaniaConsole.Data.AnimaniaConsoleContext context)
         {
-
+            
             //Method outputs the EntityValidationErrors in PackageManager
             EntityValidationErrorsOutput.SaveChanges(context);
+
+
+
+
+
+
 
         }
 

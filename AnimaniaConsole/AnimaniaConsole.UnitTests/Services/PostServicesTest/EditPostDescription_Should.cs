@@ -1,27 +1,18 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using AnimaniaConsole.Data;
-using AnimaniaConsole.DTO.Models;
+﻿using AnimaniaConsole.Data;
 using AnimaniaConsole.Models.Models;
 using AnimaniaConsole.Services.Contracts;
 using AnimaniaConsole.Services.Services;
 using AnimaniaConsole.UnitTests.Helpers;
-using AutoMapper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using System.Collections.Generic;
+using AnimaniaConsole.DTO.Models;
 
 namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
 {
     [TestClass]
-    public class SearchPosts_Should
+    public class EditPostDescriptionShould
     {
-
-        [ClassInitialize]
-        public static void InitilizeM(TestContext context)
-        {
-            Mapper.Initialize(config => { });
-        }
-
         private Mock<IAnimaniaConsoleContext> mockContext;
         private IPostServices postServices;
 
@@ -48,46 +39,34 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
             postServices = new PostServices(mockContext.Object, stubLocationSerivces.Object,
                 stubAnimalTypeServices.Object, stubBreedTypeServices.Object);
         }
-
-
+        
         [TestMethod]
-        public void ReturnInstanceOfTypeIQueriable_When_Executed()
+        public void Returns_InstanceOfTypeString_When_Executed()
         {
-            //Act
-            var foundPosts = postServices.SearchPosts("1");
-
-
-            //Assert
-            Assert.IsInstanceOfType(foundPosts, typeof(IEnumerable<PostModel>));
-        }
-
-        [TestMethod]
-        public void ReturnCorrectResult_When_Executed()
-        {
+            //NOT COMPLETED ....
+            
             //Arrange
-            var expectedPostsFound = new List<PostModel>
-            {
-                new PostModel
-                {
-                    Id = 1,
-                    Title = "Title No A1",
-                    Description = "The shortest post description in the database - part 1"
-                },
-                new PostModel
-                {
-                    Id = 2,
-                    Title = "Title No A2",
-                    Description = "The shortest post description in the database - part 2"
-                }
-            };
-
+            var editPostModel = new Mock<EditPostModel>();
+            
             //Act
-            var actualPostsFound = postServices.SearchPosts("A").ToList();
+            var result = postServices.EditPostDescription(editPostModel.Object);
 
             //Assert
-            CollectionAssert.AreEqual(expectedPostsFound, actualPostsFound, new PostModelComparer());
+            Assert.IsInstanceOfType(result, typeof(string));
         }
 
+        [TestMethod]
+        public void FindTheCorrectPostForEdit_When_Executed()
+        {
 
+
+        }
+
+        [TestMethod]
+        public void EditCorrectly_theDescrition_When_Executed()
+        {
+
+
+        }
     }
 }

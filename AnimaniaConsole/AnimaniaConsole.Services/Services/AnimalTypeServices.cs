@@ -20,6 +20,5 @@ namespace AnimaniaConsole.Services.Services
             return animalTypeId;
 
         }
-
     }
 }
