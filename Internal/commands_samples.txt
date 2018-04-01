@@ -21,28 +21,6 @@ GetPostsInPDF
 Преместване на AutofacModule и AutoMapperConfig в Core 
 No such command, please type 'Help' to see all available commands!
 Говорящи съобщения за грешка при RegisterUser 
+Защо имаме толкова DTO а в AutoMapper ги няма?!
 
-
-
-
-
-ActivatePost(postId)
-CreatePost(Title;Description;Price;Birthday;AnimalName;AnimalTypeName;BreedTypeName;LocationName)
-DeactivatePost(postId)
-DeactivateUser
-EditPostDescription(postId,newDescription)
-EditPostPrice(postId,newPrice)
-EditPostTitle(postId,newTitle)
-GetPostsInPDF
-Help
-SearchPostsByPriceFrom(searchedText;priceFrom)
-SearchPostsByPriceRangeTo(searchedTextpriceTo)
-SearchPosts(searchedText)
-SearchPostsInPriceRange(searchedText;priceFrom;priceTo)
-ShowMyDeactivatedPosts
-ShowMyActivePosts
-ShowMyPosts
-ChangePassword
-LogInUser(userName;password)
-RegisterUser(userName;password;firstName;lastName;email;tel;facebook;skype)
 

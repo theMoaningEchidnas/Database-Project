@@ -2,7 +2,6 @@
 using AnimaniaConsole.Core.Contracts;
 using AnimaniaConsole.Services.Contracts;
 using System;
-using System.Collections.Generic;
 
 namespace AnimaniaConsole.Core.Engine
 {
@@ -34,6 +33,15 @@ namespace AnimaniaConsole.Core.Engine
 
         public void Run()
         {
+            this.writer.WriteLine("****************************************************************");
+            this.writer.WriteLine("********        Welcome to Animanima Console App        ********");
+            this.writer.WriteLine("****************************************************************");
+            this.writer.WriteLine("");
+            this.writer.WriteLine("Please, type 'Help' to show all available commands and their parameters");
+            this.writer.WriteLine("");
+            this.writer.WriteLine("Most of the commands require LogIn, so please take a minute to Register.");
+            this.writer.WriteLine("");
+
             //breedService.LoadBreedsFromJSON("breedsjson.txt", "Dog");
             while ((commandAsString = this.reader.ReadLine()) != TerminationCommand)
             {
@@ -54,17 +62,6 @@ namespace AnimaniaConsole.Core.Engine
             }
         }
 
-        private List<string> StringifyModelProperties(Object obj)
-        {
-            List<string> propertyNames = new List<string>();
-            var props = obj.GetType().GetProperties();
-            foreach (var prop in props)
-            {
-                propertyNames.Add(prop.Name);
-            }
-
-            return propertyNames;
-        }
     }
 }
 
