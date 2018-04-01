@@ -171,10 +171,10 @@ namespace AnimaniaConsole.Services.Services
 
         public EditPostModel FindPostById(int postId)
         {
-            var post = context.Posts.Find(postId);
+            var post = context.Posts.SingleOrDefault(x=>x.Id == postId);
             if (post == null)
             {
-                throw new ArgumentException("Such post doesn't exist. Please check the id and try again!");
+                throw new ArgumentNullException("Such post doesn't exist. Please check the id and try again!");
             }
 
             if (post.Status == false)

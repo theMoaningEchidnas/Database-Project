@@ -1,4 +1,5 @@
 ﻿using AnimaniaConsole.Data;
+using AnimaniaConsole.DTO.Contracts;
 using AnimaniaConsole.DTO.Models;
 using AnimaniaConsole.Services.Services;
 using AutoMapper;
@@ -11,7 +12,7 @@ namespace AnimaniaConsole.UnitTests.Services.UserServicesTests
     public class LogOut_Should
     {
 
-        private UserSessionModel userSession;
+        private IUserSessionModel userSession;
 
         [TestInitialize]
         public void Initialize()
