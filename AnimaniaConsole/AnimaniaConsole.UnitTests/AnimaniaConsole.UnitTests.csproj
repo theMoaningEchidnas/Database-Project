@@ -97,6 +97,7 @@
     <Compile Include="Services\LocationServicesTests\GetLocationIdByLocationName_Should.cs" />
     <Compile Include="Services\PostServicesTest\CreatePost_Should.cs" />
     <Compile Include="Services\PostServicesTest\EditPostDescription_Should.cs" />
+    <Compile Include="Services\PostServicesTest\EditPostTitle_Should.cs" />
     <Compile Include="Services\PostServicesTest\FindPostById_Should.cs" />
     <Compile Include="Services\PostServicesTest\GetAllDeactivatedPosts_Should.cs" />
     <Compile Include="Helpers\PostModelComparer.cs" />
