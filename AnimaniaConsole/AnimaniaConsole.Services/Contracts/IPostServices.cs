@@ -12,6 +12,7 @@ namespace AnimaniaConsole.Services.Contracts
         string EditPostTitle(EditPostModel editPostModel);
         string EditPostDescription(EditPostModel editPostModel);
         string EditPostPrice(EditPostModel editPostModel);
+        IEnumerable<PostModel> SearchPostsByAnimalType(string searchText);
         IEnumerable<PostModel> SearchPostsFrom(string searchedText, int minPrice);
         IEnumerable<PostModel> SearchPostsTo(string searchedText, int maxPrice);
         IEnumerable<PostModel> SearchPostsFromTo(string searchedText, int minPrice,int maxPrice);

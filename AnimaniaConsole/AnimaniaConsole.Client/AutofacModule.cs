@@ -52,6 +52,7 @@ namespace Client
             builder.RegisterType<EditPostDescriptionCommand>().Named<ICommand>("EditPostDescription").SingleInstance();
             builder.RegisterType<EditPostPriceCommand>().Named<ICommand>("EditPostPrice").SingleInstance();
             builder.RegisterType<DeactivateUserCommand>().Named<ICommand>("DeactivateUser").SingleInstance();
+            builder.RegisterType<SearchPostsByAnimalTypeCommand>().Named<ICommand>("SearchPostsByAnimalType").SingleInstance();
             builder.RegisterType<SearchPostsByPriceFromCommand>().Named<ICommand>("SearchPostsByPriceFrom").SingleInstance();
             builder.RegisterType<SearchPostsByPriceRangeToCommand>().Named<ICommand>("SearchPostsByPriceTo").SingleInstance();
             builder.RegisterType<SearchPostsInPriceRangeCommand>().Named<ICommand>("SearchPostsByPriceInRange").SingleInstance();

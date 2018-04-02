@@ -7,6 +7,8 @@ using AutoMapper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
 {
@@ -43,11 +45,27 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
             postService = new PostServices(effortContext, locationServicesMock.Object, animalTypeServicesMock.Object, breedTypeServicesMock.Object);
             User user = new User()
             {
-                Id = 0,
                 UserName = "Tester",
                 Password = "Password123",
                 Email = "test@test.com"
             };
+            BreedType breed = new BreedType()
+            {
+                BreedTypeName = "TestBreed",
+                AnimalTypeId = 1
+            };
+            AnimalType type = new AnimalType()
+            {
+                AnimalTypeName = "TestAnimalTypeName",
+            };
+            Location location = new Location()
+            {
+                LocationName = "TestLocation",
+            };
+
+            effortContext.Locations.Add(location);
+            effortContext.AnimalTypes.Add(type);
+            effortContext.BreedTypes.Add(breed);
             effortContext.Users.Add(user);
             effortContext.SaveChanges();
         }
@@ -59,7 +77,7 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
         }
 
         [TestMethod]
-        public void Pass_TheRight_Argument_ToLocationServices()
+        public void Create_Post_WhenArguments_AreValid()
         {
             var createPostModel = new CreatePostModel()
             {
@@ -75,16 +93,17 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
 
             locationServicesMock
                 .Setup(l => l.GetLocationIdByLocationName(It.IsAny<IAnimaniaConsoleContext>(), It.IsAny<string>()))
-                .Returns(0);
+                .Returns(1);
             animalTypeServicesMock
                 .Setup(a => a.GetAnimalTypeIdByAnimalTypeName(It.IsAny<IAnimaniaConsoleContext>(), It.IsAny<string>()))
-                .Returns(0);
+                .Returns(1);
             breedTypeServicesMock
                 .Setup(b => b.GetBreedTypeIdByBreedTypeName(It.IsAny<string>()))
-                .Returns(0);
+                .Returns(1);
 
-            postService.CreatePost(createPostModel, 0);
+            postService.CreatePost(createPostModel, 1);
 
+            Assert.AreEqual(1, effortContext.Posts.Count());
         }
     }
 }

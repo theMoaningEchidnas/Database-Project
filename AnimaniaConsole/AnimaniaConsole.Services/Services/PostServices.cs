@@ -195,5 +195,13 @@ namespace AnimaniaConsole.Services.Services
             }
         }
 
+        public IEnumerable<PostModel> SearchPostsByAnimalType(string searchText)
+        {
+            var animalId = context.AnimalTypes.Where(x => x.AnimalTypeName == searchText).FirstOrDefault().Id;
+
+            var searchResults = context.Posts.Where(x => x.Animal.AnimalTypeId == animalId).ProjectTo<PostModel>().ToList();
+
+            return searchResults;
+        }
     }
 }
