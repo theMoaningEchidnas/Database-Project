@@ -97,10 +97,17 @@
     <Compile Include="Services\LocationServicesTests\GetLocationIdByLocationName_Should.cs" />
     <Compile Include="Services\PostServicesTest\CreatePost_Should.cs" />
     <Compile Include="Services\PostServicesTest\EditPostDescription_Should.cs" />
+    <Compile Include="Services\PostServicesTest\FindPostById_Should.cs" />
+    <Compile Include="Services\PostServicesTest\GetAllDeactivatedPosts_Should.cs" />
+    <Compile Include="Helpers\PostModelComparer.cs" />
+    <Compile Include="Services\PostServicesTest\SearchPostsТо_Should.cs" />
     <Compile Include="Services\PostServicesTest\GetAllMyPosts_Should.cs" />
     <Compile Include="Services\PostServicesTest\PostModelComparer.cs" />
     <Compile Include="Services\PostServicesTest\SearchPosts_Should.cs" />
+    <Compile Include="Services\UserServicesTests\ChangePassword_Should.cs" />
+    <Compile Include="Services\UserServicesTests\GetLoggedUserId_Should.cs" />
     <Compile Include="Services\UserServicesTests\LogOut_Should.cs" />
+    <Compile Include="Services\UserServicesTests\ValidateUser_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -8,6 +8,7 @@ using AnimaniaConsole.Core.Providers;
 using AnimaniaConsole.Core.Validator;
 using AnimaniaConsole.Core.Wrappers;
 using AnimaniaConsole.Data;
+using AnimaniaConsole.DTO.Contracts;
 using AnimaniaConsole.DTO.Models;
 using AnimaniaConsole.Services.Contracts;
 using AnimaniaConsole.Services.Services;
@@ -34,12 +35,12 @@ namespace Client
             builder.RegisterType<LocationServices>().As<ILocationServices>().SingleInstance();
             builder.RegisterType<AnimalTypeServices>().As<IAnimalTypeServices>().SingleInstance();
             builder.RegisterType<BreedTypeServices>().As<IBreedTypeServices>().SingleInstance();
-
+            builder.RegisterType<UserSessionModel>().As<IUserSessionModel>().SingleInstance();
             builder.Register(x => Mapper.Instance).SingleInstance();
             builder.RegisterType<UserServices>().As<IUserServices>();
             //If above is not single then the different commands related to same user will not work properly, e.g. we deactivate user and then try to show his/her posts :)
 
-            builder.RegisterType<UserSessionModel>().AsSelf().SingleInstance();
+            
             builder.RegisterType<GetPostsInPDFCommand>().Named<ICommand>("GetPostsInPDF").SingleInstance();
             builder.RegisterType<ChangePasswordCommand>().Named<ICommand>("ChangePassword").SingleInstance();
             builder.RegisterType<RegisterUserCommand>().Named<ICommand>("RegisterUser").SingleInstance();
@@ -51,6 +52,7 @@ namespace Client
             builder.RegisterType<EditPostDescriptionCommand>().Named<ICommand>("EditPostDescription").SingleInstance();
             builder.RegisterType<EditPostPriceCommand>().Named<ICommand>("EditPostPrice").SingleInstance();
             builder.RegisterType<DeactivateUserCommand>().Named<ICommand>("DeactivateUser").SingleInstance();
+            builder.RegisterType<SearchPostsByAnimalTypeCommand>().Named<ICommand>("SearchPostsByAnimalType").SingleInstance();
             builder.RegisterType<SearchPostsByPriceFromCommand>().Named<ICommand>("SearchPostsByPriceFrom").SingleInstance();
             builder.RegisterType<SearchPostsByPriceRangeToCommand>().Named<ICommand>("SearchPostsByPriceTo").SingleInstance();
             builder.RegisterType<SearchPostsInPriceRangeCommand>().Named<ICommand>("SearchPostsByPriceInRange").SingleInstance();

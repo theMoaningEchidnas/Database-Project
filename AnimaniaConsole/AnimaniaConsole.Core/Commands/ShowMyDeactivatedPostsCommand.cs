@@ -22,7 +22,7 @@ namespace AnimaniaConsole.Core.Commands
         public string Execute(IList<string> parameters)
         {
             var userID = userService.GetLoggedUserId();
-            var postsToShow = postService.GetAllDeactivetedPosts(userID);
+            var postsToShow = postService.GetAllDeactivatedPosts(userID);
             return postService.PrintPostsToConsole(postsToShow);
         }
     }

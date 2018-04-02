@@ -12,11 +12,12 @@ namespace AnimaniaConsole.Services.Contracts
         string EditPostTitle(EditPostModel editPostModel);
         string EditPostDescription(EditPostModel editPostModel);
         string EditPostPrice(EditPostModel editPostModel);
+        IEnumerable<PostModel> SearchPostsByAnimalType(string searchText);
         IEnumerable<PostModel> SearchPostsFrom(string searchedText, int minPrice);
         IEnumerable<PostModel> SearchPostsTo(string searchedText, int maxPrice);
         IEnumerable<PostModel> SearchPostsFromTo(string searchedText, int minPrice,int maxPrice);
         IEnumerable<PostModel> GetActivePosts(int userId);
-        IEnumerable<PostModel> GetAllDeactivetedPosts(int userId);
+        IEnumerable<PostModel> GetAllDeactivatedPosts(int userId);
         void ActivatePost(int postId);
         void DeactivatePost(int postId, int userId);
 

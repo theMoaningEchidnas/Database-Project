@@ -63,9 +63,13 @@ namespace AnimaniaConsole.Services.Services
 
             return posts;
         }
-        public IEnumerable<PostModel> GetAllDeactivetedPosts(int userId)
+        public IEnumerable<PostModel> GetAllDeactivatedPosts(int userId)
         {
-            var posts = this.context.Posts.Where(x => x.UserId == userId && x.Status == false).ProjectTo<PostModel>();
+            var posts = this.context.Posts
+                .Where(x => x.UserId == userId && x.Status == false)
+                .ProjectTo<PostModel>()
+                .ToList();
+
             return posts;
         }
         public void ActivatePost(int postId)
@@ -101,6 +105,7 @@ namespace AnimaniaConsole.Services.Services
         {
             var searchResult = this.SearchPosts(searchedText);
             var postsInThePriceRange = searchResult.Where(x => x.Price <= maxPrice).ToList();
+
             return postsInThePriceRange;
         }
 
@@ -147,11 +152,11 @@ namespace AnimaniaConsole.Services.Services
 
         public string EditPostDescription(EditPostModel editPostModel)
         {
-            var postForEdit = this.context.Posts.Find(editPostModel.Id);
+            var postForEdit = this.context.Posts.SingleOrDefault(x => x.Id == editPostModel.Id);
             postForEdit.Description = editPostModel.Description;
             context.SaveChanges();
 
-            return "Post Description was successfully edited";
+            return $"Post Description was successfully edited to {postForEdit.Description}";
         }
 
         public string EditPostPrice(EditPostModel editPostModel)
@@ -166,10 +171,10 @@ namespace AnimaniaConsole.Services.Services
 
         public EditPostModel FindPostById(int postId)
         {
-            var post = context.Posts.Find(postId);
+            var post = context.Posts.SingleOrDefault(x=>x.Id == postId);
             if (post == null)
             {
-                throw new ArgumentException("Such post doesn't exist. Please check the id and try again!");
+                throw new ArgumentNullException("Such post doesn't exist. Please check the id and try again!");
             }
 
             if (post.Status == false)
@@ -190,5 +195,13 @@ namespace AnimaniaConsole.Services.Services
             }
         }
 
+        public IEnumerable<PostModel> SearchPostsByAnimalType(string searchText)
+        {
+            var animalId = context.AnimalTypes.Where(x => x.AnimalTypeName == searchText).FirstOrDefault().Id;
+
+            var searchResults = context.Posts.Where(x => x.Animal.AnimalTypeId == animalId).ProjectTo<PostModel>().ToList();
+
+            return searchResults;
+        }
     }
 }

@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IUserSessionModel.cs" />
     <Compile Include="Models\AnimalModel.cs" />
     <Compile Include="Models\AnimalTypeModel.cs" />
     <Compile Include="Models\BreedTypeModel.cs" />

@@ -53,6 +53,7 @@
     <Compile Include="Commands\GetPostsInPDFCommand.cs" />
     <Compile Include="Commands\LogOutUserCommand.cs" />
     <Compile Include="Commands\HelpCommand.cs" />
+    <Compile Include="Commands\SearchPostsByAnimalTypeCommand.cs" />
     <Compile Include="Commands\SearchPostsByPriceFromCommand.cs" />
     <Compile Include="Commands\SearchPostsByPriceRangeToCommand.cs" />
     <Compile Include="Commands\SearchPostsCommand.cs" />

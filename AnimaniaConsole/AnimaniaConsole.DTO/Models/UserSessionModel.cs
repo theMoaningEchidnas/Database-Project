@@ -1,6 +1,8 @@
-﻿namespace AnimaniaConsole.DTO.Models
+﻿using AnimaniaConsole.DTO.Contracts;
+
+namespace AnimaniaConsole.DTO.Models
 {
-    public class UserSessionModel
+    public class UserSessionModel: IUserSessionModel
     {
         public int Id { get; set; }
 

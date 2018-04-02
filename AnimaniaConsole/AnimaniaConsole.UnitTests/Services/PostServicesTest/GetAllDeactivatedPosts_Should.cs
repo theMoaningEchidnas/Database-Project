@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using AnimaniaConsole.Data;
+﻿using AnimaniaConsole.Data;
 using AnimaniaConsole.DTO.Models;
 using AnimaniaConsole.Models.Models;
 using AnimaniaConsole.Services.Contracts;
@@ -9,13 +7,14 @@ using AnimaniaConsole.UnitTests.Helpers;
 using AutoMapper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
 {
     [TestClass]
-    public class SearchPosts_Should
+    public class GetAllDeactivatedPosts_Should
     {
-
         private Mock<IAnimaniaConsoleContext> mockContext;
         private IPostServices postServices;
 
@@ -24,11 +23,35 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
         {
             Mapper.Initialize(config => { });
 
+
             var data = new List<Post>
             {
-                new Post {Id = 1, Title= "Title No A1", Description = "The shortest post description in the database - part 1"},
-                new Post {Id = 2, Title= "Title No A2", Description = "The shortest post description in the database - part 2"},
-                new Post {Id = 3, Title= "Title No 3", Description = "The shortest post description in the database - part 3"}
+                new Post
+                {
+                    Id = 1, Title= "Title No A1",
+                    Description = "The shortest post description - part 1",
+                    Price = 10, 
+                    Status = false,
+                    UserId = 1
+                },
+                new Post
+                {
+                    Id = 2,
+                    Title = "Title No A2",
+                    Description = "The shortest post description - part 2", Price = 20,
+                    Status = false,
+                    UserId = 2
+
+                },
+                new Post
+                {
+                    Id = 3,
+                    Title = "Title No 3",
+                    Description = "The shortest post description - part 3",
+                    Price = 30,
+                    Status = true,
+                    UserId = 1
+                }
             };
 
             var mockSet = data.GetQueryableMockDbSet();
@@ -43,6 +66,7 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
 
             postServices = new PostServices(mockContext.Object, stubLocationSerivces.Object,
                 stubAnimalTypeServices.Object, stubBreedTypeServices.Object);
+
         }
 
         [TestCleanup]
@@ -51,21 +75,19 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
             Mapper.Reset();
         }
 
-
         [TestMethod]
-        public void ReturnInstanceOfTypeIEnumerable_When_Executed()
+        public void ReturnInstanceOfTypeListIfCorrectUserIsProvided_When_Executed()
         {
             //Act
-            var foundPosts = postServices.SearchPosts("1");
-
+            var foundPosts = postServices.GetAllDeactivatedPosts(1);
 
             //Assert
-            Assert.IsInstanceOfType(foundPosts, typeof(IEnumerable<PostModel>));
+            Assert.IsInstanceOfType(foundPosts, typeof(List<PostModel>));
 
         }
 
         [TestMethod]
-        public void ReturnCorrectResult_When_Executed()
+        public void ReturnAllTheCorrectDeactivatedPosts_When_Executed()
         {
             //Arrange
             var expectedPostsFound = new List<PostModel>
@@ -74,22 +96,19 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
                 {
                     Id = 1,
                     Title = "Title No A1",
-                    Description = "The shortest post description in the database - part 1"
-                },
-                new PostModel
-                {
-                    Id = 2,
-                    Title = "Title No A2",
-                    Description = "The shortest post description in the database - part 2"
+                    Description = "The shortest post description - part 1",
+                    Price = 10,
+                    Status = false,
+                    UserId = 1
                 }
             };
 
             //Act
-            var actualPostsFound = postServices.SearchPosts("A").ToList();
+            var actualPostsFound = postServices.GetAllDeactivatedPosts(1).ToList();
 
             //Assert
             CollectionAssert.AreEqual(expectedPostsFound, actualPostsFound, new PostModelComparer());
-            
+
         }
 
 

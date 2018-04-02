@@ -6,19 +6,20 @@ using AnimaniaConsole.Services.Contracts;
 using AutoMapper;
 using System;
 using System.Linq;
+using AnimaniaConsole.DTO.Contracts;
 
 namespace AnimaniaConsole.Services.Services
 {
     public class UserServices : IUserServices
     {
-        public UserServices(IAnimaniaConsoleContext ctx, IMapper mapper, UserSessionModel session)
+        public UserServices(IAnimaniaConsoleContext ctx, IMapper mapper, IUserSessionModel session)
         {
             this.Session = session;
             this.Context = ctx;
             this.Mapper = mapper;
         }
 
-        public UserSessionModel Session { get; }
+        public IUserSessionModel Session { get; }
         public IAnimaniaConsoleContext Context { get; }
         public IMapper Mapper { get; }
 
@@ -61,7 +62,8 @@ namespace AnimaniaConsole.Services.Services
 
         public void ChangePassword(string newPassword)
         {
-            var user = this.Context.Users.Where(x => x.Id == Session.Id).Single();
+            var user = this.Context.Users.SingleOrDefault(x => x.Id == Session.Id);
+
             user.Password = newPassword;
             this.Context.SaveChanges();
         }
