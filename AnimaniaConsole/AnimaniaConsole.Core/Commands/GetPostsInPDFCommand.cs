@@ -15,8 +15,8 @@ namespace AnimaniaConsole.Core.Commands
 
         public GetPostsInPDFCommand(IPostServices postServices, IUserServices userService)
         {
-            this.postServices = postServices;
-            this.userService = userService;
+            this.postServices = postServices ?? throw new ArgumentNullException();
+            this.userService = userService ?? throw new ArgumentNullException();
         }
 
 

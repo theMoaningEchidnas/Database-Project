@@ -3,11 +3,7 @@ using AnimaniaConsole.DTO.Models;
 using AnimaniaConsole.Services.Contracts;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AnimaniaConsole.UnitTests.Core.Commands.SearchPostsCommandTests
 {

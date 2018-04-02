@@ -1,4 +1,5 @@
-﻿using AnimaniaConsole.Core.CommandContracts;
+﻿using System;
+using AnimaniaConsole.Core.CommandContracts;
 using AnimaniaConsole.Core.Contracts;
 using AnimaniaConsole.DTO.Models;
 using AnimaniaConsole.Services.Contracts;
@@ -15,9 +16,9 @@ namespace AnimaniaConsole.Core.Commands
 
         public DeactivateUserCommand(IWriter consoleWriter, IReader consoleReader, IUserServices userService)
         {
-            this.consoleWriter = consoleWriter;
-            this.consoleReader = consoleReader;
-            this.userService = userService;           
+            this.consoleWriter = consoleWriter ?? throw new ArgumentNullException();
+            this.consoleReader = consoleReader ?? throw new ArgumentNullException();
+            this.userService = userService ?? throw new ArgumentNullException();           
         }
 
 

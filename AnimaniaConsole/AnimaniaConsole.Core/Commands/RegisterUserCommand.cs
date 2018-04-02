@@ -10,7 +10,7 @@ namespace AnimaniaConsole.Core.Commands
     {
         public RegisterUserCommand(IUserServices service)
         {
-            this.Service = service;
+            this.Service = service ?? throw new ArgumentNullException();
         }
 
         public IUserServices Service { get; }

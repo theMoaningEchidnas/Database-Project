@@ -16,8 +16,8 @@ namespace AnimaniaConsole.Core.Commands
 
         public CreatePostCommand(IPostServices postService, IUserServices userService)
         {
-            this.userService = userService;
-            this.PostService = postService;
+            this.userService = userService ?? throw new ArgumentNullException();
+            this.PostService = postService ?? throw new ArgumentNullException();
         }
 
         public IPostServices PostService { get; }

@@ -16,8 +16,8 @@ namespace AnimaniaConsole.Core.Commands
 
         public ShowMyDeactivatedPostsCommand(IUserServices userService,IPostServices postService)
         {
-            this.userService = userService;
-            this.postService = postService;
+            this.userService = userService ?? throw new ArgumentNullException();
+            this.postService = postService ?? throw new ArgumentNullException();
         }
         public string Execute(IList<string> parameters)
         {

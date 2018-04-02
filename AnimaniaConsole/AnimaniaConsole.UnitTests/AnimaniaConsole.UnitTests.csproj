@@ -82,10 +82,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Commands\ActivatePostCommandTests\Constructor_Should.cs" />
     <Compile Include="Core\Commands\ChangePasswordCommandTests\Constructor_Should.cs" />
     <Compile Include="Core\Commands\ChangePasswordCommandTests\Execute_Should.cs" />
+    <Compile Include="Core\Commands\CreatePostCommandTests\Constructor_Should.cs" />
+    <Compile Include="Core\Commands\DeactivatePostCommandTests\Constructor_Should.cs" />
+    <Compile Include="Core\Commands\EditPostDescriptionCommandTests\Constructor_Should.cs" />
     <Compile Include="Core\Commands\EditPostPriceCommandTests\Constructor_Should.cs" />
     <Compile Include="Core\Commands\EditPostPriceCommandTests\Execute_Should.cs" />
+    <Compile Include="Core\Commands\EditPostTitleCommandTests\Constructor_Should.cs" />
+    <Compile Include="Core\Commands\GetPostInPDFCommandTests\Constructor_Should.cs" />
     <Compile Include="Core\Commands\SearchByPriceFromCommandTests\Constructor_Should.cs" />
     <Compile Include="Core\Commands\SearchByPriceFromCommandTests\Execute_Should.cs" />
     <Compile Include="Core\Commands\SearchPostsCommandTests\Constructor_Should.cs" />

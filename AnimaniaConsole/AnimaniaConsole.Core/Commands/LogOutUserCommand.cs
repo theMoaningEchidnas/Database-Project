@@ -14,7 +14,7 @@ namespace AnimaniaConsole.Core.Commands
 
         public LogOutUserCommand(IUserServices userService)
         {
-            this.userService = userService;
+            this.userService = userService ?? throw new ArgumentNullException();
         }
         public string Execute(IList<string> parameters)
         {

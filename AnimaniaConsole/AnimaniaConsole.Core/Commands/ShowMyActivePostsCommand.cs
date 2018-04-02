@@ -16,8 +16,8 @@ namespace AnimaniaConsole.Core.Commands
 
         public ShowMyActivePostsCommand(IPostServices postService, IUserServices userService)
         {
-            this.postService = postService;
-            this.userService = userService;
+            this.postService = postService ?? throw new ArgumentNullException();
+            this.userService = userService ?? throw new ArgumentNullException();
         }
         public string Execute(IList<string> parameters)
         {
