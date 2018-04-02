@@ -49,15 +49,241 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnimaniaConsoleContext.cs" />
-    <Compile Include="Migrations\201803131145299_Many changes to db.cs" />
-    <Compile Include="Migrations\201803131145299_Many changes to db.Designer.cs">
-      <DependentUpon>201803131145299_Many changes to db.cs</DependentUpon>
+    <Compile Include="IAnimaniaConsoleContext.cs" />
+    <Compile Include="Migrations\201803160955151_New.cs" />
+    <Compile Include="Migrations\201803160955151_New.Designer.cs">
+      <DependentUpon>201803160955151_New.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803151657016_Town deleted Location fixed.cs" />
-    <Compile Include="Migrations\201803151657016_Town deleted Location fixed.Designer.cs">
-      <DependentUpon>201803151657016_Town deleted Location fixed.cs</DependentUpon>
+    <Compile Include="Migrations\201803161139370_Johny - anymal type.cs" />
+    <Compile Include="Migrations\201803161139370_Johny - anymal type.Designer.cs">
+      <DependentUpon>201803161139370_Johny - anymal type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161203367_User.cs" />
+    <Compile Include="Migrations\201803161203367_User.Designer.cs">
+      <DependentUpon>201803161203367_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161212098_Add Required.cs" />
+    <Compile Include="Migrations\201803161212098_Add Required.Designer.cs">
+      <DependentUpon>201803161212098_Add Required.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161305301_Last migration prior push.cs" />
+    <Compile Include="Migrations\201803161305301_Last migration prior push.Designer.cs">
+      <DependentUpon>201803161305301_Last migration prior push.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161405498_seed test.cs" />
+    <Compile Include="Migrations\201803161405498_seed test.Designer.cs">
+      <DependentUpon>201803161405498_seed test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161442077_testing validation 1.cs" />
+    <Compile Include="Migrations\201803161442077_testing validation 1.Designer.cs">
+      <DependentUpon>201803161442077_testing validation 1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161442340_testing validation 2.cs" />
+    <Compile Include="Migrations\201803161442340_testing validation 2.Designer.cs">
+      <DependentUpon>201803161442340_testing validation 2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161443092_last test for validation.cs" />
+    <Compile Include="Migrations\201803161443092_last test for validation.Designer.cs">
+      <DependentUpon>201803161443092_last test for validation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161452158_seed testing couple of models created.cs" />
+    <Compile Include="Migrations\201803161452158_seed testing couple of models created.Designer.cs">
+      <DependentUpon>201803161452158_seed testing couple of models created.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161456476_Seed test with post added.cs" />
+    <Compile Include="Migrations\201803161456476_Seed test with post added.Designer.cs">
+      <DependentUpon>201803161456476_Seed test with post added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161505477_added user id to posts and made nullable problem.cs" />
+    <Compile Include="Migrations\201803161505477_added user id to posts and made nullable problem.Designer.cs">
+      <DependentUpon>201803161505477_added user id to posts and made nullable problem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161853276_ChangeIdTypeFromIntToByteWhereNoMoreThan250ElementsAreExpected.cs" />
+    <Compile Include="Migrations\201803161853276_ChangeIdTypeFromIntToByteWhereNoMoreThan250ElementsAreExpected.Designer.cs">
+      <DependentUpon>201803161853276_ChangeIdTypeFromIntToByteWhereNoMoreThan250ElementsAreExpected.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161935064_ChangeIdTypeFromIntToByteWhereNoMoreThan250ElementsAreExpected1.cs" />
+    <Compile Include="Migrations\201803161935064_ChangeIdTypeFromIntToByteWhereNoMoreThan250ElementsAreExpected1.Designer.cs">
+      <DependentUpon>201803161935064_ChangeIdTypeFromIntToByteWhereNoMoreThan250ElementsAreExpected1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161940321_TryToFixError.cs" />
+    <Compile Include="Migrations\201803161940321_TryToFixError.Designer.cs">
+      <DependentUpon>201803161940321_TryToFixError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161942401_ReturnRequiredOnAnimalInPost.cs" />
+    <Compile Include="Migrations\201803161942401_ReturnRequiredOnAnimalInPost.Designer.cs">
+      <DependentUpon>201803161942401_ReturnRequiredOnAnimalInPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161947497_TryToINcludeAnimalInPostWhenSeeding.cs" />
+    <Compile Include="Migrations\201803161947497_TryToINcludeAnimalInPostWhenSeeding.Designer.cs">
+      <DependentUpon>201803161947497_TryToINcludeAnimalInPostWhenSeeding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161953001_TryToINcludeAnimalInPostWhenSeeding1.cs" />
+    <Compile Include="Migrations\201803161953001_TryToINcludeAnimalInPostWhenSeeding1.Designer.cs">
+      <DependentUpon>201803161953001_TryToINcludeAnimalInPostWhenSeeding1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803161953474_TryToINcludeAnimalInPostWhenSeeding2.cs" />
+    <Compile Include="Migrations\201803161953474_TryToINcludeAnimalInPostWhenSeeding2.Designer.cs">
+      <DependentUpon>201803161953474_TryToINcludeAnimalInPostWhenSeeding2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803162003594_TryToINcludeAnimalInPostWhenSeeding3.cs" />
+    <Compile Include="Migrations\201803162003594_TryToINcludeAnimalInPostWhenSeeding3.Designer.cs">
+      <DependentUpon>201803162003594_TryToINcludeAnimalInPostWhenSeeding3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803171942465_AllIdsAutoIncrement_NoSeedData.cs" />
+    <Compile Include="Migrations\201803171942465_AllIdsAutoIncrement_NoSeedData.Designer.cs">
+      <DependentUpon>201803171942465_AllIdsAutoIncrement_NoSeedData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803171958200_ReturnPostIdToBeOptional.cs" />
+    <Compile Include="Migrations\201803171958200_ReturnPostIdToBeOptional.Designer.cs">
+      <DependentUpon>201803171958200_ReturnPostIdToBeOptional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803171959002_SeedData.cs" />
+    <Compile Include="Migrations\201803171959002_SeedData.Designer.cs">
+      <DependentUpon>201803171959002_SeedData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803172137048_TweakPropsTryingToFixErrorResultedFromDatabaseGeneratedIds.cs" />
+    <Compile Include="Migrations\201803172137048_TweakPropsTryingToFixErrorResultedFromDatabaseGeneratedIds.Designer.cs">
+      <DependentUpon>201803172137048_TweakPropsTryingToFixErrorResultedFromDatabaseGeneratedIds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803172203084_AddAnimalIdinPOST.cs" />
+    <Compile Include="Migrations\201803172203084_AddAnimalIdinPOST.Designer.cs">
+      <DependentUpon>201803172203084_AddAnimalIdinPOST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803172219048_ChangeAnimalTypeIDtoAnimalTypeIdandSameForBreedTypeandLocation.cs" />
+    <Compile Include="Migrations\201803172219048_ChangeAnimalTypeIDtoAnimalTypeIdandSameForBreedTypeandLocation.Designer.cs">
+      <DependentUpon>201803172219048_ChangeAnimalTypeIDtoAnimalTypeIdandSameForBreedTypeandLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803172244384_SmallChanges.cs" />
+    <Compile Include="Migrations\201803172244384_SmallChanges.Designer.cs">
+      <DependentUpon>201803172244384_SmallChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803172344166_JustInCase.cs" />
+    <Compile Include="Migrations\201803172344166_JustInCase.Designer.cs">
+      <DependentUpon>201803172344166_JustInCase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180014303_ChangeBreedTypeId.cs" />
+    <Compile Include="Migrations\201803180014303_ChangeBreedTypeId.Designer.cs">
+      <DependentUpon>201803180014303_ChangeBreedTypeId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180016338_BackToChangeBreedTypeId.cs" />
+    <Compile Include="Migrations\201803180016338_BackToChangeBreedTypeId.Designer.cs">
+      <DependentUpon>201803180016338_BackToChangeBreedTypeId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180018214_BackToChangeBreedTypeId2.cs" />
+    <Compile Include="Migrations\201803180018214_BackToChangeBreedTypeId2.Designer.cs">
+      <DependentUpon>201803180018214_BackToChangeBreedTypeId2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180735523_TryFixValidationErrorInPost.cs" />
+    <Compile Include="Migrations\201803180735523_TryFixValidationErrorInPost.Designer.cs">
+      <DependentUpon>201803180735523_TryFixValidationErrorInPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180752264_TryRemoveImagesFromPost.cs" />
+    <Compile Include="Migrations\201803180752264_TryRemoveImagesFromPost.Designer.cs">
+      <DependentUpon>201803180752264_TryRemoveImagesFromPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180801110_PlayingWithIdentityFieldOfPost.cs" />
+    <Compile Include="Migrations\201803180801110_PlayingWithIdentityFieldOfPost.Designer.cs">
+      <DependentUpon>201803180801110_PlayingWithIdentityFieldOfPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180802186_PlayingWithIdentityFieldOfPost2.cs" />
+    <Compile Include="Migrations\201803180802186_PlayingWithIdentityFieldOfPost2.Designer.cs">
+      <DependentUpon>201803180802186_PlayingWithIdentityFieldOfPost2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180820596_PlayingWithIdentityFieldOfPost3.cs" />
+    <Compile Include="Migrations\201803180820596_PlayingWithIdentityFieldOfPost3.Designer.cs">
+      <DependentUpon>201803180820596_PlayingWithIdentityFieldOfPost3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180846079_KeysIssue.cs" />
+    <Compile Include="Migrations\201803180846079_KeysIssue.Designer.cs">
+      <DependentUpon>201803180846079_KeysIssue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180850534_KeysIssue2.cs" />
+    <Compile Include="Migrations\201803180850534_KeysIssue2.Designer.cs">
+      <DependentUpon>201803180850534_KeysIssue2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180858365_KeysIssue3.cs" />
+    <Compile Include="Migrations\201803180858365_KeysIssue3.Designer.cs">
+      <DependentUpon>201803180858365_KeysIssue3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180925334_ChangedAnimalAndPostIdsToAnimalIdandPOstId.cs" />
+    <Compile Include="Migrations\201803180925334_ChangedAnimalAndPostIdsToAnimalIdandPOstId.Designer.cs">
+      <DependentUpon>201803180925334_ChangedAnimalAndPostIdsToAnimalIdandPOstId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180940331_ChangeIdsBack.cs" />
+    <Compile Include="Migrations\201803180940331_ChangeIdsBack.Designer.cs">
+      <DependentUpon>201803180940331_ChangeIdsBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180947422_DropDataAnnotationForDatabaseGeneratedOnPost.cs" />
+    <Compile Include="Migrations\201803180947422_DropDataAnnotationForDatabaseGeneratedOnPost.Designer.cs">
+      <DependentUpon>201803180947422_DropDataAnnotationForDatabaseGeneratedOnPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180954501_RemoveDataGeneratedOnIdinPost.cs" />
+    <Compile Include="Migrations\201803180954501_RemoveDataGeneratedOnIdinPost.Designer.cs">
+      <DependentUpon>201803180954501_RemoveDataGeneratedOnIdinPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803180959470_YesYesYes_DataSeedWorks_Now_Add_back_The_Images_Data_In_Post.cs" />
+    <Compile Include="Migrations\201803180959470_YesYesYes_DataSeedWorks_Now_Add_back_The_Images_Data_In_Post.Designer.cs">
+      <DependentUpon>201803180959470_YesYesYes_DataSeedWorks_Now_Add_back_The_Images_Data_In_Post.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803181006286_AllValidationsAreBack.cs" />
+    <Compile Include="Migrations\201803181006286_AllValidationsAreBack.Designer.cs">
+      <DependentUpon>201803181006286_AllValidationsAreBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803181139257_IncreaseUserNameTo30char.cs" />
+    <Compile Include="Migrations\201803181139257_IncreaseUserNameTo30char.Designer.cs">
+      <DependentUpon>201803181139257_IncreaseUserNameTo30char.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803181145091_ChangePasswordValidation.cs" />
+    <Compile Include="Migrations\201803181145091_ChangePasswordValidation.Designer.cs">
+      <DependentUpon>201803181145091_ChangePasswordValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803181154134_ChangePasswordValidation1.cs" />
+    <Compile Include="Migrations\201803181154134_ChangePasswordValidation1.Designer.cs">
+      <DependentUpon>201803181154134_ChangePasswordValidation1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803181202346_AddUserIdInPost.cs" />
+    <Compile Include="Migrations\201803181202346_AddUserIdInPost.Designer.cs">
+      <DependentUpon>201803181202346_AddUserIdInPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803201654194_ChangeNameToLocationName.cs" />
+    <Compile Include="Migrations\201803201654194_ChangeNameToLocationName.Designer.cs">
+      <DependentUpon>201803201654194_ChangeNameToLocationName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803201718006_MakeLocationNameUniqueAndRequired.cs" />
+    <Compile Include="Migrations\201803201718006_MakeLocationNameUniqueAndRequired.Designer.cs">
+      <DependentUpon>201803201718006_MakeLocationNameUniqueAndRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803241213405_MakeUserNameSmallerFrom6To4Chars.cs" />
+    <Compile Include="Migrations\201803241213405_MakeUserNameSmallerFrom6To4Chars.Designer.cs">
+      <DependentUpon>201803241213405_MakeUserNameSmallerFrom6To4Chars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803271549371_AddStatusToUserTable.cs" />
+    <Compile Include="Migrations\201803271549371_AddStatusToUserTable.Designer.cs">
+      <DependentUpon>201803271549371_AddStatusToUserTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803271556266_MakeStatusColumnsInUserAndPostTableRequred.cs" />
+    <Compile Include="Migrations\201803271556266_MakeStatusColumnsInUserAndPostTableRequred.Designer.cs">
+      <DependentUpon>201803271556266_MakeStatusColumnsInUserAndPostTableRequred.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803290744106_User validation, AnimalType validation, BreedType validation.cs" />
+    <Compile Include="Migrations\201803290744106_User validation, AnimalType validation, BreedType validation.Designer.cs">
+      <DependentUpon>201803290744106_User validation, AnimalType validation, BreedType validation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803290827112_BreedType.cs" />
+    <Compile Include="Migrations\201803290827112_BreedType.Designer.cs">
+      <DependentUpon>201803290827112_BreedType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803290847207_RemoveAnimalTypeIdFromBreedType.cs" />
+    <Compile Include="Migrations\201803290847207_RemoveAnimalTypeIdFromBreedType.Designer.cs">
+      <DependentUpon>201803290847207_RemoveAnimalTypeIdFromBreedType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803290848359_AddAnimalTypeIdFromBreedType.cs" />
+    <Compile Include="Migrations\201803290848359_AddAnimalTypeIdFromBreedType.Designer.cs">
+      <DependentUpon>201803290848359_AddAnimalTypeIdFromBreedType.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\EntityValidationErrorsOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,18 +291,186 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803131145299_Many changes to db.resx">
-      <DependentUpon>201803131145299_Many changes to db.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803151657016_Town deleted Location fixed.resx">
-      <DependentUpon>201803151657016_Town deleted Location fixed.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\AnimaniaConsole.Models\AnimaniaConsole.Models.csproj">
       <Project>{1c1dd402-36d5-4a11-86eb-bbdc7acf63ed}</Project>
       <Name>AnimaniaConsole.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201803160955151_New.resx">
+      <DependentUpon>201803160955151_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161139370_Johny - anymal type.resx">
+      <DependentUpon>201803161139370_Johny - anymal type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161203367_User.resx">
+      <DependentUpon>201803161203367_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161212098_Add Required.resx">
+      <DependentUpon>201803161212098_Add Required.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161305301_Last migration prior push.resx">
+      <DependentUpon>201803161305301_Last migration prior push.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161405498_seed test.resx">
+      <DependentUpon>201803161405498_seed test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161442077_testing validation 1.resx">
+      <DependentUpon>201803161442077_testing validation 1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161442340_testing validation 2.resx">
+      <DependentUpon>201803161442340_testing validation 2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161443092_last test for validation.resx">
+      <DependentUpon>201803161443092_last test for validation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161452158_seed testing couple of models created.resx">
+      <DependentUpon>201803161452158_seed testing couple of models created.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161456476_Seed test with post added.resx">
+      <DependentUpon>201803161456476_Seed test with post added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161505477_added user id to posts and made nullable problem.resx">
+      <DependentUpon>201803161505477_added user id to posts and made nullable problem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161853276_ChangeIdTypeFromIntToByteWhereNoMoreThan250ElementsAreExpected.resx">
+      <DependentUpon>201803161853276_ChangeIdTypeFromIntToByteWhereNoMoreThan250ElementsAreExpected.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161935064_ChangeIdTypeFromIntToByteWhereNoMoreThan250ElementsAreExpected1.resx">
+      <DependentUpon>201803161935064_ChangeIdTypeFromIntToByteWhereNoMoreThan250ElementsAreExpected1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161940321_TryToFixError.resx">
+      <DependentUpon>201803161940321_TryToFixError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161942401_ReturnRequiredOnAnimalInPost.resx">
+      <DependentUpon>201803161942401_ReturnRequiredOnAnimalInPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161947497_TryToINcludeAnimalInPostWhenSeeding.resx">
+      <DependentUpon>201803161947497_TryToINcludeAnimalInPostWhenSeeding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161953001_TryToINcludeAnimalInPostWhenSeeding1.resx">
+      <DependentUpon>201803161953001_TryToINcludeAnimalInPostWhenSeeding1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803161953474_TryToINcludeAnimalInPostWhenSeeding2.resx">
+      <DependentUpon>201803161953474_TryToINcludeAnimalInPostWhenSeeding2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803162003594_TryToINcludeAnimalInPostWhenSeeding3.resx">
+      <DependentUpon>201803162003594_TryToINcludeAnimalInPostWhenSeeding3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803171942465_AllIdsAutoIncrement_NoSeedData.resx">
+      <DependentUpon>201803171942465_AllIdsAutoIncrement_NoSeedData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803171958200_ReturnPostIdToBeOptional.resx">
+      <DependentUpon>201803171958200_ReturnPostIdToBeOptional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803171959002_SeedData.resx">
+      <DependentUpon>201803171959002_SeedData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803172137048_TweakPropsTryingToFixErrorResultedFromDatabaseGeneratedIds.resx">
+      <DependentUpon>201803172137048_TweakPropsTryingToFixErrorResultedFromDatabaseGeneratedIds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803172203084_AddAnimalIdinPOST.resx">
+      <DependentUpon>201803172203084_AddAnimalIdinPOST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803172219048_ChangeAnimalTypeIDtoAnimalTypeIdandSameForBreedTypeandLocation.resx">
+      <DependentUpon>201803172219048_ChangeAnimalTypeIDtoAnimalTypeIdandSameForBreedTypeandLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803172244384_SmallChanges.resx">
+      <DependentUpon>201803172244384_SmallChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803172344166_JustInCase.resx">
+      <DependentUpon>201803172344166_JustInCase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180014303_ChangeBreedTypeId.resx">
+      <DependentUpon>201803180014303_ChangeBreedTypeId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180016338_BackToChangeBreedTypeId.resx">
+      <DependentUpon>201803180016338_BackToChangeBreedTypeId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180018214_BackToChangeBreedTypeId2.resx">
+      <DependentUpon>201803180018214_BackToChangeBreedTypeId2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180735523_TryFixValidationErrorInPost.resx">
+      <DependentUpon>201803180735523_TryFixValidationErrorInPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180752264_TryRemoveImagesFromPost.resx">
+      <DependentUpon>201803180752264_TryRemoveImagesFromPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180801110_PlayingWithIdentityFieldOfPost.resx">
+      <DependentUpon>201803180801110_PlayingWithIdentityFieldOfPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180802186_PlayingWithIdentityFieldOfPost2.resx">
+      <DependentUpon>201803180802186_PlayingWithIdentityFieldOfPost2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180820596_PlayingWithIdentityFieldOfPost3.resx">
+      <DependentUpon>201803180820596_PlayingWithIdentityFieldOfPost3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180846079_KeysIssue.resx">
+      <DependentUpon>201803180846079_KeysIssue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180850534_KeysIssue2.resx">
+      <DependentUpon>201803180850534_KeysIssue2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180858365_KeysIssue3.resx">
+      <DependentUpon>201803180858365_KeysIssue3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180925334_ChangedAnimalAndPostIdsToAnimalIdandPOstId.resx">
+      <DependentUpon>201803180925334_ChangedAnimalAndPostIdsToAnimalIdandPOstId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180940331_ChangeIdsBack.resx">
+      <DependentUpon>201803180940331_ChangeIdsBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180947422_DropDataAnnotationForDatabaseGeneratedOnPost.resx">
+      <DependentUpon>201803180947422_DropDataAnnotationForDatabaseGeneratedOnPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180954501_RemoveDataGeneratedOnIdinPost.resx">
+      <DependentUpon>201803180954501_RemoveDataGeneratedOnIdinPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803180959470_YesYesYes_DataSeedWorks_Now_Add_back_The_Images_Data_In_Post.resx">
+      <DependentUpon>201803180959470_YesYesYes_DataSeedWorks_Now_Add_back_The_Images_Data_In_Post.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803181006286_AllValidationsAreBack.resx">
+      <DependentUpon>201803181006286_AllValidationsAreBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803181139257_IncreaseUserNameTo30char.resx">
+      <DependentUpon>201803181139257_IncreaseUserNameTo30char.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803181145091_ChangePasswordValidation.resx">
+      <DependentUpon>201803181145091_ChangePasswordValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803181154134_ChangePasswordValidation1.resx">
+      <DependentUpon>201803181154134_ChangePasswordValidation1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803181202346_AddUserIdInPost.resx">
+      <DependentUpon>201803181202346_AddUserIdInPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803201654194_ChangeNameToLocationName.resx">
+      <DependentUpon>201803201654194_ChangeNameToLocationName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803201718006_MakeLocationNameUniqueAndRequired.resx">
+      <DependentUpon>201803201718006_MakeLocationNameUniqueAndRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803241213405_MakeUserNameSmallerFrom6To4Chars.resx">
+      <DependentUpon>201803241213405_MakeUserNameSmallerFrom6To4Chars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803271549371_AddStatusToUserTable.resx">
+      <DependentUpon>201803271549371_AddStatusToUserTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803271556266_MakeStatusColumnsInUserAndPostTableRequred.resx">
+      <DependentUpon>201803271556266_MakeStatusColumnsInUserAndPostTableRequred.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803290744106_User validation, AnimalType validation, BreedType validation.resx">
+      <DependentUpon>201803290744106_User validation, AnimalType validation, BreedType validation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803290827112_BreedType.resx">
+      <DependentUpon>201803290827112_BreedType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803290847207_RemoveAnimalTypeIdFromBreedType.resx">
+      <DependentUpon>201803290847207_RemoveAnimalTypeIdFromBreedType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803290848359_AddAnimalTypeIdFromBreedType.resx">
+      <DependentUpon>201803290848359_AddAnimalTypeIdFromBreedType.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,13 +1,23 @@
-﻿using AnimaniaConsole.Data;
+﻿using AnimaniaConsole.Core.Contracts;
+using Autofac;
+using Client;
+using System.Reflection;
 
 namespace AnimaniaConsole.Client
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            var context = new AnimaniaConsoleContext();
-            context.Database.CreateIfNotExists();
+            AutoMapperConfig.Initialize();
+
+            var builder = new ContainerBuilder();
+            builder.RegisterAssemblyModules(Assembly.GetExecutingAssembly());
+
+            var container = builder.Build();
+
+            var engine = container.Resolve<IEngine>();
+            engine.Run();
         }
     }
 }

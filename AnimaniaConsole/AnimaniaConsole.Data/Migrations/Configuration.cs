@@ -1,23 +1,32 @@
 namespace AnimaniaConsole.Data.Migrations
 {
+    using System;
     using System.Data.Entity.Migrations;
+    using System.IO;
+    using System.Linq;
 
     public sealed class Configuration : DbMigrationsConfiguration<AnimaniaConsole.Data.AnimaniaConsoleContext>
     {
+
         public Configuration()
         {
-            this.AutomaticMigrationsEnabled = false;
-            //TODO: to be set to false once app in production
-            this.AutomaticMigrationDataLossAllowed = true;
-            
+            ////used while in development mode to be able to debug while updating database
+            //if (System.Diagnostics.Debugger.IsAttached == false) { System.Diagnostics.Debugger.Launch(); }
         }
 
         protected override void Seed(AnimaniaConsole.Data.AnimaniaConsoleContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            
+            //Method outputs the EntityValidationErrors in PackageManager
+            EntityValidationErrorsOutput.SaveChanges(context);
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
+
+
+
+
+
+
         }
+
     }
 }

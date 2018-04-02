@@ -1,0 +1,18 @@
+1. LazyLoading in EFCore - how to use it: 
+	https://docs.microsoft.com/en-us/ef/core/querying/related-data
+2. How To…Verify Email Address: Entity Framework Code First Migrations
+	http://www.codenutz.com/verify-email-address-entity-framework-code-first-migrations/
+3. How to fix error in PackageManager console when running update-database: EntityvalidationErrors
+	https://stackoverflow.com/questions/10219864/ef-code-first-how-do-i-see-entityvalidationerrors-property-from-the-nuget-pac
+4. How to fix error in PackageManager console - A dependent property in a ReferentialConstraint is mapped to a store-generated column
+	https://stackoverflow.com/questions/19793572/ef-migrations-exception-a-dependent-property-in-a-referentialconstraint-is-mapp
+5. Error in PackageManager: Column 'LocationName' in table 'dbo.Locations' is of a type that is invalid for use as a key column in an index.
+	https://stackoverflow.com/questions/27687080/creating-string-index-with-code-first 	
+6. Many Build Errors after pull incl. Metadata File sOmEnAmE.DLL could not be found
+	https://stackoverflow.com/questions/898559/metadata-file-release-project-dll-could-not-be-found-in-visual-studio/13031884#13031884
+7. Why CollectionAssert.AreEqual fails even when both lists contain the same items
+	http://softwareonastring.com/357/why-collectionassert-areequal-fails-even-when-both-lists-contain-the-same-items
+
+	
+	
+	

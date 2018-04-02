@@ -1,0 +1,26 @@
+﻿RegisterUser;Auser;Apassword123;Kremvirsh;KenBoni;obichame.kremvirshken.vseki.den@meso.edu
+
+RegisterUser;Cuser;Cpassword123;Kremvirsh;KenBoni;obichame.kremvirsh.ken@meso.edu
+RegisterUser;Duser;Dpassword123;Kremvirsh;Sachi;sachi@meso.edu
+
+LogInUser;Buser;Bpassword123
+EditPostTitle;10;NEW NEW NEW Title
+ShowMyPosts
+
+LogInUser;Buser;Bpassword123
+EditPostDescription;10;New description description NEW
+ShowMyPosts
+
+LogInUser;Buser;Bpassword123
+EditPostPrice;11;25
+ShowMyPosts
+
+GetPostsInPDF
+
+
+Преместване на AutofacModule и AutoMapperConfig в Core 
+No such command, please type 'Help' to see all available commands!
+Говорящи съобщения за грешка при RegisterUser 
+Защо имаме толкова DTO а в AutoMapper ги няма?!
+
+
