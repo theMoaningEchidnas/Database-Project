@@ -176,7 +176,7 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
 
             locationServicesMock
                 .Setup(l => l.GetLocationIdByLocationName(It.IsAny<IAnimaniaConsoleContext>(), It.IsAny<string>()))
-                .Returns(1);
+                .Returns(1);    
             animalTypeServicesMock
                 .Setup(a => a.GetAnimalTypeIdByAnimalTypeName(It.IsAny<IAnimaniaConsoleContext>(), It.IsAny<string>()))
                 .Returns(1);
