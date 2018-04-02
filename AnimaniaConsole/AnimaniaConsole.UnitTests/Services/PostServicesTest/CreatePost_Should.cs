@@ -21,15 +21,6 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
         private AnimaniaConsoleContext effortContext;
         private PostServices postService;
 
-        [ClassInitialize]
-        public static void InitilizeAutomapper(TestContext context)
-        {
-            //Mapper.Initialize(config => {
-            //    config.CreateMap<CreatePostModel, Post>().ReverseMap();
-            //});
-        }
-
-
         [TestInitialize]
         public void Initialize()
         {
@@ -42,7 +33,9 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
             animalTypeServicesMock = new Mock<IAnimalTypeServices>();
             breedTypeServicesMock = new Mock<IBreedTypeServices>();
             effortContext = new AnimaniaConsoleContext(Effort.DbConnectionFactory.CreateTransient());
+
             postService = new PostServices(effortContext, locationServicesMock.Object, animalTypeServicesMock.Object, breedTypeServicesMock.Object);
+
             User user = new User()
             {
                 UserName = "Tester",
@@ -104,6 +97,96 @@ namespace AnimaniaConsole.UnitTests.Services.PostServicesTest
             postService.CreatePost(createPostModel, 1);
 
             Assert.AreEqual(1, effortContext.Posts.Count());
+        }
+
+        [TestMethod]
+        public void Invoke_GetLocationIdByLocationName_From_LocationServices()
+        {
+            var createPostModel = new CreatePostModel()
+            {
+                Title = "1234567890",
+                Description = "12345678901234567890",
+                Status = true,
+                LocationName = "TestLocation",
+                AnimalTypeName = "TestAnimalTypeName",
+                BreedTypeName = "TestBreed",
+                AnimalName = "TestAnimalName",
+                Birthday = DateTime.Now
+            };
+
+            locationServicesMock
+                .Setup(l => l.GetLocationIdByLocationName(It.IsAny<IAnimaniaConsoleContext>(), It.IsAny<string>()))
+                .Returns(1).Verifiable();
+            animalTypeServicesMock
+                .Setup(a => a.GetAnimalTypeIdByAnimalTypeName(It.IsAny<IAnimaniaConsoleContext>(), It.IsAny<string>()))
+                .Returns(1);
+            breedTypeServicesMock
+                .Setup(b => b.GetBreedTypeIdByBreedTypeName(It.IsAny<string>()))
+                .Returns(1);
+
+            postService.CreatePost(createPostModel, 1);
+
+            locationServicesMock.Verify(x => x.GetLocationIdByLocationName(It.IsAny<IAnimaniaConsoleContext>(), It.IsAny<string>()), Times.Once);
+        }
+
+        [TestMethod]
+        public void Invoke_GetAnimalTypeIdByAnimalTypeName_From_AnimalTypeServices()
+        {
+            var createPostModel = new CreatePostModel()
+            {
+                Title = "1234567890",
+                Description = "12345678901234567890",
+                Status = true,
+                LocationName = "TestLocation",
+                AnimalTypeName = "TestAnimalTypeName",
+                BreedTypeName = "TestBreed",
+                AnimalName = "TestAnimalName",
+                Birthday = DateTime.Now
+            };
+
+            locationServicesMock
+                .Setup(l => l.GetLocationIdByLocationName(It.IsAny<IAnimaniaConsoleContext>(), It.IsAny<string>()))
+                .Returns(1);
+            animalTypeServicesMock
+                .Setup(a => a.GetAnimalTypeIdByAnimalTypeName(It.IsAny<IAnimaniaConsoleContext>(), It.IsAny<string>()))
+                .Returns(1).Verifiable();
+            breedTypeServicesMock
+                .Setup(b => b.GetBreedTypeIdByBreedTypeName(It.IsAny<string>()))
+                .Returns(1);
+
+            postService.CreatePost(createPostModel, 1);
+
+            animalTypeServicesMock.Verify(x => x.GetAnimalTypeIdByAnimalTypeName(It.IsAny<IAnimaniaConsoleContext>(), It.IsAny<string>()), Times.Once);
+        }
+
+        [TestMethod]
+        public void Invoke_GetBreedTypeIdByBreedTypeName_From_BreedTypeServices()
+        {
+            var createPostModel = new CreatePostModel()
+            {
+                Title = "1234567890",
+                Description = "12345678901234567890",
+                Status = true,
+                LocationName = "TestLocation",
+                AnimalTypeName = "TestAnimalTypeName",
+                BreedTypeName = "TestBreed",
+                AnimalName = "TestAnimalName",
+                Birthday = DateTime.Now
+            };
+
+            locationServicesMock
+                .Setup(l => l.GetLocationIdByLocationName(It.IsAny<IAnimaniaConsoleContext>(), It.IsAny<string>()))
+                .Returns(1);
+            animalTypeServicesMock
+                .Setup(a => a.GetAnimalTypeIdByAnimalTypeName(It.IsAny<IAnimaniaConsoleContext>(), It.IsAny<string>()))
+                .Returns(1);
+            breedTypeServicesMock
+                .Setup(b => b.GetBreedTypeIdByBreedTypeName(It.IsAny<string>()))
+                .Returns(1).Verifiable();
+
+            postService.CreatePost(createPostModel, 1);
+
+            breedTypeServicesMock.Verify(x => x.GetBreedTypeIdByBreedTypeName(It.IsAny<string>()), Times.Once);
         }
     }
 }
