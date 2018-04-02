@@ -27,9 +27,10 @@ namespace AnimaniaConsole.Services.Services
                 .Where(x => x.BreedTypeName == breedTypeName)
                 .Select(x => x.Id)
                 .SingleOrDefault();
+
             if (breedTypeId == 0)
             {
-                throw new ArgumentNullException("Such type of Breed does not exist");
+                throw new ArgumentException("Such type of Breed does not exist");
             }
             return breedTypeId;
 

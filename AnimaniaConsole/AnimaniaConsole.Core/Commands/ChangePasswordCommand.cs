@@ -1,4 +1,5 @@
-﻿using AnimaniaConsole.Core.CommandContracts;
+﻿using System;
+using AnimaniaConsole.Core.CommandContracts;
 using AnimaniaConsole.DTO.Models;
 using AnimaniaConsole.Services.Contracts;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace AnimaniaConsole.Core.Commands
 
         public ChangePasswordCommand(IUserServices userService)
         {
-            this.UserService = userService;
+            this.UserService = userService ?? throw new ArgumentNullException();
         }
 
         public IUserServices UserService { get; }

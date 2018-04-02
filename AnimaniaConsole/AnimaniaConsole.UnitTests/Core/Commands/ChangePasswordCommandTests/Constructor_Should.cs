@@ -1,4 +1,7 @@
-﻿using AnimaniaConsole.DTO.Models;
+﻿using System;
+using AnimaniaConsole.Core.Commands;
+using AnimaniaConsole.DTO.Models;
+using AnimaniaConsole.Services.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AnimaniaConsole.UnitTests.Core.Commands.ChangePasswordCommandTests
@@ -21,19 +24,8 @@ namespace AnimaniaConsole.UnitTests.Core.Commands.ChangePasswordCommandTests
         [TestMethod]
         public void Throw_Exception_IfUserService_IsNull()
         {
-
+            Assert.ThrowsException<ArgumentNullException>(() => new ChangePasswordCommand(null));
         }
 
-        [TestMethod]
-        public void Throw_Exception_IfSessionService_IsNull()
-        {
-
-        }
-
-        [TestMethod]
-        public void Throw_Exception_IfSession_IsNull()
-        {
-
-        }
     }
 }

@@ -93,7 +93,7 @@
     <Compile Include="Helpers\DbSetExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AnimalTypeServicesTests\GetAnimalTypeIdByAnimalTypeName_Should.cs" />
-    <Compile Include="Services\BreedTypeServicesTests\LoadBreedsFromJSON_Should.cs" />
+    <Compile Include="Services\BreedTypeServicesTests\GetBreedTypeIdByBreedTypeName_Should.cs" />
     <Compile Include="Services\LocationServicesTests\GetLocationIdByLocationName_Should.cs" />
     <Compile Include="Services\PostServicesTest\CreatePost_Should.cs" />
     <Compile Include="Services\PostServicesTest\EditPostDescription_Should.cs" />
