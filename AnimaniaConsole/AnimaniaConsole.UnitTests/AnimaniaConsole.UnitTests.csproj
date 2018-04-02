@@ -106,6 +106,7 @@
     <Compile Include="Services\PostServicesTest\SearchPosts_Should.cs" />
     <Compile Include="Services\UserServicesTests\ChangePassword_Should.cs" />
     <Compile Include="Services\UserServicesTests\GetLoggedUserId_Should.cs" />
+    <Compile Include="Services\UserServicesTests\GetLoggedUserName_Should.cs" />
     <Compile Include="Services\UserServicesTests\LogOut_Should.cs" />
     <Compile Include="Services\UserServicesTests\ValidateUser_Should.cs" />
   </ItemGroup>
